@@ -1,0 +1,17 @@
+[
+{
+  "modid": "emporium",
+  "name": "Emporium",
+  "description": "Emporium is a mod that adds decorative and interactive blocks to Minecraft.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "logoFile": "assets/emporium/textures/logo.png",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["wiiv"],
+  "credits": "",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
