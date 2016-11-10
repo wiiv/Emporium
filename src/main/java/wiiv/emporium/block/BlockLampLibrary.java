@@ -4,10 +4,10 @@ import java.util.List;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.block.properties.*;
+import net.minecraft.block.state.*;
+import net.minecraft.entity.*;
+import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 
@@ -21,7 +21,7 @@ public class BlockLampLibrary extends BlockBase {
 		super(Material.GLASS, "library_lamp", 1.0F);
 		setSoundType(SoundType.GLASS);
 		setLightLevel(15.0F);
-		//setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class BlockLampLibrary extends BlockBase {
 	/*
 	@Override
 	public BlockRenderLayer getBlockLayer() {
-	
+
 		return BlockRenderLayer.TRANSLUCENT;
 	}
 	*/
@@ -51,26 +51,33 @@ public class BlockLampLibrary extends BlockBase {
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn) {
 		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX);
 	}
-	/*
-		@Override
-		public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-			IBlockState state = worldIn.getBlockState(pos);
-			return state.withProperty(FACING, placer.getHorizontalFacing());
-		}
-	
-		@Override
-		public int getMetaFromState(IBlockState state) {
-			return state.getValue(FACING).getHorizontalIndex();
-		}
-	
-		@Override
-		public IBlockState getStateFromMeta(int meta) {
-			return getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
-		}
-	
-		@Override
-		protected BlockStateContainer createBlockState() {
-			return new BlockStateContainer(this, FACING);
-		}
-		*/
+
+	@Override
+	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+		IBlockState state = super.onBlockPlaced(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer);
+		return state.withProperty(FACING, placer.getHorizontalFacing());
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return state.getValue(FACING).getHorizontalIndex();
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
+	}
+
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] {
+				FACING
+		});
+	}
+
+	@Override
+	public IBlockState withRotation(IBlockState state, Rotation rot) {
+		return state.withProperty(FACING, rot.rotate(state.getValue(FACING)));
+	}
+
 }

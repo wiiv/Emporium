@@ -1,6 +1,5 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
-    "parent":"block/block",
     "textures": {
         "0": "emporium:blocks/lamp_library_frame",
         "1": "emporium:blocks/lamp_library_green",
