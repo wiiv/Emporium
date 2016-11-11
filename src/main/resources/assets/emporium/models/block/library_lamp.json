@@ -1,14 +1,45 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+    "parent":"block/block",
     "textures": {
         "0": "emporium:blocks/lamp_library_frame",
         "particle": "emporium:blocks/lamp_library_frame"
     },
     "display": {
+        "thirdperson_righthand": {
+            "rotation": [ 10, 180, 0 ],
+            "translation": [ 0, 1, 0 ],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [ 10, 180, 0 ],
+            "translation": [ 0, 1, 0 ],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 180, 5 ],
+            "translation": [ 2.75, 0, -2.75 ],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 0, 180, 5 ],
+            "translation": [ 2.75, 0, -2.75 ],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
         "gui": {
-            "rotation": [ 30, 45, 0 ],
-            "translation": [ 0, 0, 0],
-            "scale":[ 0.625, 0.625, 0.625 ]
+            "rotation": [ 30, 225, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, -2],
+            "scale":[ 1, 1, 1]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 5, 0],
+            "scale":[ 0.5, 0.5, 0.5]
         }
     },
     "elements": [
@@ -66,7 +97,7 @@
             }
         },
         {
-            "name": "Cube",
+            "name": "Light",
             "from": [ 2.0, 8.0, 6.0 ], 
             "to": [ 14.0, 12.0, 12.0 ], 
             "faces": {

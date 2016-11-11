@@ -20,7 +20,7 @@ public class BlockLampLibrary extends BlockBaseColorable {
 	public BlockLampLibrary(int color) {
 		super(Material.GLASS, "library_lamp", 1.0F, color);
 		setSoundType(SoundType.GLASS);
-		setLightLevel(15.0F);
+		setLightLevel(0.75F);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 

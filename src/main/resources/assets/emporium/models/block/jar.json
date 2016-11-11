@@ -6,6 +6,13 @@
         "1": "emporium:blocks/jar_glass",
         "particle": "emporium:blocks/jar_lid"
     },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 225, 0 ],
+            "translation": [ 0, 0, 0],
+            "scale":[ 0.625, 0.625, 0.625 ]
+        }
+    },
     "elements": [
         {
             "name": "Base",
@@ -46,12 +53,5 @@
                 "down": { "texture": "#0", "uv": [ 8.0, 10.0, 14.0, 16.0 ] }
             }
         }
-    ],
-    "display": {
-        "gui": {
-            "rotation": [ 30, 45, 0 ],
-            "translation": [ 0, 0, 0],
-            "scale":[ 0.625, 0.625, 0.625 ]
-        }
-    }
+    ]
 }
