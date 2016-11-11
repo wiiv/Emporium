@@ -2,7 +2,22 @@ item.cookie.name=Cookie
 item.debug.name=Render Debug
 
 tile.jar.name=Jar
-tile.library_lamp.name=Library Lamp
+tile.library_lamp_white.name=White Library Lamp
+tile.library_lamp_orange.name=Orange Library Lamp
+tile.library_lamp_magenta.name=Magenta Library Lamp
+tile.library_lamp_lime.name=Lime Library Lamp
+tile.library_lamp_light_blue.name=Light Blue Library Lamp
+tile.library_lamp_blue.name=Blue Library Lamp
+tile.library_lamp_purple.name=Purple Library Lamp
+tile.library_lamp_black.name=Black Library Lamp
+tile.library_lamp_gray.name=Gray Library Lamp
+tile.library_lamp_silver.name=Light Gray Library Lamp
+tile.library_lamp_pink.name=Pink Library Lamp
+tile.library_lamp_red.name=Red Library Lamp
+tile.library_lamp_green.name=Green Library Lamp
+tile.library_lamp_cyan.name=Cyan Library Lamp
+tile.library_lamp_yellow.name=Yellow Library Lamp
+tile.library_lamp_brown.name=Brown Library Lamp
 tile.lamp_chandelier.name=Chandelier
  
 itemGroup.tabDecwiivrations=D <3 Emporium

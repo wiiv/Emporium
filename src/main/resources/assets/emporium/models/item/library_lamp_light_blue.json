@@ -1,0 +1,40 @@
+{
+    "parent": "emporium:block/library_lamp_light_blue",
+	"display": {
+        "thirdperson_righthand": {
+            "rotation": [ 10, 180, 0 ],
+            "translation": [ 0, 1, 0 ],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [ 10, 180, 0 ],
+            "translation": [ 0, 1, 0 ],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 180, 5 ],
+            "translation": [ 2.75, 0, -2.75 ],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 0, 180, 5 ],
+            "translation": [ 2.75, 0, -2.75 ],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
+        "gui": {
+            "rotation": [ 15, -25, -5 ],
+            "translation": [ 0, 1, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, -2],
+            "scale":[ 1, 1, 1]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 5, 0],
+            "scale":[ 0.5, 0.5, 0.5]
+        }
+    }
+}
