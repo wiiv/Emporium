@@ -1,0 +1,6 @@
+{
+	"parent": "emporium:block/tall_candle",
+	"textures": {
+		"candle": "emporium:blocks/lamp_candle_silver"
+	}
+}

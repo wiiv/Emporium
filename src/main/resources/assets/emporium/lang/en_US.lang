@@ -1,3 +1,5 @@
+itemGroup.tabDecwiivrations=D <3 Emporium
+
 item.cookie.name=Chocolat Cookie
 item.debug.name=Render Debug
 
@@ -53,7 +55,7 @@ tile.candelabra_lamp_cyan.name=Old Cyan Candelabra
 tile.candelabra_lamp_yellow.name=Old Yellow Candelabra
 tile.candelabra_lamp_brown.name=Old Brown Candelabra
 
-tile.big_candle_white.name=Big White Candle
+tile.Tall_candle_white.name=Big White Candle
 tile.big_candle_orange.name=Big Orange Candle
 tile.big_candle_magenta.name=Big Magenta Candle
 tile.big_candle_lime.name=Big Lime Candle
@@ -70,4 +72,24 @@ tile.big_candle_cyan.name=Big Cyan Candle
 tile.big_candle_yellow.name=Big Yellow Candle
 tile.big_candle_brown.name=Big Brown Candle
 
-itemGroup.tabDecwiivrations=D <3 Emporium
+tile.tall_candle_white.name=Big White Candle
+tile.tall_candle_orange.name=Tall Orange Candle
+tile.tall_candle_magenta.name=Tall Magenta Candle
+tile.tall_candle_lime.name=Tall Lime Candle
+tile.tall_candle_light_blue.name=Tall Light Blue Candle
+tile.tall_candle_blue.name=Tall Blue Candle
+tile.tall_candle_purple.name=Tall Purple Candle
+tile.tall_candle_black.name=Tall Black Candle
+tile.tall_candle_gray.name=Tall Gray Candle
+tile.tall_candle_silver.name=Tall Light Gray Candle
+tile.tall_candle_pink.name=Tall Pink Candle
+tile.tall_candle_red.name=Tall Red Candle
+tile.tall_candle_green.name=Tall Green Candle
+tile.tall_candle_cyan.name=Tall Cyan Candle
+tile.tall_candle_yellow.name=Tall Yellow Candle
+tile.tall_candle_brown.name=Tall Brown Candle
+
+tile.medieval_table.name=Medieval Banquet Table
+tile.medieval_bench.name=Medieval Banquet Bench
+tile.medieval_chair_king.name=Medieval Banquet King Chair
+tile.medieval_chair_queen.name=Medieval Banquet Queen Chair

@@ -10,7 +10,7 @@ public class BlockLampChandelier extends BlockBaseColorable {
 	public BlockLampChandelier(int color) {
 		super(Material.ANVIL, "chandelier_lamp", 1.0F, color);
 		setSoundType(SoundType.ANVIL);
-		setLightLevel(0.625F);
+		setLightLevel(0.75F);
 	}
 
 	@Override

@@ -10,7 +10,7 @@ public class BlockLampCandelabra extends BlockBaseColorable {
 	public BlockLampCandelabra(int color) {
 		super(Material.ANVIL, "candelabra_lamp", 1.0F, color);
 		setSoundType(SoundType.ANVIL);
-		setLightLevel(0.625F);
+		setLightLevel(0.75F);
 	}
 
 	@Override

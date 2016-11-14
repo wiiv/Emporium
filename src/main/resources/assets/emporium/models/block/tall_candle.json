@@ -1,9 +1,9 @@
 {
-	"__comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"frame": "blocks/lamp_candle_tall_frame",
-		"particle": "blocks/lamp_candle_tall_frame"
+		"frame": "emporium:blocks/lamp_candle_tall_frame",
+		"particle": "emporium:blocks/lamp_candle_tall_frame"
 	},
 	"elements": [
 		{
@@ -36,10 +36,10 @@
 			"faces": {
 				"down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
 				"up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
-				"north": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"south": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"west": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" },
-				"east": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" }
+				"north": { "uv": [ 0, 2, 2, 10 ], "texture": "#candle" },
+				"south": { "uv": [ 0, 2, 2, 10 ], "texture": "#candle" },
+				"west": { "uv": [ 2, 2, 4, 10 ], "texture": "#candle" },
+				"east": { "uv": [ 2, 2, 4, 10 ], "texture": "#candle" }
 			}
 		},
 		{

@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.*;
 import net.minecraft.block.state.*;
 import net.minecraft.entity.*;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
@@ -75,6 +76,12 @@ public class BlockLampLibrary extends BlockBaseColorable {
 		return new BlockStateContainer(this, new IProperty[] {
 				FACING
 		});
+	}
+	
+	@Override
+	public BlockRenderLayer getBlockLayer() {
+
+		return BlockRenderLayer.CUTOUT;
 	}
 
 }
