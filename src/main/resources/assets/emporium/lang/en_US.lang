@@ -1,4 +1,4 @@
-item.cookie.name=Cookie
+item.cookie.name=Chocolat Cookie
 item.debug.name=Render Debug
 
 tile.jar.name=Jar
@@ -18,6 +18,56 @@ tile.library_lamp_green.name=Green Library Lamp
 tile.library_lamp_cyan.name=Cyan Library Lamp
 tile.library_lamp_yellow.name=Yellow Library Lamp
 tile.library_lamp_brown.name=Brown Library Lamp
-tile.lamp_chandelier.name=Chandelier
- 
+
+tile.chandelier_lamp_white.name=Old White Chandelier
+tile.chandelier_lamp_orange.name=Old Orange Chandelier
+tile.chandelier_lamp_magenta.name=Old Magenta Chandelier
+tile.chandelier_lamp_lime.name=Old Lime Chandelier
+tile.chandelier_lamp_light_blue.name=Old Light Blue Chandelier
+tile.chandelier_lamp_blue.name=Old Blue Chandelier
+tile.chandelier_lamp_purple.name=Old Purple Chandelier
+tile.chandelier_lamp_black.name=Old Black Chandelier
+tile.chandelier_lamp_gray.name=Old Gray Chandelier
+tile.chandelier_lamp_silver.name=Old Light Gray Chandelier
+tile.chandelier_lamp_pink.name=Old Pink Chandelier
+tile.chandelier_lamp_red.name=Old Red Chandelier
+tile.chandelier_lamp_green.name=Old Green Chandelier
+tile.chandelier_lamp_cyan.name=Old Cyan Chandelier
+tile.chandelier_lamp_yellow.name=Old Yellow Chandelier
+tile.chandelier_lamp_brown.name=Old Brown Chandelier
+
+tile.candelabra_lamp_white.name=Old White Candelabra
+tile.candelabra_lamp_orange.name=Old Orange Candelabra
+tile.candelabra_lamp_magenta.name=Old Magenta Candelabra
+tile.candelabra_lamp_lime.name=Old Lime Candelabra
+tile.candelabra_lamp_light_blue.name=Old Light Blue Candelabra
+tile.candelabra_lamp_blue.name=Old Blue Candelabra
+tile.candelabra_lamp_purple.name=Old Purple Candelabra
+tile.candelabra_lamp_black.name=Old Black Candelabra
+tile.candelabra_lamp_gray.name=Old Gray Candelabra
+tile.candelabra_lamp_silver.name=Old Light Gray Candelabra
+tile.candelabra_lamp_pink.name=Old Pink Candelabra
+tile.candelabra_lamp_red.name=Old Red Candelabra
+tile.candelabra_lamp_green.name=Old Green Candelabra
+tile.candelabra_lamp_cyan.name=Old Cyan Candelabra
+tile.candelabra_lamp_yellow.name=Old Yellow Candelabra
+tile.candelabra_lamp_brown.name=Old Brown Candelabra
+
+tile.big_candle_white.name=Big White Candle
+tile.big_candle_orange.name=Big Orange Candle
+tile.big_candle_magenta.name=Big Magenta Candle
+tile.big_candle_lime.name=Big Lime Candle
+tile.big_candle_light_blue.name=Big Light Blue Candle
+tile.big_candle_blue.name=Big Blue Candle
+tile.big_candle_purple.name=Big Purple Candle
+tile.big_candle_black.name=Big Black Candle
+tile.big_candle_gray.name=Big Gray Candle
+tile.big_candle_silver.name=Big Light Gray Candle
+tile.big_candle_pink.name=Big Pink Candle
+tile.big_candle_red.name=Big Red Candle
+tile.big_candle_green.name=Big Green Candle
+tile.big_candle_cyan.name=Big Cyan Candle
+tile.big_candle_yellow.name=Big Yellow Candle
+tile.big_candle_brown.name=Big Brown Candle
+
 itemGroup.tabDecwiivrations=D <3 Emporium

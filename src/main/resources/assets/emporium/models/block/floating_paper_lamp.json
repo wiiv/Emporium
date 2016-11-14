@@ -1,0 +1,69 @@
+{
+	"__comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"0": "blocks/lamp_paper_floating_blue"
+	},
+	"elements": [
+		{
+			"__comment": "Cube1",
+			"from": [ 3, 2, 3 ],
+			"to": [ 13, 14, 13 ],
+			"faces": {
+				"up": { "uv": [ 0, 0, 10, 10 ], "texture": "#0" },
+				"north": { "uv": [ 0, 4, 10, 16 ], "texture": "#0" },
+				"south": { "uv": [ 0, 4, 10, 16 ], "texture": "#0" },
+				"west": { "uv": [ 0, 4, 10, 16 ], "texture": "#0" },
+				"east": { "uv": [ 0, 4, 10, 16 ], "texture": "#0" }
+			}
+		},
+		{
+			"__comment": "Cube1",
+			"from": [ 7, 2, 7 ],
+			"to": [ 9, 3, 9 ],
+			"faces": {
+				"down": { "uv": [ 14, 2, 16, 4 ], "texture": "#0" },
+				"up": { "uv": [ 12, 2, 14, 4 ], "texture": "#0" },
+				"north": { "uv": [ 14, 4, 16, 5 ], "texture": "#0" },
+				"south": { "uv": [ 12, 4, 14, 5 ], "texture": "#0" },
+				"west": { "uv": [ 14, 4, 12, 5 ], "texture": "#0" },
+				"east": { "uv": [ 14, 4, 16, 5 ], "texture": "#0" }
+			}
+		},
+		{
+			"__comment": "Cube1",
+			"from": [ 3, 2.5, 8 ],
+			"to": [ 7, 2.501, 9 ],
+			"faces": {
+				"down": { "uv": [ 10, 0, 14, 1 ], "texture": "#0" },
+				"up": { "uv": [ 10, 0, 14, 1 ], "texture": "#0" },
+			}
+		},
+		{
+			"__comment": "Cube1",
+			"from": [ 9, 2.5, 7 ],
+			"to": [ 13, 2.501, 8 ],
+			"faces": {
+				"down": { "uv": [ 10, 1, 14, 2 ], "texture": "#0" },
+				"up": { "uv": [ 10, 1, 14, 2 ], "texture": "#0" },
+			}
+		},
+		{
+			"__comment": "Cube1",
+			"from": [ 7, 2.5, 3 ],
+			"to": [ 8, 2.501, 7 ],
+			"faces": {
+				"down": { "uv": [ 11, 2, 12, 6 ], "texture": "#0" },
+				"up": { "uv": [ 11, 2, 12, 6 ], "texture": "#0" },
+			}
+		},
+		{
+			"__comment": "Cube1",
+			"from": [ 8, 2.5, 9 ],
+			"to": [ 9, 2.501, 13 ],
+			"faces": {
+				"down": { "uv": [ 10, 2, 11, 6 ], "texture": "#0" },
+				"up": { "uv": [ 10, 2, 11, 6 ], "texture": "#0" },
+			}
+		}
+	]
+}

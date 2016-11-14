@@ -5,12 +5,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockRenderLayer;
 
-public class BlockLampChandelier extends BlockBase {
+public class BlockLampChandelier extends BlockBaseColorable {
 
-	public BlockLampChandelier() {
-		super(Material.ANVIL, "chandelier_lamp", 1.0F);
+	public BlockLampChandelier(int color) {
+		super(Material.ANVIL, "chandelier_lamp", 1.0F, color);
 		setSoundType(SoundType.ANVIL);
-		setLightLevel(7.0F);
+		setLightLevel(0.625F);
 	}
 
 	@Override

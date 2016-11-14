@@ -1,12 +1,13 @@
 {
-	"__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+	"Comment": "Model created by wiiv using Cubik Sudio",
+    "parent": "block/block",
 	"textures": {
-		"frame": "blocks/lamp_candle_big_frame",
-		"candle": "blocks/lamp_candle_red"
+		"frame": "emporium:blocks/lamp_candle_big_frame",
+		"particle": "emporium:blocks/lamp_candle_big_frame"
 	},
 	"elements": [
 		{
-			"__comment": "Candle",
+			"Name": "Candle",
 			"from": [ 6, 3, 6 ],
 			"to": [ 10, 12, 10 ],
 			"faces": {
@@ -19,7 +20,7 @@
 			}
 		},
 		{
-			"__comment": "Base",
+			"Name": "Base",
 			"from": [ 5, 0, 5 ],
 			"to": [ 11, 3, 11 ],
 			"faces": {

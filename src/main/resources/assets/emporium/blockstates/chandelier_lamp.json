@@ -1,10 +1,5 @@
 {
     "variants": {
-        "facing=up":    { "model": "emporium:chandelier_lamp" },
-        "facing=down":  { "model": "emporium:chandelier_lamp" },
-        "facing=north": { "model": "emporium:chandelier_lamp_wall_small" },
-        "facing=east":  { "model": "emporium:chandelier_lamp_wall_small", "y":90 },
-        "facing=south": { "model": "emporium:chandelier_lamp_wall_small", "y":180},
-        "facing=west":  { "model": "emporium:chandelier_lamp_wall_small", "y":270}
+        "normal": { "model": "emporium:chandelier_lamp" }
     }
 }

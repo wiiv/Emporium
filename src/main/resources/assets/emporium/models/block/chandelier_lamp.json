@@ -1,15 +1,13 @@
 {
-	"__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+	"Comment": "Model created by wiiv using Cubik Sudio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "blocks/lamp_chandelier_frame",
-		"candle": "blocks/lamp_candle_red",
-		"crystal": "blocks/lamp_chandelier_crystal_red",
-		"frame": "blocks/lamp_chandelier_frame"
+		"frame": "emporium:blocks/lamp_chandelier_frame",
+		"particle": "emporium:blocks/lamp_chandelier_frame"
 	},
 	"elements": [
 		{
-			"__comment": "Crystal",
+			"Name": "Crystal",
 			"from": [ 6, 10, 6 ],
 			"to": [ 10, 14, 10 ],
 			"faces": {
@@ -22,20 +20,7 @@
 			}
 		},
 		{
-			"__comment": "CandleNorth",
-			"from": [ 7, 6, 1 ],
-			"to": [ 9, 10, 3 ],
-			"faces": {
-				"down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
-				"up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
-				"north": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"south": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"west": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" },
-				"east": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" }
-			}
-		},
-		{
-			"__comment": "SupportCenter",
+			"Name": "SupportCenter",
 			"from": [ 6, 5, 6 ],
 			"to": [ 10, 8, 10 ],
 			"faces": {
@@ -48,7 +33,7 @@
 			}
 		},
 		{
-			"__comment": "FrameSouth",
+			"Name": "FrameSouth",
 			"from": [ 7, 6, 10 ],
 			"to": [ 9, 7, 12 ],
 			"faces": {
@@ -61,7 +46,7 @@
 			}
 		},
 		{
-			"__comment": "CupSouth",
+			"Name": "CupSouth",
 			"from": [ 6, 4, 12 ],
 			"to": [ 10, 7, 16 ],
 			"faces": {
@@ -74,7 +59,7 @@
 			}
 		},
 		{
-			"__comment": "Crystal",
+			"Name": "Crystal",
 			"from": [ 5, 2, 13 ],
 			"to": [ 6, 6, 14 ],
 			"faces": {
@@ -87,12 +72,11 @@
 			}
 		},
 		{
-			"__comment": "CrystalS",
+			"Name": "CrystalS",
 			"from": [ 7, 0, 1 ],
 			"to": [ 9, 4, 2 ],
 			"faces": {
 				"down": { "uv": [ 14, 3, 16, 4 ], "texture": "#crystal" },
-				"up": { "uv": [ 0, 0, 2, 1 ], "texture": "#-1" },
 				"north": { "uv": [ 16, 0, 14, 4 ], "texture": "#crystal" },
 				"south": { "uv": [ 14, 0, 16, 4 ], "texture": "#crystal" },
 				"west": { "uv": [ 14, 0, 15, 4 ], "texture": "#crystal" },
@@ -100,12 +84,11 @@
 			}
 		},
 		{
-			"__comment": "CrystalW",
+			"Name": "CrystalW",
 			"from": [ 1, 0, 7 ],
 			"to": [ 2, 4, 9 ],
 			"faces": {
 				"down": { "uv": [ 15, 4, 16, 2 ], "texture": "#crystal" },
-				"up": { "uv": [ 0, 0, 1, 2 ], "texture": "#-1" },
 				"north": { "uv": [ 14, 0, 15, 4 ], "texture": "#crystal" },
 				"south": { "uv": [ 15, 0, 16, 4 ], "texture": "#crystal" },
 				"west": { "uv": [ 14, 0, 16, 4 ], "texture": "#crystal" },
@@ -113,20 +96,20 @@
 			}
 		},
 		{
-			"__comment": "FrameCenter",
+			"Name": "FrameCenter",
 			"from": [ 7, 8, 7 ],
-			"to": [ 9, 14, 9 ],
+			"to": [ 9, 10, 9 ],
 			"faces": {
 				"down": { "uv": [ 12, 0, 14, 2 ], "texture": "#frame" },
 				"up": { "uv": [ 12, 0, 14, 2 ], "texture": "#frame" },
-				"north": { "uv": [ 12, 2, 14, 8 ], "texture": "#frame" },
-				"south": { "uv": [ 12, 2, 14, 8 ], "texture": "#frame" },
-				"west": { "uv": [ 12, 2, 14, 8 ], "texture": "#frame" },
-				"east": { "uv": [ 12, 2, 14, 8 ], "texture": "#frame" }
+				"north": { "uv": [ 12, 6, 14, 8 ], "texture": "#frame" },
+				"south": { "uv": [ 12, 6, 14, 8 ], "texture": "#frame" },
+				"west": { "uv": [ 12, 6, 14, 8 ], "texture": "#frame" },
+				"east": { "uv": [ 12, 6, 14, 8 ], "texture": "#frame" }
 			}
 		},
 		{
-			"__comment": "Support",
+			"Name": "Support",
 			"from": [ 5, 14, 5 ],
 			"to": [ 11, 16, 11 ],
 			"faces": {
@@ -139,46 +122,7 @@
 			}
 		},
 		{
-			"__comment": "CandleSouth",
-			"from": [ 7, 6, 13 ],
-			"to": [ 9, 10, 15 ],
-			"faces": {
-				"down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
-				"up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
-				"north": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"south": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"west": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" },
-				"east": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" }
-			}
-		},
-		{
-			"__comment": "CandleEast",
-			"from": [ 13, 6, 7 ],
-			"to": [ 15, 10, 9 ],
-			"faces": {
-				"down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
-				"up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
-				"north": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"south": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"west": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" },
-				"east": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" }
-			}
-		},
-		{
-			"__comment": "CandleWest",
-			"from": [ 1, 6, 7 ],
-			"to": [ 3, 10, 9 ],
-			"faces": {
-				"down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
-				"up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
-				"north": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"south": { "uv": [ 0, 2, 2, 6 ], "texture": "#candle" },
-				"west": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" },
-				"east": { "uv": [ 2, 2, 4, 6 ], "texture": "#candle" }
-			}
-		},
-		{
-			"__comment": "CupSouth",
+			"Name": "CupSouth",
 			"from": [ 12, 4, 6 ],
 			"to": [ 16, 7, 10 ],
 			"faces": {
@@ -191,7 +135,7 @@
 			}
 		},
 		{
-			"__comment": "CupSouth",
+			"Name": "CupSouth",
 			"from": [ 6, 4, 0 ],
 			"to": [ 10, 7, 4 ],
 			"faces": {
@@ -204,7 +148,7 @@
 			}
 		},
 		{
-			"__comment": "CupSouth",
+			"Name": "CupSouth",
 			"from": [ 0, 4, 6 ],
 			"to": [ 4, 7, 10 ],
 			"faces": {
@@ -217,7 +161,7 @@
 			}
 		},
 		{
-			"__comment": "FrameSouth",
+			"Name": "FrameSouth",
 			"from": [ 10, 6, 7 ],
 			"to": [ 12, 7, 9 ],
 			"faces": {
@@ -230,7 +174,7 @@
 			}
 		},
 		{
-			"__comment": "FrameSouth",
+			"Name": "FrameSouth",
 			"from": [ 7, 6, 4 ],
 			"to": [ 9, 7, 6 ],
 			"faces": {
@@ -243,7 +187,7 @@
 			}
 		},
 		{
-			"__comment": "FrameSouth",
+			"Name": "FrameSouth",
 			"from": [ 4, 6, 7 ],
 			"to": [ 6, 7, 9 ],
 			"faces": {
@@ -256,7 +200,7 @@
 			}
 		},
 		{
-			"__comment": "Crystal",
+			"Name": "Crystal",
 			"from": [ 10, 2, 13 ],
 			"to": [ 11, 6, 14 ],
 			"faces": {
@@ -269,7 +213,7 @@
 			}
 		},
 		{
-			"__comment": "Crystal",
+			"Name": "Crystal",
 			"from": [ 13, 2, 10 ],
 			"to": [ 14, 6, 11 ],
 			"faces": {
@@ -282,7 +226,7 @@
 			}
 		},
 		{
-			"__comment": "Crystal",
+			"Name": "Crystal",
 			"from": [ 13, 2, 5 ],
 			"to": [ 14, 6, 6 ],
 			"faces": {
@@ -295,7 +239,7 @@
 			}
 		},
 		{
-			"__comment": "Crystal",
+			"Name": "Crystal",
 			"from": [ 10, 2, 2 ],
 			"to": [ 11, 6, 3 ],
 			"faces": {
@@ -308,7 +252,7 @@
 			}
 		},
 		{
-			"__comment": "Crystal",
+			"Name": "Crystal",
 			"from": [ 5, 2, 2 ],
 			"to": [ 6, 6, 3 ],
 			"faces": {
@@ -321,7 +265,7 @@
 			}
 		},
 		{
-			"__comment": "Crystal",
+			"Name": "Crystal",
 			"from": [ 2, 2, 5 ],
 			"to": [ 3, 6, 6 ],
 			"faces": {
@@ -334,7 +278,7 @@
 			}
 		},
 		{
-			"__comment": "Crystal",
+			"Name": "Crystal",
 			"from": [ 2, 2, 10 ],
 			"to": [ 3, 6, 11 ],
 			"faces": {
@@ -347,12 +291,11 @@
 			}
 		},
 		{
-			"__comment": "CrystalE",
+			"Name": "CrystalE",
 			"from": [ 14, 0, 7 ],
 			"to": [ 15, 4, 9 ],
 			"faces": {
 				"down": { "uv": [ 15, 4, 16, 2 ], "texture": "#crystal" },
-				"up": { "uv": [ 0, 0, 1, 2 ], "texture": "#-1" },
 				"north": { "uv": [ 14, 0, 15, 4 ], "texture": "#crystal" },
 				"south": { "uv": [ 15, 0, 16, 4 ], "texture": "#crystal" },
 				"west": { "uv": [ 14, 0, 16, 4 ], "texture": "#crystal" },
@@ -360,17 +303,69 @@
 			}
 		},
 		{
-			"__comment": "CrystalS",
+			"Name": "CrystalS",
 			"from": [ 7, 0, 14 ],
 			"to": [ 9, 4, 15 ],
 			"faces": {
 				"down": { "uv": [ 14, 3, 16, 4 ], "texture": "#crystal" },
-				"up": { "uv": [ 0, 0, 2, 1 ], "texture": "#-1" },
 				"north": { "uv": [ 16, 0, 14, 4 ], "texture": "#crystal" },
 				"south": { "uv": [ 14, 0, 16, 4 ], "texture": "#crystal" },
 				"west": { "uv": [ 14, 0, 15, 4 ], "texture": "#crystal" },
 				"east": { "uv": [ 15, 0, 16, 4 ], "texture": "#crystal" }
 			}
-		}
+		},
+        {
+            "Name": "CandleEast",
+            "from": [ 13, 7, 7 ],
+            "to": [ 15, 10, 9 ],
+            "faces": {
+                "down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
+                "up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
+                "north": { "uv": [ 0, 2, 2, 5 ], "texture": "#candle" },
+                "south": { "uv": [ 0, 2, 2, 5 ], "texture": "#candle" },
+                "west": { "uv": [ 2, 2, 4, 5 ], "texture": "#candle" },
+                "east": { "uv": [ 2, 2, 4, 5 ], "texture": "#candle" }
+            }
+        },
+        {
+            "Name": "CandleWest",
+            "from": [ 1, 7, 7 ],
+            "to": [ 3, 10, 9 ],
+            "faces": {
+                "down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
+                "up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
+                "north": { "uv": [ 0, 2, 2, 5 ], "texture": "#candle" },
+                "south": { "uv": [ 0, 2, 2, 5 ], "texture": "#candle" },
+                "west": { "uv": [ 2, 2, 4, 5 ], "texture": "#candle" },
+                "east": { "uv": [ 2, 2, 4, 5 ], "texture": "#candle" }
+            }
+        }
+		,
+        {
+            "Name": "CandleNorth",
+            "from": [ 7, 7, 1 ],
+            "to": [ 9, 10, 3 ],
+            "faces": {
+                "down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
+                "up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
+                "north": { "uv": [ 0, 2, 2, 5 ], "texture": "#candle" },
+                "south": { "uv": [ 0, 2, 2, 5 ], "texture": "#candle" },
+                "west": { "uv": [ 2, 2, 4, 5 ], "texture": "#candle" },
+                "east": { "uv": [ 2, 2, 4, 5 ], "texture": "#candle" }
+            }
+        },
+        {
+            "Name": "CandleSouth",
+            "from": [ 7, 7, 13 ],
+            "to": [ 9, 10, 15 ],
+            "faces": {
+                "down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
+                "up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
+                "north": { "uv": [ 0, 2, 2, 5 ], "texture": "#candle" },
+                "south": { "uv": [ 0, 2, 2, 5 ], "texture": "#candle" },
+                "west": { "uv": [ 2, 2, 4, 5 ], "texture": "#candle" },
+                "east": { "uv": [ 2, 2, 4, 5 ], "texture": "#candle" }
+            }
+        }
 	]
 }
