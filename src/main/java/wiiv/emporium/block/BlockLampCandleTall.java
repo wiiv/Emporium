@@ -23,6 +23,7 @@ import wiiv.emporium.render.tile.RenderTileJar;
 
 public class BlockLampCandleTall extends BlockBaseColorable {
 	
+	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 7), 0.0D, (0.0625D * 7), (0.0625D * 9), (0.0625D * 16), (0.0625D * 9));
 	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 7), 0.0D, (0.0625D * 7), (0.0625D * 9), (0.0625D * 16), (0.0625D * 9));
 
 	public BlockLampCandleTall(int color) {
