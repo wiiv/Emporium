@@ -20,9 +20,8 @@ public class BlockMedievalChairKing extends BlockBase{
 	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 1), (0.0625D * 15), (0.0625D * 10), (0.0625D * 15));
 
 	public BlockMedievalChairKing() {
-		super(Material.GLASS, "medieval_chair_king", 1.0F);
+		super(Material.WOOD, "medieval_chair_king", 1.0F);
 		setSoundType(SoundType.WOOD);
-		setLightLevel(0.75F);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 

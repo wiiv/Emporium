@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.*;
 import wiiv.emporium.Globals;
 import wiiv.emporium.block.tile.TileJar;
-import wiiv.emporium.item.ItemCookie;
+import wiiv.emporium.item.ItemCookieChocolat;
 import wiiv.emporium.render.tile.RenderTileJar;
 
 public class BlockJar extends BlockBase implements ITileEntityProvider {
@@ -84,7 +84,7 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 	}
 
 	private void handleSingle(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
-		if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemCookie) {
+		if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemCookieChocolat) {
 			int returnSize = player.getHeldItem(hand).stackSize - 1;
 			ItemStack ret = returnSize == 0 ? null : new ItemStack(player.getHeldItem(hand).getItem(), returnSize);
 			jar.addCookies(new ItemStack(player.getHeldItem(hand).getItem(), 1));
@@ -107,7 +107,7 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 	private void handleStack(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
 		if (jar.getStack() == null) {
 			if (player.getHeldItem(hand) != null) {
-				if (heldItem.getItem() instanceof ItemCookie) {
+				if (heldItem.getItem() instanceof ItemCookieChocolat) {
 					player.inventory.setInventorySlotContents(player.inventory.currentItem, jar.addCookies(player.getHeldItem(hand)));
 					player.openContainer.detectAndSendChanges();
 				}
@@ -116,7 +116,7 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 		else { //jar has cookies
 			ItemStack stack = jar.getStack();
 			if (stack.stackSize < stack.getMaxStackSize()) { //jar isn't full
-				if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemCookie) { //player is holding at least 1 cookie
+				if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemCookieChocolat) { //player is holding at least 1 cookie
 					int jarStackSize = stack.stackSize;
 					int heldStackSize = player.getHeldItem(hand).stackSize;
 					if (jarStackSize + heldStackSize <= stack.getMaxStackSize()) {

@@ -1,0 +1,6 @@
+{
+	"parent": "emporium:block/glowrescent_axis_lamp",
+    "textures": {
+        "glass": "emporium:blocks/lamp_glass_purple"
+    }
+}

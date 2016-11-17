@@ -22,7 +22,6 @@ public class BlockMedievalBench extends BlockBase{
 	public BlockMedievalBench() {
 		super(Material.GLASS, "medieval_bench", 1.0F);
 		setSoundType(SoundType.WOOD);
-		setLightLevel(0.75F);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 

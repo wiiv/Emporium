@@ -13,14 +13,14 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 
-public class BlockMedievalChairQueen extends BlockBase{
+public class BlockSofaHeart extends BlockBase{
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
-	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 1), (0.0625D * 15), (0.0625D * 10), (0.0625D * 15));
-	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 1), (0.0625D * 15), (0.0625D * 10), (0.0625D * 15));
+	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), (0.0625D * 8), (0.0625D * 14));
+	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), (0.0625D * 8), (0.0625D * 14));
 
-	public BlockMedievalChairQueen() {
-		super(Material.WOOD, "medieval_chair_queen", 1.0F);
+	public BlockSofaHeart() {
+		super(Material.WOOD, "sofa_heart", 1.0F);
 		setSoundType(SoundType.WOOD);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
@@ -34,14 +34,6 @@ public class BlockMedievalChairQueen extends BlockBase{
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
-
-	/*
-	@Override
-	public BlockRenderLayer getBlockLayer() {
-	
-		return BlockRenderLayer.TRANSLUCENT;
-	}
-	*/
 
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {

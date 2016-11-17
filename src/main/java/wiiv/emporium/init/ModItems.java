@@ -8,11 +8,11 @@ import wiiv.emporium.item.*;
 public class ModItems {
 
 	public static List<IModelHolder> ITEM_LIST = new ArrayList<IModelHolder>();
-	public static ItemCookie cookie;
+	public static ItemCookieChocolat cookie;
 	public static ItemDebug debug;
 
 	public static void init() {
-		ITEM_LIST.add(cookie = new ItemCookie());
+		ITEM_LIST.add(cookie = new ItemCookieChocolat());
 		ITEM_LIST.add(debug = new ItemDebug());
 	}
 

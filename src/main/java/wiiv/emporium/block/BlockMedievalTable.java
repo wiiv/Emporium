@@ -22,7 +22,6 @@ public class BlockMedievalTable extends BlockBase{
 	public BlockMedievalTable() {
 		super(Material.GLASS, "medieval_table", 1.0F);
 		setSoundType(SoundType.WOOD);
-		setLightLevel(0.75F);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 

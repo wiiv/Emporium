@@ -1,0 +1,8 @@
+{
+    "variants": {
+	    "facing=west":  { "model": "emporium:sofa_heart", "y": 270 },
+        "facing=north": { "model": "emporium:sofa_heart" },
+        "facing=east":  { "model": "emporium:sofa_heart", "y": 90 },
+        "facing=south": { "model": "emporium:sofa_heart", "y": 180 }
+    }
+}

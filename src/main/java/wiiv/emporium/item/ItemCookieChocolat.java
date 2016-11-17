@@ -9,10 +9,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import wiiv.emporium.block.BlockJar;
 
-public class ItemCookie extends ItemBaseFood {
+public class ItemCookieChocolat extends ItemBaseFood {
 
-	public ItemCookie() {
-		super(2, 0.0F, false, "cookie");
+	public ItemCookieChocolat() {
+		super(2, 0.0F, false, "cookie_chocolat");
 		setMaxStackSize(16);
 
 		for (int i = 0; i < 16; ++i) {

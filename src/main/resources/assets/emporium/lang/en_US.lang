@@ -72,7 +72,7 @@ tile.big_candle_cyan.name=Big Cyan Candle
 tile.big_candle_yellow.name=Big Yellow Candle
 tile.big_candle_brown.name=Big Brown Candle
 
-tile.tall_candle_white.name=Big White Candle
+tile.tall_candle_white.name=Tall White Candle
 tile.tall_candle_orange.name=Tall Orange Candle
 tile.tall_candle_magenta.name=Tall Magenta Candle
 tile.tall_candle_lime.name=Tall Lime Candle
@@ -93,3 +93,31 @@ tile.medieval_table.name=Medieval Banquet Table
 tile.medieval_bench.name=Medieval Banquet Bench
 tile.medieval_chair_king.name=Medieval Banquet King Chair
 tile.medieval_chair_queen.name=Medieval Banquet Queen Chair
+
+tile.sofa_heart.name=Heart Sofa
+
+tile.floating_paper_lamp_white.name=White Floating Paper Lamp
+tile.floating_paper_lamp_orange.name=Orange Floating Paper Lamp
+tile.floating_paper_lamp_magenta.name=Magenta Floating Paper Lamp
+tile.floating_paper_lamp_blue.name=Blue Floating Paper Lamp
+tile.floating_paper_lamp_purple.name=Purple Floating Paper Lamp
+tile.floating_paper_lamp_red.name=Red Floating Paper Lamp
+tile.floating_paper_lamp_green.name=Green Floating Paper Lamp
+tile.floating_paper_lamp_yellow.name=Yellow Floating Paper Lamp
+
+tile.glowrescent_axis_lamp_white.name=White Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_orange.name=Orange Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_magenta.name=Magenta Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_lime.name=Lime Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_light_blue.name=Light Blue Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_blue.name=Blue Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_purple.name=Purple Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_black.name=Black Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_gray.name=Gray Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_silver.name=Light Gray Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_pink.name=Pink Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_red.name=Red Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_green.name=Green Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_cyan.name=Cyan Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_yellow.name=Yellow Glowrescent Axis Lamp
+tile.glowrescent_axis_lamp_brown.name=Brown Glowrescent Axis Lamp
