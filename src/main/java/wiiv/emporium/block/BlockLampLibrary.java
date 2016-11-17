@@ -12,7 +12,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
 
-public class BlockLampLibrary extends BlockBaseColorable {
+public class BlockLampLibrary extends BlockBaseColorable16 {
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), (0.0625D * 15), (0.0625D * 14));
@@ -34,14 +34,6 @@ public class BlockLampLibrary extends BlockBaseColorable {
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
-
-	/*
-	@Override
-	public BlockRenderLayer getBlockLayer() {
-	
-		return BlockRenderLayer.TRANSLUCENT;
-	}
-	*/
 
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {

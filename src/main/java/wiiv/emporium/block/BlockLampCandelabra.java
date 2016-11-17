@@ -5,7 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockRenderLayer;
 
-public class BlockLampCandelabra extends BlockBaseColorable {
+public class BlockLampCandelabra extends BlockBaseColorable16 {
 
 	public BlockLampCandelabra(int color) {
 		super(Material.ANVIL, "candelabra_lamp", 1.0F, color);

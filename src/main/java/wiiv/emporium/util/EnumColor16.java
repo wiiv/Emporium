@@ -6,7 +6,7 @@ import net.minecraft.util.IStringSerializable;
  * @author p455w0rd
  *
  */
-public enum EnumColor implements IStringSerializable {
+public enum EnumColor16 implements IStringSerializable {
 	WHITE, ORANGE, MAGENTA, LIGHT_BLUE, YELLOW, LIME, PINK, GRAY, SILVER, CYAN, PURPLE, BLUE, BROWN, GREEN, RED, BLACK;
 
 	public int getMetadata() {
@@ -18,7 +18,7 @@ public enum EnumColor implements IStringSerializable {
 		return name;
 	}
 
-	public static EnumColor byMetadata(int meta) {
+	public static EnumColor16 byMetadata(int meta) {
 		if (meta < 0 || meta >= META_LOOKUP.length) {
 			meta = 0;
 		}
@@ -33,15 +33,15 @@ public enum EnumColor implements IStringSerializable {
 
 	private final int meta;
 	private final String name;
-	private static final EnumColor[] META_LOOKUP = new EnumColor[values().length];
+	private static final EnumColor16[] META_LOOKUP = new EnumColor16[values().length];
 
-	private EnumColor() {
+	private EnumColor16() {
 		meta = ordinal();
 		name = name().toLowerCase();
 	}
 
 	static {
-		for (EnumColor color : values()) {
+		for (EnumColor16 color : values()) {
 			META_LOOKUP[color.getMetadata()] = color;
 		}
 	}

@@ -10,11 +10,13 @@ import wiiv.emporium.block.BlockLampCandleBig;
 import wiiv.emporium.block.BlockLampCandleTall;
 import wiiv.emporium.block.BlockLampChandelier;
 import wiiv.emporium.block.BlockLampLibrary;
+import wiiv.emporium.block.BlockLampPaperFloating;
 import wiiv.emporium.block.BlockMedievalBench;
 import wiiv.emporium.block.BlockMedievalChairKing;
 import wiiv.emporium.block.BlockMedievalChairQueen;
 import wiiv.emporium.block.BlockMedievalTable;
-import wiiv.emporium.util.EnumColor;
+import wiiv.emporium.util.EnumColor16;
+import wiiv.emporium.util.EnumColor8;
 
 public class ModBlocks {
 
@@ -25,8 +27,9 @@ public class ModBlocks {
 	public static BlockMedievalBench MEDIEVAL_BENCH;
 	public static BlockMedievalChairKing MEDIEVAL_CHAIR_KING;
 	public static BlockMedievalChairQueen MEDIEVAL_CHAIR_QUEEN;
-	
 	public static BlockLampLibrary[] LIBRARY_LAMP = new BlockLampLibrary[16];
+	
+	public static BlockLampPaperFloating[] PAPER_LAMP_FLOATING = new BlockLampPaperFloating[8];
 	
 	public static BlockLampChandelier[] CHANDELIER_LAMP = new BlockLampChandelier[16];
 	public static BlockLampCandelabra[] CANDELABRA_LAMP = new BlockLampCandelabra[16];
@@ -42,30 +45,37 @@ public class ModBlocks {
 		BLOCK_LIST.add(MEDIEVAL_CHAIR_KING = new BlockMedievalChairKing());
 		BLOCK_LIST.add(MEDIEVAL_CHAIR_QUEEN = new BlockMedievalChairQueen());
 		
-		for (EnumColor color : EnumColor.values()) {
+		
+		
+		for (EnumColor16 color : EnumColor16.values()) {
 			LIBRARY_LAMP[color.getMetadata()] = new BlockLampLibrary(color.getMetadata());
 			BLOCK_LIST.add(LIBRARY_LAMP[color.getMetadata()]);
 		}
 
 		
-		for (EnumColor color : EnumColor.values()) {
+		for (EnumColor16 color : EnumColor16.values()) {
 			CHANDELIER_LAMP[color.getMetadata()] = new BlockLampChandelier(color.getMetadata());
 			BLOCK_LIST.add(CHANDELIER_LAMP[color.getMetadata()]);
 		}
 		
-		for (EnumColor color : EnumColor.values()) {
+		for (EnumColor16 color : EnumColor16.values()) {
 			CANDELABRA_LAMP[color.getMetadata()] = new BlockLampCandelabra(color.getMetadata());
 			BLOCK_LIST.add(CANDELABRA_LAMP[color.getMetadata()]);
 		}
 		
-		for (EnumColor color : EnumColor.values()) {
+		for (EnumColor16 color : EnumColor16.values()) {
 			CANDLE_BIG_LAMP[color.getMetadata()] = new BlockLampCandleBig(color.getMetadata());
 			BLOCK_LIST.add(CANDLE_BIG_LAMP[color.getMetadata()]);
 		}
 		
-		for (EnumColor color : EnumColor.values()) {
+		for (EnumColor16 color : EnumColor16.values()) {
 			CANDLE_TALL_LAMP[color.getMetadata()] = new BlockLampCandleTall(color.getMetadata());
 			BLOCK_LIST.add(CANDLE_TALL_LAMP[color.getMetadata()]);
+		}
+		
+		for (EnumColor8 color : EnumColor8.values()) {
+			PAPER_LAMP_FLOATING[color.getMetadata()] = new BlockLampPaperFloating(color.getMetadata());
+			BLOCK_LIST.add(PAPER_LAMP_FLOATING[color.getMetadata()]);
 		}
 	}
 

@@ -1,0 +1,6 @@
+{
+    "parent": "emporium:block/floating_paper_lamp",
+    "textures": {
+        "paper": "emporium:blocks/lamp_paper_floating_orange"
+    }
+}

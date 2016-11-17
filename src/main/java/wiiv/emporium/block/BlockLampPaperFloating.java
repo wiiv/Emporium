@@ -4,8 +4,11 @@ import java.util.List;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -21,15 +24,14 @@ import wiiv.emporium.block.tile.TileJar;
 import wiiv.emporium.item.ItemCookie;
 import wiiv.emporium.render.tile.RenderTileJar;
 
-public class BlockLampCandleTall extends BlockBaseColorable16 {
-	
-	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 7), 0.0D, (0.0625D * 7), (0.0625D * 9), (0.0625D * 16), (0.0625D * 9));
-	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 7), 0.0D, (0.0625D * 7), (0.0625D * 9), (0.0625D * 16), (0.0625D * 9));
+public class BlockLampPaperFloating extends BlockBaseColorable8{
 
-	public BlockLampCandleTall(int color) {
-		super(Material.ANVIL, "tall_candle", 1.0F, color);
-		setSoundType(SoundType.METAL);
-		setLightLevel(0.625F);
+	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 4), 0.0D, (0.0625D * 4), (0.0625D * 12), (0.0625D * 12), (0.0625D * 12));
+
+	public BlockLampPaperFloating(int color) {
+		super(Material.SNOW, "floating_paper_lamp", 1.0F, color);
+		setSoundType(SoundType.SNOW);
+		setLightLevel(0.75F);
 	}
 
 	@Override
@@ -41,15 +43,15 @@ public class BlockLampCandleTall extends BlockBaseColorable16 {
 	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
-	
-	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 
-		return BOUNDING_BOX;
-	}
-	
 	@Override
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn) {
 		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX);
+	}
+	
+	@Override
+	public BlockRenderLayer getBlockLayer() {
+
+		return BlockRenderLayer.TRANSLUCENT;
 	}
 }

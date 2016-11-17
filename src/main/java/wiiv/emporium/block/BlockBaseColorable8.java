@@ -27,17 +27,18 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.*;
 import wiiv.emporium.Emporium;
 import wiiv.emporium.api.IModelHolder;
-import wiiv.emporium.util.EnumColor;
+import wiiv.emporium.util.EnumColor16;
+import wiiv.emporium.util.EnumColor8;
 
 /**
  * @author p455w0rd
  *
  */
-public class BlockBaseColorable extends Block implements IModelHolder {
+public class BlockBaseColorable8 extends Block implements IModelHolder {
 
-	public BlockBaseColorable(Material materialIn, String nameIn, float hardness, int color) {
+	public BlockBaseColorable8(Material materialIn, String nameIn, float hardness, int color) {
 		super(materialIn);
-		String name = nameIn + "_" + EnumColor.byMetadata(color);
+		String name = nameIn + "_" + EnumColor8.byMetadata(color);
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setHardness(hardness);

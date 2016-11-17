@@ -12,7 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockLampCandleBig extends BlockBaseColorable {
+public class BlockLampCandleBig extends BlockBaseColorable16 {
 	
 	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 6), 0.0D, (0.0625D * 6), (0.0625D * 10), (0.0625D * 12), (0.0625D * 10));
 	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 6), 0.0D, (0.0625D * 6), (0.0625D * 10), (0.0625D * 12), (0.0625D * 10));
