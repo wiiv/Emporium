@@ -2,18 +2,19 @@ package wiiv.emporium.block;
 
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.*;
 import net.minecraft.block.state.*;
 import net.minecraft.entity.*;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.*;
 import net.minecraft.util.math.*;
 import net.minecraft.world.*;
+import wiiv.emporium.util.MountableUtil;
 
-public class BlockMedievalChairQueen extends BlockBase{
+public class BlockMedievalChairQueen extends BlockBase {
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 1), (0.0625D * 15), (0.0625D * 10), (0.0625D * 15));
@@ -77,11 +78,16 @@ public class BlockMedievalChairQueen extends BlockBase{
 				FACING
 		});
 	}
-	
+
 	@Override
 	public BlockRenderLayer getBlockLayer() {
 
 		return BlockRenderLayer.CUTOUT;
+	}
+
+	@Override
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
+		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.4);
 	}
 
 }
