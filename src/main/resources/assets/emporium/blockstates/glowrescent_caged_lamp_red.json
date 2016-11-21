@@ -1,0 +1,22 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+            "base": "emporium:glowrescent_caged_lamp_red#base",
+            "Cutout": "emporium:glowrescent_caged_lamp_red#base",
+            "Translucent": "emporium:glowrescent_caged_lamp_red#trans"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:glowrescent_caged_lamp"
+        }],
+        "trans": [{
+            "model": "emporium:glowrescent_caged_lamp_red"
+        }]
+    }
+}

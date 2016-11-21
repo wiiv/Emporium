@@ -2,8 +2,8 @@
 	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
     "parent":"block/block",
 	"textures": {
-		"frame": "emporium:blocks/lamp_glowrescent_frame",
-		"particle": "emporium:blocks/lamp_glowrescent_frame"
+		"frame": "emporium:blocks/lamp_axis_frame",
+		"particle": "emporium:blocks/lamp_axis_frame"
 	},
 	"elements": [
 		{
@@ -20,7 +20,7 @@
 			}
 		},
 		{
-			"Name": "Light",
+			"Name": "Lamp",
 			"from": [ 7, 3, 7 ],
 			"to": [ 9, 15, 9 ],
 			"faces": {
@@ -30,19 +30,6 @@
 				"south": { "uv": [ 14, 0, 16, 12 ], "texture": "#frame" },
 				"west": { "uv": [ 14, 0, 16, 12 ], "texture": "#frame" },
 				"east": { "uv": [ 14, 0, 16, 12 ], "texture": "#frame" }
-			}
-		},
-		{
-			"Name": "Glass",
-			"from": [ 6, 3, 6 ],
-			"to": [ 10, 15, 10 ],
-			"faces": {
-				"down": { "uv": [ 0, 0, 0, 0.5 ], "texture": "#glass" },
-				"up": { "uv": [ 0, 0, 0, 0 ], "texture": "#glass" },
-				"north": { "uv": [ 6, 1, 10, 13 ], "texture": "#glass" },
-				"south": { "uv": [ 6, 1, 10, 13 ], "texture": "#glass" },
-				"west": { "uv": [ 6, 1, 10, 13 ], "texture": "#glass" },
-				"east": { "uv": [ 6, 1, 10, 13 ], "texture": "#glass" }
 			}
 		},
 		{

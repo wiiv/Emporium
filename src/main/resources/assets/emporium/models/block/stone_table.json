@@ -1,0 +1,34 @@
+{
+	"__comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"texture": "blocks/table_medieval"
+	},
+	"elements": [
+		{
+			"__comment": "Cube1",
+			"from": [ 0, 12, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 6, 16, 10 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 6, 16, 10 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 4, 16 ], "texture": "#texture", "rotation": 90 },
+				"east": { "uv": [ 12, 0, 16, 16 ], "texture": "#texture", "rotation": 90 }
+			}
+		},
+		{
+			"__comment": "Cube1",
+			"from": [ 4, 0, 4 ],
+			"to": [ 12, 12, 12 ],
+			"faces": {
+				"down": { "uv": [ 4, 4, 12, 12 ], "texture": "#texture", "rotation": 90 },
+				"up": { "uv": [ 0, 2, 1.5, 2 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 4, 14, 12 ], "texture": "#texture", "rotation": 90 },
+				"south": { "uv": [ 0, 4, 14, 12 ], "texture": "#texture", "rotation": 90 },
+				"west": { "uv": [ 0, 4, 14, 12 ], "texture": "#texture", "rotation": 90 },
+				"east": { "uv": [ 0, 4, 14, 12 ], "texture": "#texture", "rotation": 90 }
+			}
+		}
+	]
+}

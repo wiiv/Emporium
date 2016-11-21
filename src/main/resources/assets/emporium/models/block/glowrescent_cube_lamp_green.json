@@ -1,0 +1,21 @@
+{
+	"parent": "emporium:block/glowrescent_axis_lamp",
+    "textures": {
+        "glass": "emporium:blocks/lamp_glass_green"
+    },
+    "elements": [
+        {
+            "Name": "Glass",
+            "from": [ 3, 2, 3 ],
+            "to": [ 13, 12, 13 ],
+            "faces": {
+                "down": { "uv": [ 3, 3, 13, 13 ], "texture": "#glass" },
+                "up": { "uv": [ 3, 3, 13, 13 ], "texture": "#glass" },
+                "north": { "uv": [ 3, 4, 13, 14 ], "texture": "#glass" },
+                "south": { "uv": [ 3, 4, 13, 14 ], "texture": "#glass" },
+                "west": { "uv": [ 3, 4, 13, 14 ], "texture": "#glass" },
+                "east": { "uv": [ 3, 4, 13, 14 ], "texture": "#glass" }
+            }
+        }
+    ]
+}

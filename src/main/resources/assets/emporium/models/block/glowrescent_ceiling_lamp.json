@@ -20,7 +20,7 @@
 		},
 		{
 			"__comment": "Light",
-			"from": [ 7, 14, 1 ],
+			"from": [ 7, 13, 1 ],
 			"to": [ 9, 15, 15 ],
 			"faces": {
 				"down": { "uv": [ 4, 15, 6, 1 ], "texture": "#texture" },
@@ -33,7 +33,7 @@
 		},
 		{
 			"__comment": "Glass",
-			"from": [ 6, 13, 0 ],
+			"from": [ 6, 12, 0 ],
 			"to": [ 10, 15, 16 ],
 			"faces": {
 				"down": { "uv": [ 0, 6.5, 16, 10.5 ], "texture": "#texture2" },
