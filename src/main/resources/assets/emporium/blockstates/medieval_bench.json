@@ -1,8 +1,20 @@
 {
-    "variants": {
-	    "facing=west":  { "model": "emporium:medieval_bench_single", "y": 270 },
-        "facing=north": { "model": "emporium:medieval_bench_single" },
-        "facing=east":  { "model": "emporium:medieval_bench_single", "y": 90 },
-        "facing=south": { "model": "emporium:medieval_bench_single", "y": 180 }
-    }
+	"variants": {
+		"facing=north,left=false,right=false": {"model": "emporium:medieval_bench_single"},
+		"facing=east,left=false,right=false": {"model": "emporium:medieval_bench_single", "y": 90},
+		"facing=south,left=false,right=false": {"model": "emporium:medieval_bench_single"},
+		"facing=west,left=false,right=false": {"model": "emporium:medieval_bench_single", "y": 90},
+		"facing=north,left=true,right=false": {"model": "emporium:medieval_bench_end", "y": 180},
+		"facing=east,left=true,right=false": {"model": "emporium:medieval_bench_end", "y": 90},
+		"facing=south,left=true,right=false": {"model": "emporium:medieval_bench_end", "y": 180},
+		"facing=west,left=true,right=false": {"model": "emporium:medieval_bench_end", "y": 90},
+		"facing=north,left=false,right=true": {"model": "emporium:medieval_bench_end"},
+		"facing=east,left=false,right=true": {"model": "emporium:medieval_bench_end", "y": 270},
+		"facing=south,left=false,right=true": {"model": "emporium:medieval_bench_end"},
+		"facing=west,left=false,right=true": {"model": "emporium:medieval_bench_end", "y": 270},
+		"facing=north,left=true,right=true": {"model": "emporium:medieval_bench_center"},
+		"facing=east,left=true,right=true": {"model": "emporium:medieval_bench_center", "y": 90},
+		"facing=south,left=true,right=true": {"model": "emporium:medieval_bench_center"},
+		"facing=west,left=true,right=true": {"model": "emporium:medieval_bench_center", "y": 90}
+	}
 }
