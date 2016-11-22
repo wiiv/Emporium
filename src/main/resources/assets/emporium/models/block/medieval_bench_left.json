@@ -3,13 +3,13 @@
     "parent": "block/block",
     "textures": {
         "frame": "emporium:blocks/medieval_wood",
-        "pillow": "emporium:blocks/medieval_bench_pillow",
+		"pillow": "emporium:blocks/medieval_bench_pillow",
         "particle": "emporium:blocks/medieval_wood"
     },
     "elements": [
         {
             "Name": "Top",
-            "from": [ 0, 8, 3 ],
+            "from": [ 1, 8, 3 ],
             "to": [ 16, 10, 13 ],
             "faces": {
                 "down": { "uv": [ 1, 3, 16, 13 ], "texture": "#frame" },
@@ -22,11 +22,24 @@
         },
         {
             "Name": "LegLeft",
-            "from": [ 0, 0, 4 ],
-            "to": [ 1, 8, 12 ],
+            "from": [ 2, 0, 4 ],
+            "to": [ 4, 8, 12 ],
             "faces": {
-                "down": { "uv": [ 4, 4, 12, 5 ], "texture": "#frame", "rotation": 90 },
+                "down": { "uv": [ 4, 4, 13, 6 ], "texture": "#frame", "rotation": 90 },
                 "up": { "uv": [ 2, 4, 4, 12 ], "texture": "#frame" },
+                "north": { "uv": [ 0, 12, 8, 14 ], "texture": "#frame", "rotation": 90 },
+                "south": { "uv": [ 0, 2, 8, 4 ], "texture": "#frame", "rotation": 90 },
+                "west": { "uv": [ 4, 8, 12, 16 ], "texture": "#frame", "rotation": 90 },
+                "east": { "uv": [ 4, 8, 12, 16 ], "texture": "#frame", "rotation": 90 }
+            }
+        },
+        {
+            "Name": "LegRight",
+            "from": [ 15, 0, 4 ],
+            "to": [ 16, 8, 12 ],
+            "faces": {
+                "down": { "uv": [ 4, 4, 13, 5 ], "texture": "#frame", "rotation": 90 },
+                "up": { "uv": [ 2, 4, 3, 12 ], "texture": "#frame" },
                 "north": { "uv": [ 0, 12, 8, 13 ], "texture": "#frame", "rotation": 90 },
                 "south": { "uv": [ 0, 3, 8, 4 ], "texture": "#frame", "rotation": 90 },
                 "west": { "uv": [ 4, 8, 12, 16 ], "texture": "#frame", "rotation": 90 },
@@ -34,7 +47,7 @@
             }
         },
         {
-            "Name": "LegRight",
+            "Name": "Bar",
             "from": [ 1, 2, 6 ],
             "to": [ 15, 4, 10 ],
             "faces": {
@@ -47,27 +60,14 @@
             }
         },
         {
-            "Name": "Bar",
-            "from": [ 15, 0, 4 ],
-            "to": [ 16, 8, 12 ],
-            "faces": {
-                "down": { "uv": [ 4, 4, 12, 5 ], "texture": "#frame", "rotation": 90 },
-                "up": { "uv": [ 2, 4, 4, 12 ], "texture": "#frame" },
-                "north": { "uv": [ 0, 12, 8, 13 ], "texture": "#frame", "rotation": 90 },
-                "south": { "uv": [ 0, 3, 8, 4 ], "texture": "#frame", "rotation": 90 },
-                "west": { "uv": [ 4, 8, 12, 16 ], "texture": "#frame", "rotation": 90 },
-                "east": { "uv": [ 4, 8, 12, 16 ], "texture": "#frame", "rotation": 90 }
-            }
-        },
-        {
             "Name": "Pillow",
-            "from": [ 0, 10, 3 ],
+            "from": [ 1, 10, 3 ],
             "to": [ 16, 11, 13 ],
             "faces": {
-                "down": { "uv": [ 0, 3, 16, 13 ], "texture": "#pillow" },
-                "up": { "uv": [ 0, 3, 16, 13 ], "texture": "#pillow" },
-                "north": { "uv": [ 0, 6, 16, 7 ], "texture": "#pillow" },
-                "south": { "uv": [ 0, 9, 16, 10 ], "texture": "#pillow" },
+                "down": { "uv": [ 1, 3, 16, 13 ], "texture": "#pillow" },
+                "up": { "uv": [ 1, 3, 16, 13 ], "texture": "#pillow" },
+                "north": { "uv": [ 1, 6, 16, 7 ], "texture": "#pillow" },
+                "south": { "uv": [ 1, 9, 16, 10 ], "texture": "#pillow" },
                 "west": { "uv": [ 12, 3, 13, 13 ], "texture": "#pillow", "rotation": 90 },
                 "east": { "uv": [ 3, 3, 4, 13 ], "texture": "#pillow", "rotation": 90 }
             }

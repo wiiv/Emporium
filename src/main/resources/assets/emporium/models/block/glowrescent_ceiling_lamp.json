@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"texture": "blocks/lamp_fluorescent_frame",
-		"texture2": "blocks/lamp_fluorescent_red"
+		"texture": "blocks/lamp_axis_frame",
+		"texture2": "blocks/lamp_glass_cyan"
 	},
 	"elements": [
 		{
@@ -19,16 +19,16 @@
 			}
 		},
 		{
-			"__comment": "Light",
+			"__comment": "Lamp",
 			"from": [ 7, 13, 1 ],
 			"to": [ 9, 15, 15 ],
 			"faces": {
-				"down": { "uv": [ 4, 15, 6, 1 ], "texture": "#texture" },
+				"down": { "uv": [ 4, 0, 6, 14 ], "texture": "#texture" },
 				"up": { "uv": [ 0, 0, 0, 0.5 ], "texture": "#texture" },
-				"north": { "uv": [ 4, 14, 6, 15 ], "texture": "#texture" },
-				"south": { "uv": [ 4, 14, 6, 15 ], "texture": "#texture" },
-				"west": { "uv": [ 4, 1, 5, 15 ], "texture": "#texture", "rotation": 270 },
-				"east": { "uv": [ 5, 1, 6, 15 ], "texture": "#texture", "rotation": 90 }
+				"north": { "uv": [ 4, 14, 6, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 4, 14, 6, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 4, 0, 6, 14 ], "texture": "#texture", "rotation": 90 },
+				"east": { "uv": [ 4, 0, 6, 14 ], "texture": "#texture", "rotation": 90 }
 			}
 		},
 		{

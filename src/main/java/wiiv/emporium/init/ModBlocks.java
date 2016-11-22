@@ -12,6 +12,7 @@ import wiiv.emporium.block.BlockLampChandelier;
 import wiiv.emporium.block.BlockLampGlowrescentAxis;
 import wiiv.emporium.block.BlockLampGlowrescentCaged;
 import wiiv.emporium.block.BlockLampGlowrescentCube;
+import wiiv.emporium.block.BlockLampGlowrescentFixture;
 import wiiv.emporium.block.BlockLampLibrary;
 import wiiv.emporium.block.BlockLampPaperFloating;
 import wiiv.emporium.block.BlockMedievalBench;
@@ -41,6 +42,7 @@ public class ModBlocks {
 	public static BlockLampGlowrescentAxis[] GLOWRESCENT_AXIS_LAMP = new BlockLampGlowrescentAxis[16];
 	public static BlockLampGlowrescentCaged[] GLOWRESCENT_CAGED_LAMP = new BlockLampGlowrescentCaged[16];
 	public static BlockLampGlowrescentCube[] GLOWRESCENT_CUBE_LAMP = new BlockLampGlowrescentCube[16];
+	public static BlockLampGlowrescentFixture[] GLOWRESCENT_FIXTURE_LAMP = new BlockLampGlowrescentFixture[16];
 	
 	public static BlockLampChandelier[] CHANDELIER_LAMP = new BlockLampChandelier[16];
 	public static BlockLampCandelabra[] CANDELABRA_LAMP = new BlockLampCandelabra[16];
@@ -102,6 +104,11 @@ public class ModBlocks {
 		for (EnumColor16 color : EnumColor16.values()) {
 			GLOWRESCENT_CUBE_LAMP[color.getMetadata()] = new BlockLampGlowrescentCube(color.getMetadata());
 			BLOCK_LIST.add(GLOWRESCENT_CUBE_LAMP[color.getMetadata()]);
+		}
+		
+		for (EnumColor16 color : EnumColor16.values()) {
+			GLOWRESCENT_FIXTURE_LAMP[color.getMetadata()] = new BlockLampGlowrescentFixture(color.getMetadata());
+			BLOCK_LIST.add(GLOWRESCENT_FIXTURE_LAMP[color.getMetadata()]);
 		}
 	}
 

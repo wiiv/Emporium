@@ -1,0 +1,36 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+    "parent":"block/block",
+	"textures": {
+		"frame": "emporium:blocks/lamp_axis_frame",
+		"particle": "emporium:blocks/lamp_axis_frame"
+	},
+	"elements": [
+		{
+			"Name": "Frame",
+			"from": [ 6, 15, 0 ],
+			"to": [ 10, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 6, 16, 10, 0 ], "texture": "#frame" },
+				"up": { "uv": [ 6, 0, 10, 16 ], "texture": "#frame" },
+				"north": { "uv": [ 4, 0, 0, 1 ], "texture": "#frame" },
+				"south": { "uv": [ 0, 15, 4, 16 ], "texture": "#frame" },
+				"west": { "uv": [ 0, 0, 1, 16 ], "texture": "#frame", "rotation": 270 },
+				"east": { "uv": [ 3, 0, 4, 16 ], "texture": "#frame", "rotation": 90 }
+			}
+		},
+		{
+			"Name": "Lamp",
+			"from": [ 7, 13, 1 ],
+			"to": [ 9, 15, 15 ],
+			"faces": {
+				"down": { "uv": [ 4, 0, 6, 14 ], "texture": "#frame" },
+				"up": { "uv": [ 0, 0, 0, 0.5 ], "texture": "#frame" },
+				"north": { "uv": [ 4, 14, 6, 16 ], "texture": "#frame" },
+				"south": { "uv": [ 4, 14, 6, 16 ], "texture": "#frame" },
+				"west": { "uv": [ 4, 0, 6, 14 ], "texture": "#frame", "rotation": 90 },
+				"east": { "uv": [ 4, 0, 6, 14 ], "texture": "#frame", "rotation": 90 }
+			}
+		}
+	]
+}

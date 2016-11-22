@@ -2,9 +2,9 @@
     "Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
     "parent": "block/block",
     "textures": {
-        "texture": "emporium:blocks/medieval_table",
+        "texture": "emporium:blocks/medieval_wood",
         "texture2": "emporium:blocks/medieval_bench_pillow",
-        "particle": "emporium:blocks/medieval_table"
+        "particle": "emporium:blocks/medieval_wood"
     },
     "display": {
         "gui": {
