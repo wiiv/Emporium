@@ -19,6 +19,7 @@ import wiiv.emporium.block.BlockMedievalBench;
 import wiiv.emporium.block.BlockMedievalChairKing;
 import wiiv.emporium.block.BlockMedievalChairQueen;
 import wiiv.emporium.block.BlockMedievalTable;
+import wiiv.emporium.block.BlockModernTable;
 import wiiv.emporium.block.BlockSofaHeart;
 import wiiv.emporium.util.EnumColor16;
 import wiiv.emporium.util.EnumColor8;
@@ -27,6 +28,8 @@ public class ModBlocks {
 
 	public static List<IModelHolder> BLOCK_LIST = new ArrayList<IModelHolder>();
 	public static BlockJar JAR;
+	
+	public static BlockModernTable[] MODERN_TABLE = new BlockModernTable[16];
 	
 	public static BlockMedievalTable MEDIEVAL_TABLE;
 	public static BlockMedievalBench MEDIEVAL_BENCH;
@@ -53,10 +56,17 @@ public class ModBlocks {
 	public static void init() {
 		BLOCK_LIST.add(JAR = new BlockJar());
 		
+		//medieval
 		BLOCK_LIST.add(MEDIEVAL_TABLE = new BlockMedievalTable());
 		BLOCK_LIST.add(MEDIEVAL_BENCH = new BlockMedievalBench());
 		BLOCK_LIST.add(MEDIEVAL_CHAIR_KING = new BlockMedievalChairKing());
 		BLOCK_LIST.add(MEDIEVAL_CHAIR_QUEEN = new BlockMedievalChairQueen());
+		
+		//modern
+		for (EnumColor16 color : EnumColor16.values()) {
+			MODERN_TABLE[color.getMetadata()] = new BlockModernTable(color.getMetadata());
+			BLOCK_LIST.add(MODERN_TABLE[color.getMetadata()]);
+		}
 		
 		BLOCK_LIST.add(SOFA_HEART = new BlockSofaHeart());
 		

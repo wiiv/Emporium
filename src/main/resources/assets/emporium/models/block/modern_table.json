@@ -1,0 +1,49 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+    "parent":"block/block",
+	"textures": {
+		"frame": "emporium:blocks/table_modern_frame",
+		"particle": "emporium:blocks/table_modern_frame"
+	},
+	"elements": [
+		{
+			"Name": "Top",
+			"from": [ 0, 13, 0 ],
+			"to": [ 16, 15, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 8, 8 ], "texture": "#frame" },
+				"up": { "uv": [ 8, 8, 16, 0 ], "texture": "#frame" },
+				"north": { "uv": [ 16, 9, 8, 10 ], "texture": "#frame" },
+				"south": { "uv": [ 8, 8, 16, 9 ], "texture": "#frame" },
+				"west": { "uv": [ 16, 8, 8, 9 ], "texture": "#frame" },
+				"east": { "uv": [ 8, 9, 16, 10 ], "texture": "#frame" }
+			}
+		},
+		{
+			"Name": "Leg",
+			"from": [ 7, 1, 7 ],
+			"to": [ 9, 13, 9 ],
+			"faces": {
+				"down": { "uv": [ 0, 12, 8, 14 ], "texture": "#frame", "rotation": 90 },
+				"up": { "uv": [ 0, 2, 1.5, 2 ], "texture": "#frame" },
+				"north": { "uv": [ 7, 8, 6, 14 ], "texture": "#frame" },
+				"south": { "uv": [ 5, 8, 6, 14 ], "texture": "#frame" },
+				"west": { "uv": [ 6, 8, 5, 14 ], "texture": "#frame" },
+				"east": { "uv": [ 6, 8, 7, 14 ], "texture": "#frame" }
+			}
+		},
+		{
+			"Name": "Base",
+			"from": [ 3, 0, 3 ],
+			"to": [ 12.5, 1, 13 ],
+			"faces": {
+				"down": { "uv": [ 0, 8, 5, 13 ], "texture": "#frame" },
+				"up": { "uv": [ 0, 13, 5, 8 ], "texture": "#frame" },
+				"north": { "uv": [ 5, 12.5, 0, 13 ], "texture": "#frame" },
+				"south": { "uv": [ 0, 8, 5, 8.5 ], "texture": "#frame" },
+				"west": { "uv": [ 0, 8, 0.5, 13 ], "texture": "#frame", "rotation": 90 },
+				"east": { "uv": [ 4.5, 13, 5, 8 ], "texture": "#frame", "rotation": 90 }
+			}
+		}
+	]
+}

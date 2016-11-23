@@ -1,0 +1,22 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+            "base": "emporium:modern_table_black#base",
+            "Cutout": "emporium:modern_table_black#base",
+            "Translucent": "emporium:modern_table_black#trans"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:modern_table"
+        }],
+        "trans": [{
+            "model": "emporium:modern_table_black"
+        }]
+    }
+}
