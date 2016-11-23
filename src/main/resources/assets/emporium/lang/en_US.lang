@@ -1,6 +1,9 @@
 itemGroup.tabDecwiivrations=D <3 Emporium
 
-item.cookie.name=Chocolat Cookie
+item.cookie_plain.name=Plain Cookie
+item.cookie_chocolat.name=Chocolat Cookie
+item.cookie_strawberry.name=Strawberry Cookie
+
 item.debug.name=Render Debug
 
 tile.jar.name=Jar

@@ -2,7 +2,8 @@ package wiiv.emporium.block;
 
 import java.util.List;
 
-import net.minecraft.block.*;
+import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -10,14 +11,20 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
-import net.minecraft.world.*;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import wiiv.emporium.Globals;
 import wiiv.emporium.block.tile.TileJar;
+import wiiv.emporium.item.ItemBaseFood;
 import wiiv.emporium.item.ItemCookieChocolat;
 import wiiv.emporium.render.tile.RenderTileJar;
 
@@ -84,7 +91,7 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 	}
 
 	private void handleSingle(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
-		if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemCookieChocolat) {
+		if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemBaseFood) {
 			int returnSize = player.getHeldItem(hand).stackSize - 1;
 			ItemStack ret = returnSize == 0 ? null : new ItemStack(player.getHeldItem(hand).getItem(), returnSize);
 			jar.addCookies(new ItemStack(player.getHeldItem(hand).getItem(), 1));
@@ -107,7 +114,7 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 	private void handleStack(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
 		if (jar.getStack() == null) {
 			if (player.getHeldItem(hand) != null) {
-				if (heldItem.getItem() instanceof ItemCookieChocolat) {
+				if (heldItem.getItem() instanceof ItemBaseFood) {
 					player.inventory.setInventorySlotContents(player.inventory.currentItem, jar.addCookies(player.getHeldItem(hand)));
 					player.openContainer.detectAndSendChanges();
 				}
@@ -116,7 +123,7 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 		else { //jar has cookies
 			ItemStack stack = jar.getStack();
 			if (stack.stackSize < stack.getMaxStackSize()) { //jar isn't full
-				if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemCookieChocolat) { //player is holding at least 1 cookie
+				if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemBaseFood) { //player is holding at least 1 cookie
 					int jarStackSize = stack.stackSize;
 					int heldStackSize = player.getHeldItem(hand).stackSize;
 					if (jarStackSize + heldStackSize <= stack.getMaxStackSize()) {
