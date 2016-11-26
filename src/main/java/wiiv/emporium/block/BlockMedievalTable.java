@@ -15,9 +15,6 @@ public class BlockMedievalTable extends BlockBase {
 	public static final PropertyBool LEFT = PropertyBool.create("left");
 	public static final PropertyBool RIGHT = PropertyBool.create("right");
 
-	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 3), (0.0625D * 15), (0.0625D * 10), (0.0625D * 13));
-	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 3), (0.0625D * 15), (0.0625D * 10), (0.0625D * 13));
-
 	public BlockMedievalTable() {
 		super(Material.GLASS, "medieval_table", 1.0F);
 		setSoundType(SoundType.WOOD);
