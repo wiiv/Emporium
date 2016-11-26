@@ -17,6 +17,14 @@
         }],
         "trans": [{
             "model": "emporium:glowrescent_caged_lamp_white"
-        }]
+        }],
+		"facing": {
+		    "up": { },
+			"down": { "x": 180 },
+            "north": {"x": 90 },
+            "south": {"x": 90, "y": 180 },
+            "west": {"x": 90, "y": 270 },
+            "east": {"x": 90, "y": 90 }
+        }
     }
 }
