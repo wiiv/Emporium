@@ -1,8 +1,8 @@
 {
-	"parent": "emporium:block/glowrescent_axis_lamp",
-    "textures": {
-        "glass": "emporium:blocks/lamp_glass_black"
-    },
+	"parent": "emporium:block/glowrescent_axis_hor_lamp",
+	"textures": {
+		"glass": "emporium:blocks/lamp_glass_black"
+	},
 	"elements": [
 		{
 			"Name": "Glass",

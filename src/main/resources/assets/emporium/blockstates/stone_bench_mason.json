@@ -1,0 +1,20 @@
+{
+	"variants": {
+		"facing=north,left=false,right=false": {"model": "emporium:stone_bench_mason_single"},
+		"facing=east,left=false,right=false": {"model": "emporium:stone_bench_mason_single", "y": 90},
+		"facing=south,left=false,right=false": {"model": "emporium:stone_bench_mason_single"},
+		"facing=west,left=false,right=false": {"model": "emporium:stone_bench_mason_single", "y": 90},
+		"facing=north,left=true,right=false": {"model": "emporium:stone_bench_mason_right"},
+		"facing=east,left=true,right=false": {"model": "emporium:stone_bench_mason_left", "y": 90},
+		"facing=south,left=true,right=false": {"model": "emporium:stone_bench_mason_right"},
+		"facing=west,left=true,right=false": {"model": "emporium:stone_bench_mason_left", "y": 90},
+		"facing=north,left=false,right=true": {"model": "emporium:stone_bench_mason_left"},
+		"facing=east,left=false,right=true": {"model": "emporium:stone_bench_mason_right", "y": 90},
+		"facing=south,left=false,right=true": {"model": "emporium:stone_bench_mason_left"},
+		"facing=west,left=false,right=true": {"model": "emporium:stone_bench_mason_right", "y": 90},
+		"facing=north,left=true,right=true": {"model": "emporium:stone_bench_mason_center"},
+		"facing=east,left=true,right=true": {"model": "emporium:stone_bench_mason_center", "y": 90},
+		"facing=south,left=true,right=true": {"model": "emporium:stone_bench_mason_center"},
+		"facing=west,left=true,right=true": {"model": "emporium:stone_bench_mason_center", "y": 90}
+	}
+}

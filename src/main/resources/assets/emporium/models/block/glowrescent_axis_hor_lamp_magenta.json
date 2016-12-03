@@ -1,0 +1,21 @@
+{
+	"parent": "emporium:block/glowrescent_axis_hor_lamp",
+    "textures": {
+        "glass": "emporium:blocks/lamp_glass_magenta"
+    },
+    "elements": [
+        {
+            "Name": "Glass",
+            "from": [ 6, 6, 1 ],
+            "to": [ 10, 10, 15 ],
+            "faces": {
+                "down": { "uv": [ 0, 6.5, 16, 10.5 ], "texture": "#glass" },
+                "up": { "uv": [ 0, 0, 4, 16 ], "texture": "#glass" },
+                "north": { "uv": [ 4, 0, 0, 2 ], "texture": "#glass" },
+                "south": { "uv": [ 0, 0, 4, 2 ], "texture": "#glass" },
+                "west": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" },
+                "east": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" }
+            }
+        }
+    ]
+}

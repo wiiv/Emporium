@@ -2,70 +2,58 @@
     "Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
     "parent":"block/block",
     "textures": {
-        "frame": "emporium:blocks/lamp_paper_floating_frame",
-        "particle": "emporium:blocks/lamp_paper_floating_frame"
+        "frame": "emporium:blocks/lamp_paper_frame_floating",
+        "particle": "emporium:blocks/lamp_paper_frame_floating"
     },
     "elements": [
         {
-            "Name": "Cube1",
-            "from": [ 3, 2.5, 8 ],
-            "to": [ 7, 2.501, 9 ],
-            "faces": {
-                "down": { "uv": [ 10, 0, 14, 1 ], "texture": "#frame" },
-                "up": { "uv": [ 10, 0, 14, 1 ], "texture": "#frame" }
-            }
-        },
-        {
-            "Name": "Cube1",
-            "from": [ 9, 2.5, 7 ],
-            "to": [ 13, 2.501, 8 ],
-            "faces": {
-                "down": { "uv": [ 10, 1, 14, 2 ], "texture": "#frame" },
-                "up": { "uv": [ 10, 1, 14, 2 ], "texture": "#frame" }
-            }
-        },
-        {
-            "Name": "Cube1",
-            "from": [ 7, 2.5, 3 ],
-            "to": [ 8, 2.501, 7 ],
-            "faces": {
-                "down": { "uv": [ 11, 2, 12, 6 ], "texture": "#frame" },
-                "up": { "uv": [ 11, 2, 12, 6 ], "texture": "#frame" }
-            }
-        },
-        {
-            "Name": "Cube1",
-            "from": [ 8, 2.5, 9 ],
-            "to": [ 9, 2.501, 13 ],
-            "faces": {
-                "down": { "uv": [ 10, 2, 11, 6 ], "texture": "#frame" },
-                "up": { "uv": [ 10, 2, 11, 6 ], "texture": "#frame" }
-            }
-        },
-        {
-            "Name": "Light",
-            "from": [ 7, 2, 7 ],
-            "to": [ 9, 3, 9 ],
-            "faces": {
-                "down": { "uv": [ 14, 2, 16, 4 ], "texture": "#frame" },
-                "up": { "uv": [ 12, 2, 14, 4 ], "texture": "#frame" },
-                "north": { "uv": [ 14, 4, 16, 5 ], "texture": "#frame" },
-                "south": { "uv": [ 12, 4, 14, 5 ], "texture": "#frame" },
-                "west": { "uv": [ 14, 4, 12, 5 ], "texture": "#frame" },
-                "east": { "uv": [ 14, 4, 16, 5 ], "texture": "#frame" }
-            }
-        },
-        {
-            "Name": "Paper",
-            "from": [ 3, 2, 3 ],
-            "to": [ 13, 14, 13 ],
-            "faces": {
-                "up": { "uv": [ 0, 0, 10, 10 ], "texture": "#paper" },
-                "north": { "uv": [ 0, 4, 10, 16 ], "texture": "#paper" },
-                "south": { "uv": [ 0, 4, 10, 16 ], "texture": "#paper" },
-                "west": { "uv": [ 0, 4, 10, 16 ], "texture": "#paper" },
-                "east": { "uv": [ 0, 4, 10, 16 ], "texture": "#paper" }
-            }
-        }
+			"Name": "Light",
+			"from": [ 7, 2, 7 ],
+			"to": [ 9, 3, 9 ],
+			"faces": {
+				"down": { "uv": [ 14, 2, 16, 4 ], "texture": "#frame" },
+				"up": { "uv": [ 12, 2, 14, 4 ], "texture": "#frame" },
+				"north": { "uv": [ 14, 4, 16, 5 ], "texture": "#frame" },
+				"south": { "uv": [ 12, 4, 14, 5 ], "texture": "#frame" },
+				"west": { "uv": [ 14, 4, 12, 5 ], "texture": "#frame" },
+				"east": { "uv": [ 14, 4, 16, 5 ], "texture": "#frame" }
+			}
+		},
+		{
+			"Name": "FWest",
+			"from": [ 3, 2.5, 8 ],
+			"to": [ 7, 2.501, 9 ],
+			"faces": {
+				"down": { "uv": [ 10, 0, 14, 1 ], "texture": "#frame" },
+				"up": { "uv": [ 10, 0, 14, 1 ], "texture": "#frame" }
+			}
+		},
+		{
+			"Name": "FEast",
+			"from": [ 9, 2.5, 7 ],
+			"to": [ 13, 2.501, 8 ],
+			"faces": {
+				"down": { "uv": [ 10, 1, 14, 2 ], "texture": "#frame" },
+				"up": { "uv": [ 10, 1, 14, 2 ], "texture": "#frame" }
+			}
+		},
+		{
+			"Name": "FNorth",
+			"from": [ 7, 2.5, 3 ],
+			"to": [ 8, 2.501, 7 ],
+			"faces": {
+				"down": { "uv": [ 11, 2, 12, 6 ], "texture": "#frame" },
+				"up": { "uv": [ 11, 2, 12, 6 ], "texture": "#frame" }
+			}
+		},
+		{
+			"Name": "FSouth",
+			"from": [ 8, 2.5, 9 ],
+			"to": [ 9, 2.501, 13 ],
+			"faces": {
+				"down": { "uv": [ 10, 2, 11, 6 ], "texture": "#frame" },
+				"up": { "uv": [ 10, 2, 11, 6 ], "texture": "#frame" }
+			}
+		}
     ]
 }

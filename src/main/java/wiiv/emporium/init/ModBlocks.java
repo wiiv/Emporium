@@ -1,10 +1,35 @@
 package wiiv.emporium.init;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import wiiv.emporium.api.IModelHolder;
-import wiiv.emporium.block.*;
-import wiiv.emporium.util.*;
+import wiiv.emporium.block.BlockJar;
+import wiiv.emporium.block.BlockLampCandelabra;
+import wiiv.emporium.block.BlockLampCandleBig;
+import wiiv.emporium.block.BlockLampCandleTall;
+import wiiv.emporium.block.BlockLampChandelier;
+import wiiv.emporium.block.BlockLampGlowrescentAxis;
+import wiiv.emporium.block.BlockLampGlowrescentCaged;
+import wiiv.emporium.block.BlockLampGlowrescentCube;
+import wiiv.emporium.block.BlockLampGlowrescentFixture;
+import wiiv.emporium.block.BlockLampLibrary;
+import wiiv.emporium.block.BlockLampPaperFloating;
+import wiiv.emporium.block.BlockMedievalBench;
+import wiiv.emporium.block.BlockMedievalChair;
+import wiiv.emporium.block.BlockMedievalChairKing;
+import wiiv.emporium.block.BlockMedievalChairQueen;
+import wiiv.emporium.block.BlockMedievalTable;
+import wiiv.emporium.block.BlockModernTable;
+import wiiv.emporium.block.BlockSofaHeart;
+import wiiv.emporium.block.BlockSofaWight;
+import wiiv.emporium.block.BlockSofaYell;
+import wiiv.emporium.block.BlockStoneBench;
+import wiiv.emporium.block.BlockStoneBenchMason;
+import wiiv.emporium.block.BlockStoneBirdBath;
+import wiiv.emporium.block.BlockStoneTable;
+import wiiv.emporium.util.EnumColor16;
+import wiiv.emporium.util.EnumColor8;
 
 public class ModBlocks {
 
@@ -15,10 +40,18 @@ public class ModBlocks {
 
 	public static BlockMedievalTable MEDIEVAL_TABLE;
 	public static BlockMedievalBench MEDIEVAL_BENCH;
+	public static BlockMedievalChair MEDIEVAL_CHAIR;
 	public static BlockMedievalChairKing MEDIEVAL_CHAIR_KING;
 	public static BlockMedievalChairQueen MEDIEVAL_CHAIR_QUEEN;
+	
+	public static BlockStoneTable STONE_TABLE;
+	public static BlockStoneBench STONE_BENCH;
+	public static BlockStoneBenchMason STONE_BENCH_MASON;
+	public static BlockStoneBirdBath STONE_BIRD_BATH;
 
 	public static BlockSofaHeart SOFA_HEART;
+	public static BlockSofaYell SOFA_YELL;
+	public static BlockSofaWight SOFA_WIGHT;
 
 	public static BlockLampLibrary[] LIBRARY_LAMP = new BlockLampLibrary[16];
 
@@ -41,8 +74,15 @@ public class ModBlocks {
 		//medieval
 		BLOCK_LIST.add(MEDIEVAL_TABLE = new BlockMedievalTable());
 		BLOCK_LIST.add(MEDIEVAL_BENCH = new BlockMedievalBench());
+		BLOCK_LIST.add(MEDIEVAL_CHAIR = new BlockMedievalChair());
 		BLOCK_LIST.add(MEDIEVAL_CHAIR_KING = new BlockMedievalChairKing());
 		BLOCK_LIST.add(MEDIEVAL_CHAIR_QUEEN = new BlockMedievalChairQueen());
+		
+		//stone
+		BLOCK_LIST.add(STONE_TABLE = new BlockStoneTable());
+		BLOCK_LIST.add(STONE_BENCH = new BlockStoneBench());
+		BLOCK_LIST.add(STONE_BENCH_MASON = new BlockStoneBenchMason());
+		BLOCK_LIST.add(STONE_BIRD_BATH = new BlockStoneBirdBath());
 
 		//modern
 		for (EnumColor16 color : EnumColor16.values()) {
@@ -78,7 +118,9 @@ public class ModBlocks {
 		}
 
 		BLOCK_LIST.add(SOFA_HEART = new BlockSofaHeart());
-
+		BLOCK_LIST.add(SOFA_YELL = new BlockSofaYell());
+		BLOCK_LIST.add(SOFA_WIGHT = new BlockSofaWight());
+		
 		for (EnumColor8 color : EnumColor8.values()) {
 			PAPER_FLOATING_LAMP[color.getMetadata()] = new BlockLampPaperFloating(color.getMetadata());
 			BLOCK_LIST.add(PAPER_FLOATING_LAMP[color.getMetadata()]);

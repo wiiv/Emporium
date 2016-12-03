@@ -17,11 +17,11 @@ import wiiv.emporium.util.MountableUtil;
 public class BlockSofaYell extends BlockBase {
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
-	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), (0.0625D * 8), (0.0625D * 14));
-	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), (0.0625D * 8), (0.0625D * 14));
+	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), (0.0625D * 5), (0.0625D * 14));
+	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), (0.0625D * 5), (0.0625D * 14));
 
 	public BlockSofaYell() {
-		super(Material.WOOD, "sofa_heart", 1.0F);
+		super(Material.WOOD, "sofa_yell", 1.0F);
 		setSoundType(SoundType.WOOD);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
@@ -73,13 +73,13 @@ public class BlockSofaYell extends BlockBase {
 
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.3);
+		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.15);
 	}
 
 	@Override
 	public BlockRenderLayer getBlockLayer() {
 
-		return BlockRenderLayer.CUTOUT;
+		return BlockRenderLayer.SOLID;
 	}
 
 }

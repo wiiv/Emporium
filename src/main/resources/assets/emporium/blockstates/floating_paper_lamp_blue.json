@@ -1,5 +1,22 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+            "base": "emporium:floating_paper_lamp_blue#base",
+            "Cutout": "emporium:floating_paper_lamp_blue#base",
+            "Translucent": "emporium:floating_paper_lamp_blue#trans"
+        },
+        "transform": "forge:default-block"
+    },
     "variants": {
-	    "normal": { "model": "emporium:floating_paper_lamp_blue" }
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:floating_paper_lamp"
+        }],
+        "trans": [{
+            "model": "emporium:floating_paper_lamp_blue"
+        }]
     }
 }

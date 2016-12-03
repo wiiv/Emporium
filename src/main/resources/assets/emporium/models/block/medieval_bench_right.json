@@ -35,8 +35,8 @@
         },
         {
             "Name": "LegRight",
-            "from": [ 14, 0, 4 ],
-            "to": [ 15, 8, 12 ],
+            "from": [ 12, 0, 4 ],
+            "to": [ 14, 8, 12 ],
             "faces": {
                 "down": { "uv": [ 4, 4, 13, 6 ], "texture": "#frame", "rotation": 90 },
                 "up": { "uv": [ 2, 4, 4, 12 ], "texture": "#frame" },

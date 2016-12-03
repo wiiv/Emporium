@@ -1,0 +1,22 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+            "base": "emporium:stone_bird_bath#base",
+            "Solid": "emporium:stone_bird_bath#base",
+            "Translucent": "emporium:stone_bird_bath#trans"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:stone_bird_bath"
+        }],
+        "trans": [{
+            "model": "emporium:stone_bird_bath_water"
+        }]
+    }
+}
