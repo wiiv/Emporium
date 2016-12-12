@@ -4,8 +4,8 @@
         "model": "forge:multi-layer",
         "custom": {
             "base": "emporium:stone_bird_bath#base",
-            "Solid": "emporium:stone_bird_bath#base",
-            "Translucent": "emporium:stone_bird_bath#trans"
+            "Translucent": "emporium:stone_bird_bath#trans",
+            "Solid": "emporium:stone_bird_bath#base"
         },
         "transform": "forge:default-block"
     },

@@ -1,0 +1,61 @@
+{
+    "Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+    "parent":"block/block",
+    "textures": {
+        "glass": "emporium:blocks/lamp_glass_pink"
+    },
+    "elements": [
+        {
+            "Name": "Glass",
+            "from": [ 6, 2, 11 ],
+            "to": [ 10, 8, 11.001 ],
+            "faces": {
+                "down": { "uv": [ 0, 6.5, 16, 10.5 ], "texture": "#glass" },
+                "up": { "uv": [ 0, 0, 4, 16 ], "texture": "#glass" },
+                "north": { "uv": [ 4, 0, 0, 2 ], "texture": "#glass" },
+                "south": { "uv": [ 0, 0, 4, 2 ], "texture": "#glass" },
+                "west": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" },
+                "east": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" }
+            }
+        },
+        {
+            "Name": "Glass",
+            "from": [ 5, 2, 6 ],
+            "to": [ 5.001, 8, 10 ],
+            "faces": {
+                "down": { "uv": [ 0, 6.5, 16, 10.5 ], "texture": "#glass" },
+                "up": { "uv": [ 0, 0, 4, 16 ], "texture": "#glass" },
+                "north": { "uv": [ 4, 0, 0, 2 ], "texture": "#glass" },
+                "south": { "uv": [ 0, 0, 4, 2 ], "texture": "#glass" },
+                "west": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" },
+                "east": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" }
+            }
+        },
+        {
+            "Name": "Glass",
+            "from": [ 11, 2, 6 ],
+            "to": [ 11.001, 8, 10 ],
+            "faces": {
+                "down": { "uv": [ 0, 6.5, 16, 10.5 ], "texture": "#glass" },
+                "up": { "uv": [ 0, 0, 4, 16 ], "texture": "#glass" },
+                "north": { "uv": [ 4, 0, 0, 2 ], "texture": "#glass" },
+                "south": { "uv": [ 0, 0, 4, 2 ], "texture": "#glass" },
+                "west": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" },
+                "east": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" }
+            }
+        },
+        {
+            "Name": "Glass",
+            "from": [ 6, 2, 5 ],
+            "to": [ 10, 8, 5.001 ],
+            "faces": {
+                "down": { "uv": [ 0, 6.5, 16, 10.5 ], "texture": "#glass" },
+                "up": { "uv": [ 0, 0, 4, 16 ], "texture": "#glass" },
+                "north": { "uv": [ 4, 0, 0, 2 ], "texture": "#glass" },
+                "south": { "uv": [ 0, 0, 4, 2 ], "texture": "#glass" },
+                "west": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" },
+                "east": { "uv": [ 0, 0, 16, 2 ], "texture": "#glass" }
+            }
+        }
+    ]
+}

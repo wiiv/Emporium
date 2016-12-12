@@ -1,0 +1,45 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+            "base": "emporium:garden_golden_lamp_cyan#base",
+            "Solid": "emporium:garden_golden_lamp_cyan#base",
+            "Translucent": "emporium:garden_golden_lamp_cyan#trans"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:garden_golden_lamp"
+        }],
+        "trans": [{
+            "model": "emporium:garden_golden_lamp_cyan"
+        }],
+        "facing": {
+            "up": {
+                "model": "forge:multi-layer",
+                "custom": {
+                    "base": "emporium:garden_golden_lamp_cyan#base",
+                    "Solid": "emporium:garden_golden_lamp_cyan#base",
+                    "Translucent": "emporium:garden_golden_lamp_cyan#trans"
+                },
+                "y": 180
+            },
+            "down": {
+                "model": "forge:multi-layer",
+                "custom": {
+                    "base": "emporium:garden_golden_lamp_cyan#base",
+                    "Solid": "emporium:garden_golden_lamp_cyan#base",
+                    "Translucent": "emporium:garden_golden_lamp_cyan#trans"
+                }
+            },
+            "north": {"y": 180 },
+            "south": { },
+            "west": {"y": 90 },
+            "east": {"y": 270 }
+        }
+    }
+}
