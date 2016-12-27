@@ -14,12 +14,15 @@ import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.*;
-import net.minecraft.util.*;
-import net.minecraft.util.datafix.DataFixer;
-import net.minecraft.util.math.*;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.*;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import wiiv.emporium.block.BlockLampChandelier;
 import wiiv.emporium.init.ModBlocks;
 
@@ -28,15 +31,17 @@ import wiiv.emporium.init.ModBlocks;
  *
  */
 public class EntityFallingChandelier extends Entity {
+
 	public IBlockState fallTile;
 	public int fallTime;
 	public boolean shouldDropItem = true;
 	private boolean canSetAsBlock;
 	private boolean hurtEntities;
 	private int fallHurtMax = 40;
-	private float fallHurtAmount = 2.0F;
+	private float fallHurtAmount = 40.0F;
 	public NBTTagCompound tileEntityData;
 	protected static final DataParameter<BlockPos> ORIGIN = EntityDataManager.<BlockPos>createKey(EntityFallingChandelier.class, DataSerializers.BLOCK_POS);
+	protected static final DataParameter<Integer> TYPE = EntityDataManager.<Integer>createKey(EntityFallingChandelier.class, DataSerializers.VARINT);
 
 	public EntityFallingChandelier(World worldIn) {
 		super(worldIn);
@@ -55,10 +60,25 @@ public class EntityFallingChandelier extends Entity {
 		prevPosY = y;
 		prevPosZ = z;
 		setOrigin(new BlockPos(this));
+		setType(fallTile.getBlock());
 	}
 
-	public void setOrigin(BlockPos p_184530_1_) {
-		dataManager.set(ORIGIN, p_184530_1_);
+	public void setType(Block block) {
+		int i = 0;
+		for (BlockLampChandelier chandelier : ModBlocks.CHANDELIER_LAMP) {
+			++i;
+			if (block == chandelier) {
+				dataManager.set(TYPE, i - 1);
+			}
+		}
+	}
+
+	public int getType() {
+		return dataManager.get(TYPE);
+	}
+
+	public void setOrigin(BlockPos pos) {
+		dataManager.set(ORIGIN, pos);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -78,6 +98,7 @@ public class EntityFallingChandelier extends Entity {
 	@Override
 	protected void entityInit() {
 		dataManager.register(ORIGIN, BlockPos.ORIGIN);
+		dataManager.register(TYPE, 0);
 	}
 
 	/**
@@ -88,9 +109,6 @@ public class EntityFallingChandelier extends Entity {
 		return !isDead;
 	}
 
-	/**
-	 * Called to update the entity's position/logic.
-	 */
 	@Override
 	public void onUpdate() {
 		if (fallTile == null) {
@@ -134,10 +152,10 @@ public class EntityFallingChandelier extends Entity {
 					IBlockState iblockstate = worldObj.getBlockState(blockpos1);
 
 					if (worldObj.isAirBlock(new BlockPos(posX, posY - 0.009999999776482582D, posZ))) {
-						//if (BlockLampChandelier.canFallThrough(worldObj.getBlockState(new BlockPos(posX, posY - 0.009999999776482582D, posZ)))) {
-						//	onGround = false;
-						//	return;
-						//}
+						if (BlockLampChandelier.canFallThrough(worldObj.getBlockState(new BlockPos(posX, posY - 0.009999999776482582D, posZ)))) {
+							onGround = false;
+							return;
+						}
 					}
 
 					motionX *= 0.699999988079071D;
@@ -145,44 +163,28 @@ public class EntityFallingChandelier extends Entity {
 					motionY *= -0.5D;
 
 					if (iblockstate.getBlock() != Blocks.PISTON_EXTENSION) {
-						setDead();
+						//setDead();
 
-						if (!canSetAsBlock) {/*
-												if (worldObj.canBlockBePlaced(block, blockpos1, true, EnumFacing.UP, (Entity) null, (ItemStack) null) && !BlockLampChandelier.canFallThrough(worldObj.getBlockState(blockpos1.down())) && worldObj.setBlockState(blockpos1, fallTile, 3)) {
-												if (isChandelier(block)) {
-												((BlockLampChandelier) block).onEndFalling(worldObj, blockpos1);
-												}
-												
-												if (tileEntityData != null && block instanceof ITileEntityProvider) {
-												TileEntity tileentity = worldObj.getTileEntity(blockpos1);
-												
-												if (tileentity != null) {
-												NBTTagCompound nbttagcompound = tileentity.writeToNBT(new NBTTagCompound());
-												
-												for (String s : tileEntityData.getKeySet()) {
-												NBTBase nbtbase = tileEntityData.getTag(s);
-												
-												if (!"x".equals(s) && !"y".equals(s) && !"z".equals(s)) {
-												nbttagcompound.setTag(s, nbtbase.copy());
-												}
-												}
-												
-												tileentity.readFromNBT(nbttagcompound);
-												tileentity.markDirty();
-												}
-												}
-												}
-												else if (shouldDropItem && worldObj.getGameRules().getBoolean("doEntityDrops")) {
-												entityDropItem(new ItemStack(block, 1, block.damageDropped(fallTile)), 0.0F);
-												}
-												*/
-						}
+						//if (!canSetAsBlock) {
+						//if (worldObj.canBlockBePlaced(block, blockpos1, true, EnumFacing.UP, (Entity) null, (ItemStack) null) && !BlockLampChandelier.canFallThrough(worldObj.getBlockState(blockpos1.down())) && worldObj.setBlockState(blockpos1, fallTile, 3)) {
+						//		if (block instanceof BlockLampChandelier) {
+						//((BlockLampChandelier) block).onEndFalling(worldObj, blockpos1);
+						//setDead();
+						//		}
+						//}
+						//else if (shouldDropItem && worldObj.getGameRules().getBoolean("doEntityDrops")) {
+						entityDropItem(new ItemStack(block, 1), 0.0F);
+						((BlockLampChandelier) block).onEndFalling(worldObj, blockpos1);
+						setDead();
+						//}
+						//}
 					}
 				}
 				else if (fallTime > 100 && !worldObj.isRemote && (blockpos1.getY() < 1 || blockpos1.getY() > 256) || fallTime > 600) {
 					if (shouldDropItem && worldObj.getGameRules().getBoolean("doEntityDrops")) {
-						entityDropItem(new ItemStack(block, 1, block.damageDropped(fallTile)), 0.0F);
+						entityDropItem(new ItemStack(block, 1), 0.0F);
 					}
+					((BlockLampChandelier) block).onEndFalling(worldObj, blockpos1);
 
 					setDead();
 				}
@@ -199,13 +201,15 @@ public class EntityFallingChandelier extends Entity {
 
 			if (i > 0) {
 				List<Entity> list = Lists.newArrayList(worldObj.getEntitiesWithinAABBExcludingEntity(this, getEntityBoundingBox()));
-				boolean flag = isChandelier(block);
-				DamageSource damagesource = flag ? DamageSource.anvil : DamageSource.fallingBlock;
+				DamageSource damagesource = DamageSource.anvil;
 
 				for (Entity entity : list) {
 					entity.attackEntityFrom(damagesource, Math.min(MathHelper.floor_float(i * fallHurtAmount), fallHurtMax));
 				}
-				canSetAsBlock = true;
+
+				if (rand.nextFloat() < 0.05000000074505806D + i * 0.05D) {
+					canSetAsBlock = true;
+				}
 			}
 		}
 	}
@@ -219,6 +223,11 @@ public class EntityFallingChandelier extends Entity {
 		return false;
 	}
 
+	@Nullable
+	public IBlockState getBlock() {
+		return ModBlocks.CHANDELIER_LAMP[getType()].getDefaultState();
+	}
+
 	private BlockLampChandelier getChandelier(Block block) {
 		for (BlockLampChandelier chandelier : ModBlocks.CHANDELIER_LAMP) {
 			if (block == chandelier) {
@@ -228,18 +237,16 @@ public class EntityFallingChandelier extends Entity {
 		return null;
 	}
 
-	public static void func_189741_a(DataFixer p_189741_0_) {
-	}
-
 	/**
 	 * (abstract) Protected helper method to write subclass entity data to NBT.
 	 */
 	@Override
 	protected void writeEntityToNBT(NBTTagCompound compound) {
+		/*
 		Block block = fallTile != null ? fallTile.getBlock() : Blocks.AIR;
 		ResourceLocation resourcelocation = Block.REGISTRY.getNameForObject(block);
 		compound.setString("Block", resourcelocation == null ? "" : resourcelocation.toString());
-		compound.setByte("Data", (byte) block.getMetaFromState(fallTile));
+		//compound.setByte("Data", (byte) block.getMetaFromState(fallTile));
 		compound.setInteger("Time", fallTime);
 		compound.setBoolean("DropItem", shouldDropItem);
 		compound.setBoolean("HurtEntities", hurtEntities);
@@ -249,6 +256,7 @@ public class EntityFallingChandelier extends Entity {
 		if (tileEntityData != null) {
 			compound.setTag("TileEntityData", tileEntityData);
 		}
+		*/
 	}
 
 	/**
@@ -256,45 +264,46 @@ public class EntityFallingChandelier extends Entity {
 	 */
 	@Override
 	protected void readEntityFromNBT(NBTTagCompound compound) {
-		int i = compound.getByte("Data") & 255;
+		//int i = compound.getByte("Data") & 255;
+		/*
+				if (compound.hasKey("Block", 8)) {
+					fallTile = Block.getBlockFromName(compound.getString("Block")).getDefaultState();
+				}
+				else if (compound.hasKey("TileID", 99)) {
+					fallTile = Block.getBlockById(compound.getInteger("TileID")).getDefaultState();
+				}
+				else {
+					fallTile = Block.getBlockById(compound.getByte("Tile") & 255).getDefaultState();
+				}
 
-		if (compound.hasKey("Block", 8)) {
-			fallTile = Block.getBlockFromName(compound.getString("Block")).getStateFromMeta(i);
-		}
-		else if (compound.hasKey("TileID", 99)) {
-			fallTile = Block.getBlockById(compound.getInteger("TileID")).getStateFromMeta(i);
-		}
-		else {
-			fallTile = Block.getBlockById(compound.getByte("Tile") & 255).getStateFromMeta(i);
-		}
+				fallTime = compound.getInteger("Time");
+				Block block = fallTile.getBlock();
 
-		fallTime = compound.getInteger("Time");
-		Block block = fallTile.getBlock();
+				if (compound.hasKey("HurtEntities", 99)) {
+					hurtEntities = compound.getBoolean("HurtEntities");
+					fallHurtAmount = compound.getFloat("FallHurtAmount");
+					fallHurtMax = compound.getInteger("FallHurtMax");
+				}
+				else if (isChandelier(block)) {
+					hurtEntities = true;
+				}
 
-		if (compound.hasKey("HurtEntities", 99)) {
-			hurtEntities = compound.getBoolean("HurtEntities");
-			fallHurtAmount = compound.getFloat("FallHurtAmount");
-			fallHurtMax = compound.getInteger("FallHurtMax");
-		}
-		else if (isChandelier(block)) {
-			hurtEntities = true;
-		}
+				if (compound.hasKey("DropItem", 99)) {
+					shouldDropItem = compound.getBoolean("DropItem");
+				}
 
-		if (compound.hasKey("DropItem", 99)) {
-			shouldDropItem = compound.getBoolean("DropItem");
-		}
+				if (compound.hasKey("TileEntityData", 10)) {
+					tileEntityData = compound.getCompoundTag("TileEntityData");
+				}
 
-		if (compound.hasKey("TileEntityData", 10)) {
-			tileEntityData = compound.getCompoundTag("TileEntityData");
-		}
-
-		if (block == null || block.getDefaultState().getMaterial() == Material.AIR) {
-			fallTile = Blocks.SAND.getDefaultState();
-		}
+				if (block == null || block.getDefaultState().getMaterial() == Material.AIR) {
+					fallTile = Blocks.SAND.getDefaultState();
+				}
+				*/
 	}
 
-	public void setHurtEntities(boolean p_145806_1_) {
-		hurtEntities = p_145806_1_;
+	public void setHurtEntities(boolean shouldHurtEntities) {
+		hurtEntities = shouldHurtEntities;
 	}
 
 	@Override
@@ -320,11 +329,6 @@ public class EntityFallingChandelier extends Entity {
 	@SideOnly(Side.CLIENT)
 	public boolean canRenderOnFire() {
 		return false;
-	}
-
-	@Nullable
-	public IBlockState getBlock() {
-		return fallTile;
 	}
 
 	@Override

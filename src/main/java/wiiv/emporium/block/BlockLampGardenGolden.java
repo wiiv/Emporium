@@ -1,6 +1,7 @@
 package wiiv.emporium.block;
 
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -17,23 +18,26 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import wiiv.emporium.client.render.EnumParticles;
+import wiiv.emporium.util.ParticleUtil;
 
 public class BlockLampGardenGolden extends BlockBaseColorable16 {
-	
+
 	public static final PropertyDirection FACING = PropertyDirection.create("facing");
-	
+
 	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 3), 0.0D, (0.0625D * 3), (0.0625D * 13), (0.0625D * 12), (0.0625D * 13));
 	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 3), 0.0D, (0.0625D * 3), (0.0625D * 13), (0.0625D * 12), (0.0625D * 13));
-
 
 	public BlockLampGardenGolden(int color) {
 		super(Material.CIRCUITS, "garden_golden_lamp", 1.0F, color);
 		setSoundType(SoundType.METAL);
 		setLightLevel(0.75F);
-		
+		setTickRandomly(true);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 	}
-	
+
 	private AxisAlignedBB getBox(EnumFacing facing) {
 		switch (facing) {
 		case DOWN:
@@ -50,6 +54,18 @@ public class BlockLampGardenGolden extends BlockBaseColorable16 {
 		case UP:
 			return new AxisAlignedBB((0.0625D * 5), 0.0D, (0.0625D * 5), (0.0625D * 11), (0.0625D * 7), (0.0625D * 11));
 		}
+	}
+
+	@Override
+	public int tickRate(World worldIn) {
+		return 1;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+		//worldIn.spawnParticle(EnumParticleTypes.FLAME, pos.getX() + 0.5, pos.getY() + 0.3D, pos.getZ() + 0.5D, 0.0D, 0.0D, 0.0D, new int[0]);
+		ParticleUtil.spawn(EnumParticles.TINY_FLAME, worldIn, pos.getX() + 0.5, pos.getY() + 0.4D, pos.getZ() + 0.5D, 0.0D, 0.0D, 0.0D);
 	}
 
 	@Override
@@ -110,10 +126,15 @@ public class BlockLampGardenGolden extends BlockBaseColorable16 {
 				FACING
 		});
 	}
-	
+
 	@Override
 	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
 		return getDefaultState().withProperty(FACING, facing);
+	}
+
+	@Override
+	public boolean canPlaceBlockOnSide(World worldIn, BlockPos pos, EnumFacing side) {
+		return side != EnumFacing.DOWN && side != EnumFacing.UP && canPlaceBlockAt(worldIn, pos);
 	}
 
 	@Override
@@ -127,19 +148,18 @@ public class BlockLampGardenGolden extends BlockBaseColorable16 {
 	}
 
 	@Override
-    public boolean canRenderInLayer(BlockRenderLayer layer) {
-        return layer == BlockRenderLayer.SOLID || layer == BlockRenderLayer.TRANSLUCENT;
-    }
-	
+	public boolean canRenderInLayer(BlockRenderLayer layer) {
+		return layer == BlockRenderLayer.SOLID || layer == BlockRenderLayer.TRANSLUCENT;
+	}
+
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 
 		return BOUNDING_BOX;
 	}
-	
+
 	@Override
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn) {
 		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX);
 	}
 }
-

@@ -1,18 +1,54 @@
 package wiiv.emporium.util;
 
 import java.util.List;
+import java.util.Map;
 
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.math.*;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import wiiv.emporium.entity.EntityMountable;
 
 public class MountableUtil {
 
 	public static boolean sitOnBlock(World world, BlockPos pos, EntityPlayer player, double yOffset) {
+		return sitOnBlock(world, pos, player, yOffset, false);
+	}
+
+	@SuppressWarnings("rawtypes")
+	public static boolean sitOnBlock(World world, BlockPos pos, EntityPlayer player, double yOffset, boolean directional) {
 		if (!checkForExistingEntity(world, pos, player)) {
 			EntityMountable nemb = new EntityMountable(world, pos, yOffset);
 			world.spawnEntityInWorld(nemb);
+			if (directional) {
+				IBlockState state = world.getBlockState(pos);
+				Map<IProperty<?>, Comparable<?>> propMap = state.getProperties();
+				for (IProperty prop : propMap.keySet()) {
+					if (prop instanceof PropertyDirection) {
+						switch ((EnumFacing) propMap.get(prop)) {
+						case EAST:
+							player.rotationYaw = 90;
+							break;
+						case NORTH:
+							player.rotationYaw = 360;
+							break;
+						case SOUTH:
+							player.rotationYaw = 180;
+							break;
+						case WEST:
+							player.rotationYaw = 270;
+							break;
+						default:
+							break;
+						}
+					}
+				}
+			}
+			player.rotationPitch = 20;
 			player.startRiding(nemb);
 		}
 		return true;

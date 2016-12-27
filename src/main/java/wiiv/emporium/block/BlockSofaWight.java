@@ -4,14 +4,22 @@ import java.util.List;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.*;
-import net.minecraft.block.state.*;
-import net.minecraft.entity.*;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.*;
-import net.minecraft.util.math.*;
-import net.minecraft.world.*;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import wiiv.emporium.util.MountableUtil;
 
 public class BlockSofaWight extends BlockBase {
@@ -19,17 +27,17 @@ public class BlockSofaWight extends BlockBase {
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	public static final PropertyBool LEFT = PropertyBool.create("left");
 	public static final PropertyBool RIGHT = PropertyBool.create("right");
-	
+
 	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 1), (0.0625D * 16), (0.0625D * 8), (0.0625D * 15));
 	private static final AxisAlignedBB BOUNDING_BOX2 = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 2), (0.0625D * 15), (0.0625D * 8), (0.0625D * 16));
 	private static final AxisAlignedBB BOUNDING_BOX3 = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 1), (0.0625D * 16), (0.0625D * 8), (0.0625D * 15));
 	private static final AxisAlignedBB BOUNDING_BOX4 = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 0), (0.0625D * 15), (0.0625D * 8), (0.0625D * 14));
-	
+
 	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 1), (0.0625D * 16), (0.0625D * 8), (0.0625D * 15));
 	private static final AxisAlignedBB COLLISION_BOX2 = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 0), (0.0625D * 15), (0.0625D * 8), (0.0625D * 14));
 	private static final AxisAlignedBB COLLISION_BOX3 = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 1), (0.0625D * 16), (0.0625D * 8), (0.0625D * 15));
 	private static final AxisAlignedBB COLLISION_BOX4 = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 0), (0.0625D * 15), (0.0625D * 8), (0.0625D * 14));
-	
+
 	public BlockSofaWight() {
 		super(Material.GLASS, "sofa_wight", 1.0F);
 		setSoundType(SoundType.WOOD);
@@ -38,7 +46,7 @@ public class BlockSofaWight extends BlockBase {
 
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.3);
+		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.3, true);
 	}
 
 	@Override

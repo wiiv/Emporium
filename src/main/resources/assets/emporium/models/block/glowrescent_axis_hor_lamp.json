@@ -2,9 +2,9 @@
 	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
 	"parent":"block/block",
 	"textures": {
-		"frame": "blocks/lamp_axis_frame",
+		"frame": "emporium:blocks/lamp_axis_frame",
 		"particle": "emporium:blocks/lamp_axis_frame",
-		"glass": "blocks/lamp_glass_cyan"
+		"glass": "emporium:blocks/lamp_glass_cyan"
 	},
 	"elements": [
 		{
