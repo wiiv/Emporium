@@ -1,0 +1,46 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "block/block",
+	"textures": {
+        "texture": "emporium:blocks/modern_wooden_table",
+        "particle": "emporium:blocks/modern_wooden_table"
+    },
+	"elements": [
+		{
+			"from": [ 0, 13, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 8, 8 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 8, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 8, 8, 9.5 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 8, 8, 9.5 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 8, 1.5 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 0, 8, 1.5 ], "texture": "#texture" }
+			}
+		},
+		{
+			"from": [ 0, 0, 0 ],
+			"to": [ 3, 13, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 1.5, 8 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 1.5, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 14.5, 0, 16, 6.5 ], "texture": "#texture" },
+				"south": { "uv": [ 8, 0, 9.5, 6.5 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 8, 6.5 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 0, 8, 6.5 ], "texture": "#texture" }
+			}
+		},
+		{
+			"from": [ 13, 0, 0 ],
+			"to": [ 16, 13, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 1.5, 8 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 1.5, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 8, 0, 9.5, 6.5 ], "texture": "#texture" },
+				"south": { "uv": [ 14.5, 0, 16, 6.5 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 8, 6.5 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 0, 8, 6.5 ], "texture": "#texture" }
+			}
+		}
+	]
+}

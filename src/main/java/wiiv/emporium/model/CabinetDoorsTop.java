@@ -1,4 +1,4 @@
-package model;
+/*package model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
@@ -7,7 +7,7 @@ import net.minecraft.entity.Entity;
 /**
  * kitchen_cabinet_doors_top - wiiv
  * Created using Tabula 4.1.1
- */
+ *//*
 public class kitchen_cabinet_doors_top extends ModelBase {
     public ModelRenderer top;
     public ModelRenderer back;
@@ -76,10 +76,11 @@ public class kitchen_cabinet_doors_top extends ModelBase {
 
     /**
      * This is a helper function from Tabula to set the rotation of model parts
-     */
+     *//*
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
     }
 }
+*/

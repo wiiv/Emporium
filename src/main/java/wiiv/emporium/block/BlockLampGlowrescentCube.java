@@ -22,10 +22,6 @@ public class BlockLampGlowrescentCube extends BlockBaseColorable16 {
 	
 	public static final PropertyDirection FACING = PropertyDirection.create("facing");
 	
-	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 3), 0.0D, (0.0625D * 3), (0.0625D * 13), (0.0625D * 12), (0.0625D * 13));
-	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 3), 0.0D, (0.0625D * 3), (0.0625D * 13), (0.0625D * 12), (0.0625D * 13));
-
-
 	public BlockLampGlowrescentCube(int color) {
 		super(Material.CIRCUITS, "glowrescent_cube_lamp", 1.0F, color);
 		setSoundType(SoundType.METAL);
@@ -37,18 +33,18 @@ public class BlockLampGlowrescentCube extends BlockBaseColorable16 {
 	private AxisAlignedBB getBox(EnumFacing facing) {
 		switch (facing) {
 		case DOWN:
-			return new AxisAlignedBB((0.0625D * 5), 1 - (0.0625D * 7), (0.0625D * 5), (0.0625D * 11), 1.0D, (0.0625D * 11));
+			return new AxisAlignedBB((0.0625D * 3), 1 - (0.0625D * 12), (0.0625D * 3), (0.0625D * 13), 1.0D, (0.0625D * 13));
 		case EAST:
-			return new AxisAlignedBB((0.0625D * 7), (0.0625D * 5), (0.0625D * 5), 0.0D, (0.0625D * 11), (0.0625D * 11));
+			return new AxisAlignedBB((0.0625D * 12), (0.0625D * 3), (0.0625D * 3), 0.0D, (0.0625D * 13), (0.0625D * 13));
 		case NORTH:
-			return new AxisAlignedBB((0.0625D * 11), (0.0625D * 5), 1 - (0.0625D * 7), (0.0625D * 5), (0.0625D * 11), 1.0D);
+			return new AxisAlignedBB((0.0625D * 13), (0.0625D * 3), 1 - (0.0625D * 12), (0.0625D * 3), (0.0625D * 13), 1.0D);
 		case SOUTH:
-			return new AxisAlignedBB((0.0625D * 11), (0.0625D * 5), 0.0D, (0.0625D * 5), (0.0625D * 11), (0.0625D * 7));
+			return new AxisAlignedBB((0.0625D * 13), (0.0625D * 3), 0.0D, (0.0625D * 3), (0.0625D * 13), (0.0625D * 12));
 		case WEST:
-			return new AxisAlignedBB(1 - (0.0625D * 7), (0.0625D * 5), (0.0625D * 5), 1.0D, (0.0625D * 11), (0.0625D * 11));
+			return new AxisAlignedBB(1 - (0.0625D * 12), (0.0625D * 3), (0.0625D * 3), 1.0D, (0.0625D * 13), (0.0625D * 13));
 		default:
 		case UP:
-			return new AxisAlignedBB((0.0625D * 5), 0.0D, (0.0625D * 5), (0.0625D * 11), (0.0625D * 7), (0.0625D * 11));
+			return new AxisAlignedBB((0.0625D * 3), 0.0D, (0.0625D * 3), (0.0625D * 13), (0.0625D * 12), (0.0625D * 13));
 		}
 	}
 
@@ -133,13 +129,12 @@ public class BlockLampGlowrescentCube extends BlockBaseColorable16 {
 	
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-
-		return BOUNDING_BOX;
+		return getBox(state.getValue(FACING));
 	}
 	
 	@Override
 	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn) {
-		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX);
+		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, getBox(state.getValue(FACING)));
 	}
 }
 

@@ -136,7 +136,7 @@ public class EntityFallingChandelier extends Entity {
 				}
 			}
 
-			if (!func_189652_ae()) {
+			if (!hasNoGravity()) {
 				motionY -= 0.03999999910593033D;
 			}
 

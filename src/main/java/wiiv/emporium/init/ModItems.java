@@ -8,6 +8,7 @@ import wiiv.emporium.item.ItemCookieChocolat;
 import wiiv.emporium.item.ItemCookiePlain;
 import wiiv.emporium.item.ItemCookieStrawberry;
 import wiiv.emporium.item.ItemDebug;
+import wiiv.emporium.item.ItemPasteChocolat;
 
 public class ModItems {
 
@@ -17,6 +18,8 @@ public class ModItems {
 	public static ItemCookieChocolat cookie_chocolat;
 	public static ItemCookieStrawberry cookie_strawberry;
 	
+	public static ItemPasteChocolat paste_chocolat;
+	
 	public static ItemDebug debug;
 
 	public static void init() {
@@ -24,6 +27,8 @@ public class ModItems {
 		ITEM_LIST.add(cookie_plain = new ItemCookiePlain());
 		ITEM_LIST.add(cookie_chocolat = new ItemCookieChocolat());
 		ITEM_LIST.add(cookie_strawberry = new ItemCookieStrawberry());
+		
+		ITEM_LIST.add(paste_chocolat = new ItemPasteChocolat());
 		
 		ITEM_LIST.add(debug = new ItemDebug());
 	}

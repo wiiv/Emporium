@@ -107,6 +107,7 @@ tile.stone_bird_bath.name=Stone Bird Bath
 tile.sofa_heart.name=Heart Sofa
 tile.sofa_wight.name=Wight Sofa
 tile.sofa_yell.name=Yell Sofa
+tile.sofa_ochre.name=Ochre Sofa
 
 tile.floating_paper_lamp_white.name=White Floating Paper Lamp
 tile.floating_paper_lamp_orange.name=Orange Floating Paper Lamp
@@ -184,6 +185,8 @@ tile.modern_table_green.name=Green Modern Table
 tile.modern_table_cyan.name=Cyan Modern Table
 tile.modern_table_yellow.name=Yellow Modern Table
 tile.modern_table_brown.name=Brown Modern Table
+
+tile.modern_wooden_table.name=Modern Wooden Table
 
 tile.garden_golden_lamp_white.name=White Outdoor Golden Lamp
 tile.garden_golden_lamp_orange.name=Orange Outdoor Golden Lamp

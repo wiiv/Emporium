@@ -1,0 +1,20 @@
+{
+	"variants": {
+		"facing=north,left=false,right=false": {"model": "emporium:modern_wooden_table_single"},
+		"facing=east,left=false,right=false": {"model": "emporium:modern_wooden_table_single", "y": 90},
+		"facing=south,left=false,right=false": {"model": "emporium:modern_wooden_table_single"},
+		"facing=west,left=false,right=false": {"model": "emporium:modern_wooden_table_single", "y": 90},
+		"facing=north,left=true,right=false": {"model": "emporium:modern_wooden_table_right"},
+		"facing=east,left=true,right=false": {"model": "emporium:modern_wooden_table_left", "y": 90},
+		"facing=south,left=true,right=false": {"model": "emporium:modern_wooden_table_right"},
+		"facing=west,left=true,right=false": {"model": "emporium:modern_wooden_table_left", "y": 90},
+		"facing=north,left=false,right=true": {"model": "emporium:modern_wooden_table_left"},
+		"facing=east,left=false,right=true": {"model": "emporium:modern_wooden_table_right", "y": 90},
+		"facing=south,left=false,right=true": {"model": "emporium:modern_wooden_table_left"},
+		"facing=west,left=false,right=true": {"model": "emporium:modern_wooden_table_right", "y": 90},
+		"facing=north,left=true,right=true": {"model": "emporium:modern_wooden_table_center"},
+		"facing=east,left=true,right=true": {"model": "emporium:modern_wooden_table_center", "y": 90},
+		"facing=south,left=true,right=true": {"model": "emporium:modern_wooden_table_center"},
+		"facing=west,left=true,right=true": {"model": "emporium:modern_wooden_table_center", "y": 90}
+	}
+}

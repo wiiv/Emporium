@@ -21,8 +21,8 @@ import wiiv.emporium.util.ParticleUtil;
 
 public class BlockLampPaperFloating extends BlockBaseColorable8 implements ICacheableBlock {
 
-	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 3), (0.0625D * 2), (0.0625D * 3), (0.0625D * 13), (0.0625D * 12), (0.0625D * 13));
-	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 3), (0.0625D * 2), (0.0625D * 3), (0.0625D * 13), (0.0625D * 12), (0.0625D * 13));
+	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 3), (0.0625D * 2), (0.0625D * 3), (0.0625D * 13), (0.0625D * 14), (0.0625D * 13));
+	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 3), (0.0625D * 2), (0.0625D * 3), (0.0625D * 13), (0.0625D * 14), (0.0625D * 13));
 
 	public BlockLampPaperFloating(int color) {
 		super(Material.CACTUS, "floating_paper_lamp", 1.0F, color);
