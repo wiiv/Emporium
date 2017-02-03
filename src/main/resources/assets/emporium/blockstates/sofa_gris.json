@@ -1,0 +1,20 @@
+{
+	"variants": {
+		"facing=north,left=false,right=false": {"model": "emporium:sofa_gris_single"},
+		"facing=east,left=false,right=false": {"model": "emporium:sofa_gris_single", "y": 90},
+		"facing=south,left=false,right=false": {"model": "emporium:sofa_gris_single", "y": 180},
+		"facing=west,left=false,right=false": {"model": "emporium:sofa_gris_single", "y": 270},
+		"facing=north,left=true,right=false": {"model": "emporium:sofa_gris_right"},
+		"facing=east,left=true,right=false": {"model": "emporium:sofa_gris_left", "y": 90},
+		"facing=south,left=true,right=false": {"model": "emporium:sofa_gris_left", "y": 180},
+		"facing=west,left=true,right=false": {"model": "emporium:sofa_gris_right", "y": 270},
+		"facing=north,left=false,right=true": {"model": "emporium:sofa_gris_left"},
+		"facing=east,left=false,right=true": {"model": "emporium:sofa_gris_right", "y": 90},
+		"facing=south,left=false,right=true": {"model": "emporium:sofa_gris_right", "y": 180},
+		"facing=west,left=false,right=true": {"model": "emporium:sofa_gris_left", "y": 270},
+		"facing=north,left=true,right=true": {"model": "emporium:sofa_gris_center"},
+		"facing=east,left=true,right=true": {"model": "emporium:sofa_gris_center", "y": 90},
+		"facing=south,left=true,right=true": {"model": "emporium:sofa_gris_center", "y": 180},
+		"facing=west,left=true,right=true": {"model": "emporium:sofa_gris_center", "y": 270}
+	}
+}

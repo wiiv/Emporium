@@ -1,0 +1,101 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "block/block",
+	"textures": {
+		"frame": "emporium:blocks/sofa_blac",
+		"feet": "emporium:blocks/sofa_feet",
+        "particle": "emporium:blocks/sofa_blac"
+	},
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 0, 180 ],
+            "translation": [ 0, 0, -2],
+            "scale":[ 1, 1, 1]
+        }
+    },
+	"elements": [
+        {
+            "Name": "ArmRestL",
+            "from": [ 0, 8, 2 ],
+            "to": [ 4, 12, 14 ],
+            "faces": {
+                "down": { "uv": [ 2, 0, 4, 6.5 ], "texture": "#frame" },
+                "up": { "uv": [ 0, 0, 2, 6.5 ], "texture": "#frame" },
+                "north": { "uv": [ 4, 6.5, 6, 8.5 ], "texture": "#frame" },
+                "south": { "uv": [ 2, 6.5, 4, 8.5 ], "texture": "#frame" },
+                "west": { "uv": [ 0, 8.5, 6, 10.5 ], "texture": "#frame" },
+                "east": { "uv": [ 0, 8.5, 6, 10.5 ], "texture": "#frame" }
+            }
+        },
+        {
+            "Name": "ArmRestR",
+            "from": [ 12, 8, 2 ],
+            "to": [ 16, 12, 14 ],
+            "faces": {
+                "down": { "uv": [ 2, 0, 4, 6.5 ], "texture": "#frame" },
+                "up": { "uv": [ 0, 0, 2, 6.5 ], "texture": "#frame" },
+                "north": { "uv": [ 4, 6.5, 6, 8.5 ], "texture": "#frame" },
+                "south": { "uv": [ 2, 6.5, 4, 8.5 ], "texture": "#frame" },
+                "west": { "uv": [ 0, 8.5, 6, 10.5 ], "texture": "#frame" },
+                "east": { "uv": [ 0, 8.5, 6, 10.5 ], "texture": "#frame" }
+            }
+        },
+        {
+            "Name": "Sit",
+            "from": [ 0, 4, 2 ],
+            "to": [ 16, 8, 14 ],
+            "faces": {
+                "down": { "uv": [ 0, 0, 8, 6.5 ], "texture": "#frame" },
+                "up": { "uv": [ 0, 0, 8, 6.5 ], "texture": "#frame" },
+                "north": { "uv": [ 0, 6.5, 8, 8.5 ], "texture": "#frame" },
+                "south": { "uv": [ 0, 6.5, 8, 8.5 ], "texture": "#frame" },
+                "west": { "uv": [ 0, 8.5, 6, 10.5 ], "texture": "#frame" },
+                "east": { "uv": [ 0, 8.5, 6, 10.5 ], "texture": "#frame" }
+            }
+        },
+        {
+            "Name": "Frame",
+            "from": [ 1, 1, 3 ],
+            "to": [ 15, 4, 13 ],
+            "faces": {
+                "down": { "uv": [ 8, 0, 15, 5 ], "texture": "#frame" },
+                "up": { "uv": [ 8, 0, 15, 5 ], "texture": "#frame" },
+                "north": { "uv": [ 8, 5, 15, 6.5 ], "texture": "#frame" },
+                "south": { "uv": [ 8, 5, 15, 6.5 ], "texture": "#frame" },
+                "west": { "uv": [ 8, 6.5, 13, 8 ], "texture": "#frame" },
+                "east": { "uv": [ 8, 6.5, 13, 8 ], "texture": "#frame" }
+            }
+        },
+        {
+            "Name": "FootL",
+            "from": [ 2, 0, 4 ],
+            "to": [ 4, 1, 12 ],
+            "faces": {
+                "down": { "uv": [ 2, 4, 4, 12 ], "texture": "#feet" },
+                "up": { "uv": [ 2, 4, 4, 12 ], "texture": "#feet" },
+                "north": { "uv": [ 12, 15, 14, 16 ], "texture": "#feet" },
+                "south": { "uv": [ 2, 15, 4, 16 ], "texture": "#feet" },
+                "west": { "uv": [ 4, 15, 12, 16 ], "texture": "#feet" },
+                "east": { "uv": [ 4, 15, 12, 16 ], "texture": "#feet" }
+            }
+        },
+        {
+            "Name": "FootR",
+            "from": [ 12, 0, 4 ],
+            "to": [ 14, 1, 12 ],
+            "faces": {
+                "down": { "uv": [ 12, 4, 14, 12 ], "texture": "#feet" },
+                "up": { "uv": [ 12, 4, 14, 12 ], "texture": "#feet" },
+                "north": { "uv": [ 2, 15, 4, 16 ], "texture": "#feet" },
+                "south": { "uv": [ 12, 15, 14, 16 ], "texture": "#feet" },
+                "west": { "uv": [ 4, 15, 12, 16 ], "texture": "#feet" },
+                "east": { "uv": [ 4, 15, 12, 16 ], "texture": "#feet" }
+            }
+        }
+    ]
+}

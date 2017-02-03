@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import wiiv.emporium.api.IModelHolder;
+import wiiv.emporium.block.BlockCabinet;
 import wiiv.emporium.block.BlockJar;
 import wiiv.emporium.block.BlockLampCandelabra;
 import wiiv.emporium.block.BlockLampCandleBig;
@@ -23,8 +24,13 @@ import wiiv.emporium.block.BlockMedievalChairQueen;
 import wiiv.emporium.block.BlockMedievalTable;
 import wiiv.emporium.block.BlockModernTable;
 import wiiv.emporium.block.BlockModernWoodenTable;
+import wiiv.emporium.block.BlockSofaBlac;
+import wiiv.emporium.block.BlockSofaBluve;
+import wiiv.emporium.block.BlockSofaGris;
 import wiiv.emporium.block.BlockSofaHeart;
 import wiiv.emporium.block.BlockSofaOchre;
+import wiiv.emporium.block.BlockSofaPurplus;
+import wiiv.emporium.block.BlockSofaSilver;
 import wiiv.emporium.block.BlockSofaWight;
 import wiiv.emporium.block.BlockSofaYell;
 import wiiv.emporium.block.BlockStoneBench;
@@ -53,11 +59,17 @@ public class ModBlocks {
 	public static BlockStoneBirdBath STONE_BIRD_BATH;
 	
 	public static BlockModernWoodenTable MODERN_WOODEN_TABLE;
+	//public static BlockCabinet CABINET;
 
 	public static BlockSofaHeart SOFA_HEART;
 	public static BlockSofaYell SOFA_YELL;
 	public static BlockSofaWight SOFA_WIGHT;
 	public static BlockSofaOchre SOFA_OCHRE;
+	public static BlockSofaBlac SOFA_BLAC;
+	public static BlockSofaPurplus SOFA_PURPLUS;
+	public static BlockSofaGris SOFA_GRIS;
+	public static BlockSofaSilver SOFA_SILVER;
+	public static BlockSofaBluve SOFA_BLUVE;
 
 	public static BlockLampLibrary[] LIBRARY_LAMP = new BlockLampLibrary[16];
 
@@ -129,11 +141,18 @@ public class ModBlocks {
 		}
 		
 		BLOCK_LIST.add(MODERN_WOODEN_TABLE = new BlockModernWoodenTable());
+		
+		//BLOCK_LIST.add(CABINET = new BlockCabinet());
 
 		BLOCK_LIST.add(SOFA_HEART = new BlockSofaHeart());
 		BLOCK_LIST.add(SOFA_YELL = new BlockSofaYell());
 		BLOCK_LIST.add(SOFA_WIGHT = new BlockSofaWight());
 		BLOCK_LIST.add(SOFA_OCHRE = new BlockSofaOchre());
+		BLOCK_LIST.add(SOFA_BLAC = new BlockSofaBlac());
+		BLOCK_LIST.add(SOFA_PURPLUS = new BlockSofaPurplus());
+		BLOCK_LIST.add(SOFA_GRIS = new BlockSofaGris());
+		BLOCK_LIST.add(SOFA_SILVER = new BlockSofaSilver());
+		BLOCK_LIST.add(SOFA_BLUVE = new BlockSofaBluve());
 		
 		for (EnumColor8 color : EnumColor8.values()) {
 			PAPER_FLOATING_LAMP[color.getMetadata()] = new BlockLampPaperFloating(color.getMetadata());

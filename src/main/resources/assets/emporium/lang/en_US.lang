@@ -108,6 +108,11 @@ tile.sofa_heart.name=Heart Sofa
 tile.sofa_wight.name=Wight Sofa
 tile.sofa_yell.name=Yell Sofa
 tile.sofa_ochre.name=Ochre Sofa
+tile.sofa_blac.name=Blac Sofa
+tile.sofa_purplus.name=Purplus Sofa
+tile.sofa_gris.name=Gris Sofa
+tile.sofa_silver.name=Silver Sofa
+tile.sofa_bluve.name=Bluve Sofa
 
 tile.floating_paper_lamp_white.name=White Floating Paper Lamp
 tile.floating_paper_lamp_orange.name=Orange Floating Paper Lamp

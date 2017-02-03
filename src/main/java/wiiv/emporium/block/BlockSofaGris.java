@@ -22,7 +22,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import wiiv.emporium.util.MountableUtil;
 
-public class BlockSofaWight extends BlockBase {
+public class BlockSofaGris extends BlockBase {
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	public static final PropertyBool LEFT = PropertyBool.create("left");
@@ -38,8 +38,8 @@ public class BlockSofaWight extends BlockBase {
 	private static final AxisAlignedBB COLLISION_BOX3 = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 1), (0.0625D * 16), (0.0625D * 8), (0.0625D * 15));
 	private static final AxisAlignedBB COLLISION_BOX4 = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 0), (0.0625D * 15), (0.0625D * 8), (0.0625D * 14));
 
-	public BlockSofaWight() {
-		super(Material.GLASS, "sofa_wight", 1.0F);
+	public BlockSofaGris() {
+		super(Material.GLASS, "sofa_gris", 1.0F);
 		setSoundType(SoundType.WOOD);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(LEFT, false).withProperty(RIGHT, false));
 	}
