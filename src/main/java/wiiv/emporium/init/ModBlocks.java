@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import wiiv.emporium.api.IModelHolder;
-import wiiv.emporium.block.BlockCabinet;
+import wiiv.emporium.block.BlockCounterBar;
 import wiiv.emporium.block.BlockJar;
 import wiiv.emporium.block.BlockLampCandelabra;
 import wiiv.emporium.block.BlockLampCandleBig;
@@ -71,6 +71,8 @@ public class ModBlocks {
 	public static BlockSofaSilver SOFA_SILVER;
 	public static BlockSofaBluve SOFA_BLUVE;
 
+	public static BlockCounterBar COUNTER_BAR;
+	
 	public static BlockLampLibrary[] LIBRARY_LAMP = new BlockLampLibrary[16];
 
 	public static BlockLampPaperFloating[] PAPER_FLOATING_LAMP = new BlockLampPaperFloating[8];
@@ -153,6 +155,8 @@ public class ModBlocks {
 		BLOCK_LIST.add(SOFA_GRIS = new BlockSofaGris());
 		BLOCK_LIST.add(SOFA_SILVER = new BlockSofaSilver());
 		BLOCK_LIST.add(SOFA_BLUVE = new BlockSofaBluve());
+		
+		BLOCK_LIST.add(COUNTER_BAR = new BlockCounterBar());
 		
 		for (EnumColor8 color : EnumColor8.values()) {
 			PAPER_FLOATING_LAMP[color.getMetadata()] = new BlockLampPaperFloating(color.getMetadata());
