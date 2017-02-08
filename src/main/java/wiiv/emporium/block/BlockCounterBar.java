@@ -28,25 +28,10 @@ public class BlockCounterBar extends BlockBase {
 	public static final PropertyBool LEFT = PropertyBool.create("left");
 	public static final PropertyBool RIGHT = PropertyBool.create("right");
 
-	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 1), (0.0625D * 16), (0.0625D * 8), (0.0625D * 15));
-	private static final AxisAlignedBB BOUNDING_BOX2 = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 2), (0.0625D * 15), (0.0625D * 8), (0.0625D * 16));
-	private static final AxisAlignedBB BOUNDING_BOX3 = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 1), (0.0625D * 16), (0.0625D * 8), (0.0625D * 15));
-	private static final AxisAlignedBB BOUNDING_BOX4 = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 0), (0.0625D * 15), (0.0625D * 8), (0.0625D * 14));
-
-	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 1), (0.0625D * 16), (0.0625D * 8), (0.0625D * 15));
-	private static final AxisAlignedBB COLLISION_BOX2 = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 0), (0.0625D * 15), (0.0625D * 8), (0.0625D * 14));
-	private static final AxisAlignedBB COLLISION_BOX3 = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 1), (0.0625D * 16), (0.0625D * 8), (0.0625D * 15));
-	private static final AxisAlignedBB COLLISION_BOX4 = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 0), (0.0625D * 15), (0.0625D * 8), (0.0625D * 14));
-
 	public BlockCounterBar() {
 		super(Material.GLASS, "counter_bar", 1.0F);
 		setSoundType(SoundType.WOOD);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(LEFT, false).withProperty(RIGHT, false));
-	}
-
-	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.3, true);
 	}
 
 	@Override
@@ -83,22 +68,6 @@ public class BlockCounterBar extends BlockBase {
 		return state;
 	}
 
-	@Override
-	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn) {
-		if (getRotationState(worldIn, pos) == 1) {
-			super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX);
-			return;
-		}
-		if (getRotationState(worldIn, pos) == 2) {
-			super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX2);
-			return;
-		}
-		if (getRotationState(worldIn, pos) == 3) {
-			super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX3);
-			return;
-		}
-		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX4);
-	}
 
 	public int getRotationState(IBlockAccess source, BlockPos pos) {
 		if (source.isAirBlock(pos)) {
@@ -124,19 +93,6 @@ public class BlockCounterBar extends BlockBase {
 		return false;
 	}
 
-	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		if (getRotationState(source, pos) == 1) {
-			return BOUNDING_BOX;
-		}
-		if (getRotationState(source, pos) == 2) {
-			return BOUNDING_BOX2;
-		}
-		if (getRotationState(source, pos) == 3) {
-			return BOUNDING_BOX3;
-		}
-		return BOUNDING_BOX4;
-	}
 
 	@Override
 	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facingIn, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
