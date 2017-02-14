@@ -28,6 +28,7 @@ import wiiv.emporium.block.BlockSofaBlac;
 import wiiv.emporium.block.BlockSofaBluve;
 import wiiv.emporium.block.BlockSofaGris;
 import wiiv.emporium.block.BlockSofaHeart;
+import wiiv.emporium.block.BlockSofaLiminus;
 import wiiv.emporium.block.BlockSofaOchre;
 import wiiv.emporium.block.BlockSofaPurplus;
 import wiiv.emporium.block.BlockSofaSilver;
@@ -70,7 +71,8 @@ public class ModBlocks {
 	public static BlockSofaGris SOFA_GRIS;
 	public static BlockSofaSilver SOFA_SILVER;
 	public static BlockSofaBluve SOFA_BLUVE;
-
+	public static BlockSofaLiminus SOFA_LIMINUS;
+	
 	public static BlockCounterBar COUNTER_BAR;
 	
 	public static BlockLampLibrary[] LIBRARY_LAMP = new BlockLampLibrary[16];
@@ -155,6 +157,7 @@ public class ModBlocks {
 		BLOCK_LIST.add(SOFA_GRIS = new BlockSofaGris());
 		BLOCK_LIST.add(SOFA_SILVER = new BlockSofaSilver());
 		BLOCK_LIST.add(SOFA_BLUVE = new BlockSofaBluve());
+		BLOCK_LIST.add(SOFA_LIMINUS = new BlockSofaLiminus());
 		
 		BLOCK_LIST.add(COUNTER_BAR = new BlockCounterBar());
 		
