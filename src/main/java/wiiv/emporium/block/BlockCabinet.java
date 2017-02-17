@@ -1,21 +1,28 @@
 package wiiv.emporium.block;
 
-import java.util.List;
-
-import net.minecraft.block.ITileEntityProvider;
+import codechicken.lib.model.ModelRegistryHelper;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -23,16 +30,15 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import wiiv.emporium.Globals;
-import wiiv.emporium.api.ICookie;
 import wiiv.emporium.block.tile.TileCabinet;
-import wiiv.emporium.block.tile.TileJar;
-import wiiv.emporium.item.ItemBaseFood;
-import wiiv.emporium.render.tile.RenderTileCabinet;
-import wiiv.emporium.render.tile.RenderTileJar;
+import wiiv.emporium.client.render.tile.RenderTileCabinet;
+import wiiv.emporium.init.ModGuiHandler;
+import wiiv.emporium.init.ModNetworkHandler;
+import wiiv.emporium.network.PacketCabinetDoors;
 
-public class BlockCabinet extends BlockBase implements ITileEntityProvider {
+public class BlockCabinet extends BlockBase {
 
-	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 4), 0.0D, (0.0625D * 4), (0.0625D * 12), (0.0625D * 12), (0.0625D * 12));
+	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
 	public BlockCabinet() {
 		super(Material.WOOD, "cabinet", 1.0F);
@@ -40,11 +46,50 @@ public class BlockCabinet extends BlockBase implements ITileEntityProvider {
 		GameRegistry.registerTileEntity(TileCabinet.class, Globals.MOD_ID + ":TileCabinet");
 	}
 
+	private AxisAlignedBB[] getBoundingBox() {
+		return new AxisAlignedBB[] {
+				new AxisAlignedBB(0.0D, 0.0D, 0.125D, 1.0D, 1.0D, 1.0D),
+				new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.875D, 1.0D, 1.0D),
+				new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.875D),
+				new AxisAlignedBB(0.125D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D)
+		};
+	}
+
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		return getBoundingBox()[getMetaFromState(state)];
+	}
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
-		super.initModel();
+		ModelRegistryHelper.registerItemRenderer(Item.getItemFromBlock(this), new RenderTileCabinet());
+		ModelRegistryHelper.setParticleTexture(this, RenderTileCabinet.CABINET_SPRITE);
 		ClientRegistry.bindTileEntitySpecialRenderer(TileCabinet.class, new RenderTileCabinet());
+	}
+
+	@Override
+	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facingIn, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+		EnumFacing facing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
+		return getDefaultState().withProperty(FACING, facing);
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return state.getValue(FACING).getHorizontalIndex();
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		EnumFacing facing = EnumFacing.getHorizontal(meta);
+		return getDefaultState().withProperty(FACING, facing);
+	}
+
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] {
+				FACING
+		});
 	}
 
 	@Override
@@ -64,109 +109,207 @@ public class BlockCabinet extends BlockBase implements ITileEntityProvider {
 	}
 
 	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-
-		return new AxisAlignedBB(0.253D, 0.0D, 0.253D, 0.7475D, 0.62D, 0.7475D);
+	public EnumBlockRenderType getRenderType(IBlockState state) {
+		return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
 	}
 
-	@Override
-	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn) {
-		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX);
-	}
-
-	private TileJar getTE(World world, BlockPos pos) {
-		return (TileJar) world.getTileEntity(pos);
+	public TileCabinet getTE(World world, BlockPos pos) {
+		return (TileCabinet) world.getTileEntity(pos);
 	}
 
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
-			TileJar jar = getTE(world, pos);
-			if (heldItem != null && jar.getContainedCookieType() != null && (jar.getContainedCookieType() != ((ICookie) heldItem.getItem()).getType())) {
-				return false;
+			if (getTE(world, pos) != null) {
+				if (!player.isSneaking()) {
+					if (hand == EnumHand.MAIN_HAND) {
+						if (player.getHeldItem(hand) != null) {
+							mergeHeldItem(player, EnumHand.MAIN_HAND, world, pos);
+						}
+						else {
+							ModGuiHandler.launchGui(0, player, getTE(world, pos));
+						}
+					}
+				}
 			}
-			if (!player.isSneaking()) {
-				handleStack(jar, player, hand, heldItem, world, pos);
-			}
-			else {
-				handleSingle(jar, player, hand, heldItem, world, pos);
+		}
+		else {
+			if (getTE(world, pos) != null) {
+				if (player.isSneaking()) {
+					if (hand == EnumHand.MAIN_HAND) {
+						if (player.getHeldItem(hand) == null) {
+							if (!GuiScreen.isCtrlKeyDown()) {
+								boolean doorsOpen = getTE(world, pos).doorsOpen();
+								getTE(world, pos).setDoorsOpen(!doorsOpen);
+								ModNetworkHandler.INSTANCE.sendToServer(new PacketCabinetDoors(pos, !doorsOpen, world.provider.getDimension()));
+							}
+						}
+
+					}
+				}
+
 			}
 		}
 		return true;
 	}
 
-	private void handleSingle(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
-		if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemBaseFood) {
-			if (jar.getStack() != null && jar.getStack().getItem() != player.getHeldItem(hand).getItem()) {
-				return;
-			}
-			int returnSize = player.getHeldItem(hand).stackSize - 1;
-			ItemStack ret = returnSize == 0 ? null : new ItemStack(player.getHeldItem(hand).getItem(), returnSize);
-			jar.addCookies(new ItemStack(player.getHeldItem(hand).getItem(), 1));
-			player.inventory.setInventorySlotContents(player.inventory.currentItem, ret);
+	@Override
+	public void onBlockClicked(World world, BlockPos pos, EntityPlayer player) {
+		RayTraceResult raytrace = net.minecraftforge.common.ForgeHooks.rayTraceEyes(player, 6);
+		if (raytrace == null || !player.isSneaking()) {
+			return;
 		}
-		else {
-			if (jar.getStack() != null) { //dey be cookiez in da cookie jar :)
-				ItemStack stack = jar.takeCookies(1); //we're not Cookie Monster, so we only takes one
-				if (!player.inventory.addItemStackToInventory(stack)) { ///ermergerd, we tried to add to inv, but inv ist full!
-					EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY() + 1, pos.getZ(), stack);
-					world.spawnEntityInWorld(entityItem);
+		EnumFacing side = raytrace.sideHit;
+		float hitX = (float) (raytrace.hitVec.xCoord - pos.getX());
+		float hitY = (float) (raytrace.hitVec.yCoord - pos.getY());
+		float hitZ = (float) (raytrace.hitVec.zCoord - pos.getZ());
+		if (side != EnumFacing.UP && side != EnumFacing.DOWN) {
+			String x = String.format("%.2f", hitX).split("\\.")[1];
+			String y = String.format("%.2f", hitY).split("\\.")[1];
+			String z = String.format("%.2f", hitZ).split("\\.")[1];
+			int slot = getSlotForFace(side, Integer.parseInt(x), Integer.parseInt(y), Integer.parseInt(z));
+			if (slot > 0) {
+				int slotIndex = slot - 1;
+				TileCabinet tile = getTE(world, pos);
+				if (slotIndex >= tile.getInventory().getSizeInventory()) {
+					return;
 				}
-				else {
-					player.openContainer.detectAndSendChanges();
+				ItemStack slotStack = tile.getInventory().getStackInSlot(slotIndex);
+				if (slotStack != null) {
+					if (!player.inventory.addItemStackToInventory(slotStack)) {
+						world.spawnEntityInWorld(new EntityItem(world, player.posX, player.posY, player.posZ, slotStack));
+					}
+					if (!world.isRemote) {
+						((EntityPlayerMP) player).sendContainerToPlayer(player.inventoryContainer);
+					}
+					tile.getInventory().setInventorySlotContents(slotIndex, null);
+					tile.markDirty();
 				}
 			}
 		}
 	}
 
-	private void handleStack(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
-		if (jar.getStack() == null) {
-			if (player.getHeldItem(hand) != null) {
-				if (heldItem.getItem() instanceof ItemBaseFood) {
-					player.inventory.setInventorySlotContents(player.inventory.currentItem, jar.addCookies(player.getHeldItem(hand)));
-					player.openContainer.detectAndSendChanges();
-				}
-			}
+	public int getSlotForFace(EnumFacing facing, int x, int y, int z) {
+		int slot = -1;
+		switch (facing) {
+		case WEST:
+			//System.out.println(getColumn(z) + " x " + getRow(y) + " = Slot " + getSlot(getColumn(z), getRow(y)));
+			slot = getSlot(getColumn(z), getRow(y));
+			break;
+		case EAST:
+			//System.out.println((5 - getColumn(z)) + " x " + getRow(y) + " = Slot " + getSlot((5 - getColumn(z)), getRow(y)));
+			slot = getSlot((5 - getColumn(z)), getRow(y));
+			break;
+		case NORTH:
+			//System.out.println((5 - getColumn(x)) + " x " + getRow(y) + " = Slot " + getSlot((5 - getColumn(x)), getRow(y)));
+			slot = getSlot((5 - getColumn(x)), getRow(y));
+			break;
+		case SOUTH:
+			//System.out.println(getColumn(x) + " x " + getRow(y) + " = Slot " + getSlot(getColumn(x), getRow(y)));
+			slot = getSlot(getColumn(x), getRow(y));
+			break;
+		default:
+		case UP:
+		case DOWN:
+			break;
 		}
-		else { //jar has cookies
-			ItemStack stack = jar.getStack();
-			if (stack.stackSize < stack.getMaxStackSize()) { //jar isn't full
-				if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemBaseFood) { //player is holding at least 1 cookie
-					if (stack.getItem() != player.getHeldItem(hand).getItem()) {
-						return;
-					}
-					int jarStackSize = stack.stackSize;
-					int heldStackSize = player.getHeldItem(hand).stackSize;
-					if (jarStackSize + heldStackSize <= stack.getMaxStackSize()) {
-						ItemStack ret = jar.addCookies(new ItemStack(player.getHeldItem(hand).getItem(), heldStackSize));
-						player.inventory.setInventorySlotContents(player.inventory.currentItem, ret);
-					}
-				}
-				else { //player isn't holding a cookie
-					if (player.getHeldItem(hand) == null) { //player isn't holding anything
-						player.inventory.setInventorySlotContents(player.inventory.currentItem, jar.getStack());
-						jar.addCookies(null);
-					}
-					else { //player is holding something..but not a cookie - we don't care at this point, so do nothing
-					}
-				}
-				player.openContainer.detectAndSendChanges();
-			}
-			else { //jar is full
-				jar.addCookies(null); //pull this entire stack from the jar
-				if (!player.inventory.addItemStackToInventory(stack)) { ///ermergerd, we tried to add to inv, but inv ist full!
-					EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY() + 1, pos.getZ(), stack);
-					world.spawnEntityInWorld(entityItem);
+		return slot;
+	}
+
+	private int getSlot(int x, int y) {
+		return x > 0 && y > 0 ? (y - 1) * 4 + x : 0;
+	}
+
+	private int getColumn(int y) {
+		if (y > 4 && y < 25) {
+			return 1;
+		}
+		else if (y >= 25 && y < 52) {
+			return 2;
+		}
+		else if (y >= 52 && y < 77) {
+			return 3;
+		}
+		else if (y >= 77 && y < 100) {
+			return 4;
+		}
+		return 0;
+	}
+
+	private int getRow(int x) {
+		if (x < 89 && x > 69) {
+			return 1;
+		}
+		else if (x <= 69 && x > 50) {
+			return 2;
+		}
+		else if (x <= 50 && x > 28) {
+			return 3;
+		}
+		else if (x <= 28 && x > 10) {
+			return 4;
+		}
+		return 0;
+	}
+
+	public boolean mergeHeldItem(EntityPlayer player, EnumHand hand, World world, BlockPos pos) {
+		boolean didMerge = false;
+		//boolean triedMerge = false;
+		int nullSlots = 0;
+		if (world.getTileEntity(pos) != null && world.getTileEntity(pos) instanceof TileCabinet) {
+			ItemStack heldStack = player.getHeldItem(hand);
+			TileCabinet tile = (TileCabinet) world.getTileEntity(pos);
+			IInventory inv = tile;
+			for (int i = 0; i < inv.getSizeInventory(); i++) {
+				if (inv.getStackInSlot(i) == null) {
+					nullSlots++;
 				}
 				else {
-					player.openContainer.detectAndSendChanges();
+					//triedMerge = true;
+					if (inv.getStackInSlot(i).stackSize != inv.getStackInSlot(i).getMaxStackSize()) {
+						if (ItemStack.areItemsEqual(inv.getStackInSlot(i), heldStack)) {
+
+							int heldStackSize = heldStack.stackSize;
+							int slotStackSize = inv.getStackInSlot(i).stackSize;
+							if (heldStackSize + slotStackSize <= heldStack.getMaxStackSize()) {
+								inv.setInventorySlotContents(i, heldStack);
+								inv.getStackInSlot(i).stackSize = heldStackSize + slotStackSize;
+								player.setHeldItem(hand, null);
+								didMerge = true;
+								break;
+							}
+							else {
+								heldStack.stackSize = (heldStackSize + slotStackSize) - heldStackSize;
+								inv.getStackInSlot(i).stackSize = inv.getStackInSlot(i).getMaxStackSize();
+								break;
+							}
+						}
+					}
+				}
+			}
+			if (nullSlots > 0 && !didMerge) {
+				for (int i = 0; i < inv.getSizeInventory(); i++) {
+					if (inv.getStackInSlot(i) == null) {
+						inv.setInventorySlotContents(i, heldStack);
+						player.setHeldItem(hand, null);
+						didMerge = true;
+						break;
+					}
 				}
 			}
 		}
+		return didMerge;
 	}
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileCabinet();
 	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
+		return true;
+	}
+
 }

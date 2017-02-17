@@ -14,7 +14,7 @@ import wiiv.emporium.api.ICookie;
 import wiiv.emporium.api.ICookieJar;
 import wiiv.emporium.util.CookieType;
 
-public class TileJar extends TileEntity implements ICookieJar {
+public class TileCookieJar extends TileEntity implements ICookieJar {
 
 	private ItemStackHandler handler = new ItemStackHandler(1) {
 		@Override

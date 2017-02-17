@@ -1,68 +1,57 @@
 package wiiv.emporium.block.tile;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ITickable;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
-import wiiv.emporium.api.ICookie;
-import wiiv.emporium.api.ICookieJar;
-import wiiv.emporium.util.CookieType;
+import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.wrapper.InvWrapper;
+import wiiv.emporium.container.ContainerCabinet;
 
-public class TileCabinet extends TileEntity implements ICookieJar {
+public class TileCabinet extends TileEntity implements ITickable, IInventory {
 
-	private ItemStackHandler handler = new ItemStackHandler(1) {
-		@Override
-		protected int getStackLimit(int slot, ItemStack stack) {
-			return stack.getMaxStackSize();
-		}
-	};
+	public float doorAngle;
+	public float prevDoorAngle;
+	private boolean doorsOpen = false;
+	private final String TAG_INVENTORY = "Inventory";
+	private final String TAG_SLOT = "Slot";
+	private final String TAG_ISOPEN = "DoorsOpen";
 
-	public ItemStack getStack() {
-		return handler.getStackInSlot(0);
+	private ItemStack[] inventory = new ItemStack[16];
+
+	public IInventory getInventory() {
+		return this;
 	}
 
-	public ItemStack addCookies(ItemStack stack) {
-		ItemStack ret;
-		if (stack == null) {
-			handler.setStackInSlot(0, null);
-			ret = null;
-		}
-		else {
-			ret = handler.insertItem(0, stack, false);
-		}
-		markDirty();
-		if (worldObj != null) {
-			IBlockState state = worldObj.getBlockState(getPos());
-			worldObj.notifyBlockUpdate(getPos(), state, state, 3);
-		}
-		return ret;
+	public ItemStack[] getInventoryArray() {
+		return inventory;
 	}
 
-	public ItemStack takeCookies(int amount) {
-		ItemStack ret;
-		ItemStack currentStack = handler.getStackInSlot(0);
-		if (currentStack == null) {
-			return null;
-		}
-		if (amount >= currentStack.stackSize) {
-			ret = currentStack;
-			handler.setStackInSlot(0, null);
-		}
-		else {
-			ret = handler.extractItem(0, amount, false);
-		}
-		markDirty();
-		if (worldObj != null) {
-			IBlockState state = worldObj.getBlockState(getPos());
-			worldObj.notifyBlockUpdate(getPos(), state, state, 3);
-		}
-		return ret;
+	public IItemHandlerModifiable getHandler() {
+		return new InvWrapper(this);
+	}
+
+	public boolean doorsOpen() {
+		return doorsOpen;
+	}
+
+	public void setDoorsOpen(boolean open) {
+		doorsOpen = open;
 	}
 
 	@Override
@@ -77,7 +66,7 @@ public class TileCabinet extends TileEntity implements ICookieJar {
 
 	@Override
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-		return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(handler) : super.getCapability(capability, facing);
+		return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(getHandler()) : super.getCapability(capability, facing);
 	}
 
 	@Override
@@ -90,171 +79,181 @@ public class TileCabinet extends TileEntity implements ICookieJar {
 	@Override
 	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity packet) {
 		readFromNBT(packet.getNbtCompound());
+		markDirty();
 	}
 
 	@Override
 	public void readFromNBT(NBTTagCompound compound) {
 		super.readFromNBT(compound);
-		handler.deserializeNBT(compound.getCompoundTag("item"));
+		NBTTagList tagList = compound.getTagList(TAG_INVENTORY, 10);
+		for (int i = 0; i < tagList.tagCount(); i++) {
+			NBTTagCompound slotNBT = tagList.getCompoundTagAt(i);
+			if (slotNBT != null) {
+				getHandler().setStackInSlot(slotNBT.getInteger(TAG_SLOT), ItemStack.loadItemStackFromNBT(slotNBT));
+			}
+		}
+		setDoorsOpen(compound.getBoolean(TAG_ISOPEN));
 	}
 
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-		super.writeToNBT(compound);
-		compound.setTag("item", handler.serializeNBT());
-		return compound;
-	}
-
-	public static float getXOffset(int index) {
-		float[] offsets = new float[16];
-		offsets[0] = 0.06F;
-		offsets[1] = -0.07F;
-		offsets[2] = 0.0F;
-		offsets[3] = -0.085F;
-		offsets[4] = 0.0F;
-		offsets[5] = 0.15F;
-		offsets[6] = -0.05F;
-		offsets[7] = 0.035F;
-		offsets[8] = 0.07F;
-		offsets[9] = -0.09F;
-		offsets[10] = 0.07F;
-		offsets[11] = -0.05F;
-		offsets[12] = 0.0F;
-		offsets[13] = -0.08F;
-		offsets[14] = 0.0F;
-		offsets[15] = 0.2F;
-		return offsets[index];
-	}
-
-	public static float getZOffset(int index) {
-		float[] offsets = new float[16];
-		offsets[0] = 0.0F;
-		offsets[1] = -0.1F;
-		offsets[2] = 0.1F;
-		offsets[3] = 0.2F;
-		offsets[4] = 0.0F;
-		offsets[5] = -0.1F;
-		offsets[6] = 0.1F;
-		offsets[7] = 0.0F;
-		offsets[8] = -0.3F;
-		offsets[9] = 0.1F;
-		offsets[10] = 0.13F;
-		offsets[11] = -0.01F;
-		offsets[12] = 0.09F;
-		offsets[13] = -0.2F;
-		offsets[14] = 0.2F;
-		offsets[15] = -0.2F;
-		return offsets[index];
-	}
-
-	public static float getYOffset(int index) {
-		float[] offsets = new float[16];
-		offsets[0] = -0.0F;
-		offsets[1] = -0.0F;
-		offsets[2] = -0.0F;
-		offsets[3] = -0.0F;
-		offsets[4] = -0.0F;
-		offsets[5] = -0.0F;
-		offsets[6] = -0.0F;
-		offsets[7] = -0.0F;
-		offsets[8] = -0.0F;
-		offsets[9] = -0.0F;
-		offsets[10] = -0.0F;
-		offsets[10] = -0.0F;
-		offsets[11] = -0.0F;
-		offsets[12] = -0.0F;
-		offsets[13] = -0.0F;
-		offsets[14] = -0.0F;
-		offsets[15] = -0.0F;
-		return offsets[index];
-	}
-
-	public static float getXRot(int index) {
-		float[] offsets = new float[16];
-		offsets[0] = 0.0F;
-		offsets[1] = 0.0F;
-		offsets[2] = 0.0F;
-		offsets[3] = 0.0F;
-		offsets[4] = 0.0F;
-		offsets[5] = 0.0F;
-		offsets[6] = 0.0F;
-		offsets[7] = 0.0F;
-		offsets[8] = 0.0F;
-		offsets[9] = 0.0F;
-		offsets[10] = 0.0F;
-		offsets[11] = 0.0F;
-		offsets[12] = 0.0F;
-		offsets[13] = 0.0F;
-		offsets[14] = 0.0F;
-		offsets[15] = 0.0F;
-		return offsets[index];
-	}
-
-	public static float getZRot(int index) {
-		float[] offsets = new float[16];
-		offsets[0] = 0.0F;
-		offsets[1] = 0.0F;
-		offsets[2] = 0.0F;
-		offsets[3] = 0.0F;
-		offsets[4] = 0.0F;
-		offsets[5] = 0.0F;
-		offsets[6] = 0.0F;
-		offsets[7] = 0.0F;
-		offsets[8] = 0.0F;
-		offsets[9] = 0.0F;
-		offsets[10] = 0.0F;
-		offsets[11] = 0.0F;
-		offsets[12] = 0.0F;
-		offsets[13] = 0.0F;
-		offsets[14] = 0.0F;
-		offsets[15] = 0.0F;
-		return offsets[index];
-	}
-
-	public static float getYRot(int index) {
-		float[] offsets = new float[16];
-		offsets[0] = 0.0F;
-		offsets[1] = 0.0F;
-		offsets[2] = 0.0F;
-		offsets[3] = 0.0F;
-		offsets[4] = 0.0F;
-		offsets[5] = 0.0F;
-		offsets[6] = 0.0F;
-		offsets[7] = 0.0F;
-		offsets[8] = 0.0F;
-		offsets[9] = 0.0F;
-		offsets[10] = 0.0F;
-		offsets[11] = 0.0F;
-		offsets[12] = 0.0F;
-		offsets[13] = 0.0F;
-		offsets[14] = 0.0F;
-		offsets[15] = 0.0F;
-		return offsets[index];
-	}
-
-	public static float getAngle(int index) {
-		float[] offsets = new float[16];
-		offsets[0] = 0.0F;
-		offsets[1] = 0.0F;
-		offsets[2] = 0.0F;
-		offsets[3] = 0.0F;
-		offsets[4] = 0.0F;
-		offsets[5] = 0.0F;
-		offsets[6] = 0.0F;
-		offsets[7] = 0.0F;
-		offsets[8] = 0.0F;
-		offsets[9] = 0.0F;
-		offsets[10] = 0.0F;
-		offsets[11] = 0.0F;
-		offsets[12] = 0.0F;
-		offsets[13] = 0.0F;
-		offsets[14] = 0.0F;
-		offsets[15] = 0.0F;
-		return offsets[index];
+		NBTTagList nbtList = new NBTTagList();
+		for (int i = 0; i < getHandler().getSlots(); i++) {
+			if (getHandler().getStackInSlot(i) != null) {
+				NBTTagCompound slotNBT = new NBTTagCompound();
+				slotNBT.setInteger(TAG_SLOT, i);
+				getHandler().getStackInSlot(i).writeToNBT(slotNBT);
+				nbtList.appendTag(slotNBT);
+			}
+		}
+		compound.setTag(TAG_INVENTORY, nbtList);
+		compound.setBoolean(TAG_ISOPEN, doorsOpen());
+		return super.writeToNBT(compound);
 	}
 
 	@Override
-	public CookieType getContainedCookieType() {
-		return getStack() != null && getStack().getItem() instanceof ICookie ? ((ICookie) getStack().getItem()).getType() : null;
+	public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {
+		return oldState.getBlock() != newSate.getBlock();
 	}
+
+	@Override
+	public void update() {
+		prevDoorAngle = doorAngle;
+
+		if (!isInUse() && doorAngle > 0.0F || isInUse() && doorAngle < 1.0F || doorsOpen() && doorAngle < 1.0F) {
+			//float f2 = doorAngle;
+
+			if (isInUse() || doorsOpen()) {
+				doorAngle += 0.1F;
+			}
+			else {
+				if (!doorsOpen()) {
+					doorAngle -= 0.1F;
+				}
+			}
+
+			if (doorAngle > 1.0F) {
+				doorAngle = 1.0F;
+			}
+		}
+
+		if (doorAngle < 0.0F) {
+			doorAngle = 0.0F;
+		}
+	}
+
+	public boolean isInUse() {
+		int i = pos.getX();
+		int j = pos.getY();
+		int k = pos.getZ();
+		for (EntityPlayer player : worldObj.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(i - 5.0F, j - 5.0F, k - 5.0F, i + 1 + 5.0F, j + 1 + 5.0F, k + 1 + 5.0F))) {
+			if (player.openContainer instanceof ContainerCabinet) {
+				if (((ContainerCabinet) player.openContainer).getCabinetInventory() == getInventory()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public String getName() {
+		return "cabinet";
+	}
+
+	@Override
+	public boolean hasCustomName() {
+		return false;
+	}
+
+	@Override
+	public int getSizeInventory() {
+		return inventory.length;
+	}
+
+	@Nullable
+	@Override
+	public ItemStack getStackInSlot(int index) {
+		return inventory[index];
+	}
+
+	@Nullable
+	@Override
+	public ItemStack decrStackSize(int index, int count) {
+		ItemStack stack = ItemStackHelper.getAndSplit(inventory, index, count);
+		markDirty();
+		return stack;
+	}
+
+	@Nullable
+	@Override
+	public ItemStack removeStackFromSlot(int index) {
+		ItemStack stack = ItemStackHelper.getAndRemove(inventory, index);
+		markDirty();
+		return stack;
+	}
+
+	@Override
+	public void setInventorySlotContents(int index, ItemStack stack) {
+		inventory[index] = stack;
+
+		if (stack != null && stack.stackSize > getInventoryStackLimit()) {
+			stack.stackSize = getInventoryStackLimit();
+		}
+		markDirty();
+	}
+
+	@Override
+	public int getInventoryStackLimit() {
+		return 64;
+	}
+
+	@Override
+	public boolean isUseableByPlayer(EntityPlayer player) {
+		return true;
+	}
+
+	@Override
+	public void openInventory(EntityPlayer player) {
+	}
+
+	@Override
+	public void closeInventory(EntityPlayer player) {
+	}
+
+	@Override
+	public boolean isItemValidForSlot(int index, ItemStack stack) {
+		return true;
+	}
+
+	@Override
+	public int getField(int id) {
+		return 0;
+	}
+
+	@Override
+	public void setField(int id, int value) {
+	}
+
+	@Override
+	public int getFieldCount() {
+		return 0;
+	}
+
+	@Override
+	public void clear() {
+	}
+
+	@Override
+	public void markDirty() {
+		super.markDirty();
+		if (getWorld() != null) {
+			IBlockState state = getWorld().getBlockState(pos);
+			if (state != null) {
+				state.getBlock().updateTick(getWorld(), getPos(), state, getWorld().rand);
+				getWorld().notifyBlockUpdate(pos, state, state, 3);
+			}
+		}
+	}
+
 }

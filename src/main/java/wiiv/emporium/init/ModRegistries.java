@@ -12,7 +12,7 @@ import net.minecraft.world.World;
  */
 public class ModRegistries {
 
-	private static Map<BlockPos, World> TICKABLE_BLOCK_CACHE = new HashMap<BlockPos, World>();
+	private static final Map<BlockPos, World> TICKABLE_BLOCK_CACHE = new HashMap<BlockPos, World>();
 
 	public static void registerTickableBlock(World world, BlockPos pos) {
 		if (!isBlockCached(pos)) {

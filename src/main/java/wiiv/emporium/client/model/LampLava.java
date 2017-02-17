@@ -1,4 +1,4 @@
-package wiiv.emporium.model;
+package wiiv.emporium.client.model;
 
 import net.minecraft.client.model.*;
 import net.minecraft.entity.Entity;

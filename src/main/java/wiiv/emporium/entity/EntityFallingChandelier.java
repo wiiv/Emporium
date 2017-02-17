@@ -136,7 +136,7 @@ public class EntityFallingChandelier extends Entity {
 				}
 			}
 
-			if (!hasNoGravity()) {
+			if (!func_189652_ae()) {
 				motionY -= 0.03999999910593033D;
 			}
 
@@ -252,7 +252,7 @@ public class EntityFallingChandelier extends Entity {
 		compound.setBoolean("HurtEntities", hurtEntities);
 		compound.setFloat("FallHurtAmount", fallHurtAmount);
 		compound.setInteger("FallHurtMax", fallHurtMax);
-
+		
 		if (tileEntityData != null) {
 			compound.setTag("TileEntityData", tileEntityData);
 		}
@@ -275,10 +275,10 @@ public class EntityFallingChandelier extends Entity {
 				else {
 					fallTile = Block.getBlockById(compound.getByte("Tile") & 255).getDefaultState();
 				}
-
+		
 				fallTime = compound.getInteger("Time");
 				Block block = fallTile.getBlock();
-
+		
 				if (compound.hasKey("HurtEntities", 99)) {
 					hurtEntities = compound.getBoolean("HurtEntities");
 					fallHurtAmount = compound.getFloat("FallHurtAmount");
@@ -287,15 +287,15 @@ public class EntityFallingChandelier extends Entity {
 				else if (isChandelier(block)) {
 					hurtEntities = true;
 				}
-
+		
 				if (compound.hasKey("DropItem", 99)) {
 					shouldDropItem = compound.getBoolean("DropItem");
 				}
-
+		
 				if (compound.hasKey("TileEntityData", 10)) {
 					tileEntityData = compound.getCompoundTag("TileEntityData");
 				}
-
+		
 				if (block == null || block.getDefaultState().getMaterial() == Material.AIR) {
 					fallTile = Blocks.SAND.getDefaultState();
 				}

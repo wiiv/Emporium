@@ -32,10 +32,15 @@ repositories {
 		name = "progwml6"
 		url = "http://dvs1.progwml6.com/files/maven"
 	}
+	maven {
+		name = "ChickenBones"
+		url "http://chickenbones.net/maven"
+	}
 }
 
 dependencies {
 	deobfCompile "mezz.jei:jei_1.10.2:+"
+	compile "codechicken:CodeChickenLib:1.10.2-2.5.2.212:deobf"
 }
 
 processResources {

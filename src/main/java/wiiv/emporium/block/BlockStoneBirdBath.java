@@ -23,10 +23,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import wiiv.emporium.Globals;
-import wiiv.emporium.block.tile.TileJar;
+import wiiv.emporium.block.tile.TileCookieJar;
+import wiiv.emporium.client.render.tile.RenderTileJar;
 import wiiv.emporium.item.ItemBaseFood;
 import wiiv.emporium.item.ItemCookieChocolat;
-import wiiv.emporium.render.tile.RenderTileJar;
 
 public class BlockStoneBirdBath extends BlockBase{
 

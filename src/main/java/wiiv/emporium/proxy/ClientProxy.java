@@ -8,6 +8,7 @@ import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import wiiv.emporium.client.particle.ParticleGlowFlame;
 import wiiv.emporium.client.particle.ParticleTinyFlame;
@@ -17,6 +18,7 @@ import wiiv.emporium.client.render.RenderFallingChandelier;
 import wiiv.emporium.entity.EntityFallingChandelier;
 import wiiv.emporium.init.ModBlocks;
 import wiiv.emporium.init.ModItems;
+import wiiv.emporium.util.RenderUtils;
 
 public class ClientProxy extends CommonProxy {
 
@@ -32,8 +34,13 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		RenderManager rm = Minecraft.getMinecraft().getRenderManager();
+		RenderManager rm = RenderUtils.getRenderManager();
 		rm.entityRenderMap.put(EntityFallingChandelier.class, new RenderFallingChandelier(rm));
+	}
+
+	@Override
+	public void postInit(FMLPostInitializationEvent event) {
+		super.postInit(event);
 	}
 
 	@Override

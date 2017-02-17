@@ -2,16 +2,20 @@ package wiiv.emporium.block;
 
 import java.util.List;
 
-import net.minecraft.block.ITileEntityProvider;
+import codechicken.lib.model.ModelRegistryHelper;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -24,25 +28,26 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import wiiv.emporium.Globals;
 import wiiv.emporium.api.ICookie;
-import wiiv.emporium.block.tile.TileJar;
+import wiiv.emporium.block.tile.TileCookieJar;
+import wiiv.emporium.client.render.tile.RenderTileJar;
 import wiiv.emporium.item.ItemBaseFood;
-import wiiv.emporium.render.tile.RenderTileJar;
 
-public class BlockJar extends BlockBase implements ITileEntityProvider {
+public class BlockCookieJar extends BlockBase {
 
 	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 4), 0.0D, (0.0625D * 4), (0.0625D * 12), (0.0625D * 12), (0.0625D * 12));
 
-	public BlockJar() {
+	public BlockCookieJar() {
 		super(Material.GLASS, "jar", 1.0F);
 		setSoundType(SoundType.GLASS);
-		GameRegistry.registerTileEntity(TileJar.class, Globals.MOD_ID + ":TileJar");
+		GameRegistry.registerTileEntity(TileCookieJar.class, Globals.MOD_ID + ":TileJar");
+		Item.getItemFromBlock(this).setMaxStackSize(1);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
-		super.initModel();
-		ClientRegistry.bindTileEntitySpecialRenderer(TileJar.class, new RenderTileJar());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileCookieJar.class, new RenderTileJar());
+		ModelRegistryHelper.registerItemRenderer(Item.getItemFromBlock(this), new RenderTileJar());
 	}
 
 	@Override
@@ -56,14 +61,17 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 	}
 
 	@Override
-	public BlockRenderLayer getBlockLayer() {
+	public EnumBlockRenderType getRenderType(IBlockState state) {
+		return EnumBlockRenderType.MODEL;
+	}
 
+	@Override
+	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.TRANSLUCENT;
 	}
 
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-
 		return new AxisAlignedBB(0.253D, 0.0D, 0.253D, 0.7475D, 0.62D, 0.7475D);
 	}
 
@@ -72,14 +80,31 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX);
 	}
 
-	private TileJar getTE(World world, BlockPos pos) {
-		return (TileJar) world.getTileEntity(pos);
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void addInformation(ItemStack jarItem, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		if (jarItem.hasTagCompound() && jarItem.getTagCompound().hasKey("BlockEntityTag")) {
+			NBTTagCompound tag = jarItem.getTagCompound().getCompoundTag("BlockEntityTag").getCompoundTag("item");
+			NBTTagList list = tag.getTagList("Items", 10);
+			ItemStack stack = ItemStack.loadItemStackFromNBT(list.getCompoundTagAt(0));
+			if (stack != null) {
+				if (stack.getItem() instanceof ICookie) {
+					String cookieType = ((ICookie) stack.getItem()).getType().name();
+					String cookieName = cookieType.substring(0, 1).toUpperCase() + cookieType.substring(1).toLowerCase();
+					tooltip.add("Contains " + stack.stackSize + " " + cookieName + " Cookie" + (stack.stackSize != 1 ? "s" : ""));
+				}
+			}
+		}
+	}
+
+	private TileCookieJar getTE(World world, BlockPos pos) {
+		return (TileCookieJar) world.getTileEntity(pos);
 	}
 
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
-			TileJar jar = getTE(world, pos);
+			TileCookieJar jar = getTE(world, pos);
 			if (heldItem != null && jar.getContainedCookieType() != null && (jar.getContainedCookieType() != ((ICookie) heldItem.getItem()).getType())) {
 				return false;
 			}
@@ -93,7 +118,7 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 		return true;
 	}
 
-	private void handleSingle(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
+	private void handleSingle(TileCookieJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
 		if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemBaseFood) {
 			if (jar.getStack() != null && jar.getStack().getItem() != player.getHeldItem(hand).getItem()) {
 				return;
@@ -117,7 +142,7 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 		}
 	}
 
-	private void handleStack(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
+	private void handleStack(TileCookieJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
 		if (jar.getStack() == null) {
 			if (player.getHeldItem(hand) != null) {
 				if (heldItem.getItem() instanceof ItemBaseFood) {
@@ -165,6 +190,6 @@ public class BlockJar extends BlockBase implements ITileEntityProvider {
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileJar();
+		return new TileCookieJar();
 	}
 }

@@ -23,10 +23,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import wiiv.emporium.Globals;
-import wiiv.emporium.block.tile.TileJar;
+import wiiv.emporium.block.tile.TileCookieJar;
+import wiiv.emporium.client.render.tile.RenderTileJar;
 import wiiv.emporium.item.ItemBaseFood;
 import wiiv.emporium.item.ItemCookieChocolat;
-import wiiv.emporium.render.tile.RenderTileJar;
 
 public class BlockPedestal extends BlockBase implements ITileEntityProvider {
 
@@ -35,14 +35,14 @@ public class BlockPedestal extends BlockBase implements ITileEntityProvider {
 	public BlockPedestal() {
 		super(Material.GLASS, "jar", 1.0F);
 		setSoundType(SoundType.GLASS);
-		GameRegistry.registerTileEntity(TileJar.class, Globals.MOD_ID + ":TileJar");
+		GameRegistry.registerTileEntity(TileCookieJar.class, Globals.MOD_ID + ":TileJar");
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
 		super.initModel();
-		ClientRegistry.bindTileEntitySpecialRenderer(TileJar.class, new RenderTileJar());
+		ClientRegistry.bindTileEntitySpecialRenderer(TileCookieJar.class, new RenderTileJar());
 	}
 
 	@Override
@@ -72,14 +72,14 @@ public class BlockPedestal extends BlockBase implements ITileEntityProvider {
 		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX);
 	}
 
-	private TileJar getTE(World world, BlockPos pos) {
-		return (TileJar) world.getTileEntity(pos);
+	private TileCookieJar getTE(World world, BlockPos pos) {
+		return (TileCookieJar) world.getTileEntity(pos);
 	}
 
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
-			TileJar jar = getTE(world, pos);
+			TileCookieJar jar = getTE(world, pos);
 			if (!player.isSneaking()) {
 				handleStack(jar, player, hand, heldItem, world, pos);
 			}
@@ -90,7 +90,7 @@ public class BlockPedestal extends BlockBase implements ITileEntityProvider {
 		return true;
 	}
 
-	private void handleSingle(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
+	private void handleSingle(TileCookieJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
 		if (player.getHeldItem(hand) != null && player.getHeldItem(hand).getItem() instanceof ItemBaseFood) {
 			int returnSize = player.getHeldItem(hand).stackSize - 1;
 			ItemStack ret = returnSize == 0 ? null : new ItemStack(player.getHeldItem(hand).getItem(), returnSize);
@@ -111,7 +111,7 @@ public class BlockPedestal extends BlockBase implements ITileEntityProvider {
 		}
 	}
 
-	private void handleStack(TileJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
+	private void handleStack(TileCookieJar jar, EntityPlayer player, EnumHand hand, ItemStack heldItem, World world, BlockPos pos) {
 		if (jar.getStack() == null) {
 			if (player.getHeldItem(hand) != null) {
 				if (heldItem.getItem() instanceof ItemBaseFood) {
@@ -156,6 +156,6 @@ public class BlockPedestal extends BlockBase implements ITileEntityProvider {
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileJar();
+		return new TileCookieJar();
 	}
 }

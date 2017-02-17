@@ -11,7 +11,7 @@ import wiiv.emporium.client.render.EnumParticles;
 public class ParticleUtil {
 
 	public static void spawn(EnumParticles particleType, World world, double xCoordIn, double yCoordIn, double zCoordIn, double xSpeedIn, double ySpeedIn, double zSpeedIn) {
-		Emporium.PROXY.spawnCustomParticle(particleType, world, xCoordIn, yCoordIn, zCoordIn, xSpeedIn, ySpeedIn, zSpeedIn);
+		Emporium.proxy.spawnCustomParticle(particleType, world, xCoordIn, yCoordIn, zCoordIn, xSpeedIn, ySpeedIn, zSpeedIn);
 	}
 
 }

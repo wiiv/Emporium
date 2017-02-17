@@ -1,9 +1,12 @@
 package wiiv.emporium;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.fml.common.*;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import wiiv.emporium.init.EmporiumCreativeTab;
 import wiiv.emporium.proxy.CommonProxy;
 
@@ -11,24 +14,25 @@ import wiiv.emporium.proxy.CommonProxy;
 public class Emporium {
 
 	@Instance(Globals.MOD_ID)
-	public static Emporium INSTANCE;
+	public static Emporium instance;
 
 	@SidedProxy(clientSide = Globals.PROXY_CLIENT, serverSide = Globals.PROXY_COMMON)
-	public static CommonProxy PROXY;
+	public static CommonProxy proxy;
 
 	public static final CreativeTabs CREATIVE_TAB = new EmporiumCreativeTab();
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		PROXY.preInit(event);
+		proxy.preInit(event);
 	}
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
-		PROXY.init(event);
+		proxy.init(event);
 	}
 
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
+		proxy.postInit(event);
 	}
 }
