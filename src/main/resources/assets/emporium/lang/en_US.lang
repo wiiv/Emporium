@@ -113,6 +113,7 @@ tile.sofa_purplus.name=Purplus Sofa
 tile.sofa_gris.name=Gris Sofa
 tile.sofa_silver.name=Silver Sofa
 tile.sofa_bluve.name=Bluve Sofa
+tile.sofa_liminus.name=Liminus Sofa
 
 tile.floating_paper_lamp_white.name=White Floating Paper Lamp
 tile.floating_paper_lamp_orange.name=Orange Floating Paper Lamp
@@ -192,6 +193,8 @@ tile.modern_table_yellow.name=Yellow Modern Table
 tile.modern_table_brown.name=Brown Modern Table
 
 tile.modern_wooden_table.name=Modern Wooden Table
+
+tile.counter_bar.name=Bar Counter
 
 tile.garden_golden_lamp_white.name=White Outdoor Golden Lamp
 tile.garden_golden_lamp_orange.name=Orange Outdoor Golden Lamp

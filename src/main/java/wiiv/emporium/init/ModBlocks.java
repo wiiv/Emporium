@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import wiiv.emporium.api.IModelHolder;
+<<<<<<< HEAD
 import wiiv.emporium.block.BlockCabinet;
 import wiiv.emporium.block.BlockCookieJar;
+=======
+import wiiv.emporium.block.BlockCounterBar;
+import wiiv.emporium.block.BlockJar;
+>>>>>>> af914bcab1156ef5b7456b71b9b0894799e68191
 import wiiv.emporium.block.BlockLampCandelabra;
 import wiiv.emporium.block.BlockLampCandleBig;
 import wiiv.emporium.block.BlockLampCandleTall;
@@ -28,6 +33,7 @@ import wiiv.emporium.block.BlockSofaBlac;
 import wiiv.emporium.block.BlockSofaBluve;
 import wiiv.emporium.block.BlockSofaGris;
 import wiiv.emporium.block.BlockSofaHeart;
+import wiiv.emporium.block.BlockSofaLiminus;
 import wiiv.emporium.block.BlockSofaOchre;
 import wiiv.emporium.block.BlockSofaPurplus;
 import wiiv.emporium.block.BlockSofaSilver;
@@ -70,7 +76,10 @@ public class ModBlocks {
 	public static BlockSofaGris SOFA_GRIS;
 	public static BlockSofaSilver SOFA_SILVER;
 	public static BlockSofaBluve SOFA_BLUVE;
-
+	public static BlockSofaLiminus SOFA_LIMINUS;
+	
+	public static BlockCounterBar COUNTER_BAR;
+	
 	public static BlockLampLibrary[] LIBRARY_LAMP = new BlockLampLibrary[16];
 
 	public static BlockLampPaperFloating[] PAPER_FLOATING_LAMP = new BlockLampPaperFloating[8];
@@ -153,7 +162,14 @@ public class ModBlocks {
 		BLOCK_LIST.add(SOFA_GRIS = new BlockSofaGris());
 		BLOCK_LIST.add(SOFA_SILVER = new BlockSofaSilver());
 		BLOCK_LIST.add(SOFA_BLUVE = new BlockSofaBluve());
+<<<<<<< HEAD
 
+=======
+		BLOCK_LIST.add(SOFA_LIMINUS = new BlockSofaLiminus());
+		
+		BLOCK_LIST.add(COUNTER_BAR = new BlockCounterBar());
+		
+>>>>>>> af914bcab1156ef5b7456b71b9b0894799e68191
 		for (EnumColor8 color : EnumColor8.values()) {
 			PAPER_FLOATING_LAMP[color.getMetadata()] = new BlockLampPaperFloating(color.getMetadata());
 			BLOCK_LIST.add(PAPER_FLOATING_LAMP[color.getMetadata()]);

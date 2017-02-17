@@ -1,0 +1,61 @@
+{
+    "Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+    "parent": "block/block",
+    "textures": {
+        "particle": "emporium:blocks/modern_wooden_counter",
+        "texture1": "emporium:blocks/modern_wooden_counter_extended",
+        "texture2": "emporium:blocks/stone_dark_extended"
+    },
+    "elements": [
+        {
+            "Name": "CounterTop",
+            "from": [ 0, 16, 0 ],
+            "to": [ 16, 20, 16 ],
+            "faces": {
+                "down": { "uv": [ 0.5, 0, 8.5, 8 ], "texture": "#texture2" },
+                "up": { "uv": [ 0.5, 0, 8.5, 8 ], "texture": "#texture2" },
+                "north": { "uv": [ 0.5, 8, 8.5, 10 ], "texture": "#texture2" },
+                "south": { "uv": [ 0.5, 8, 8.5, 10 ], "texture": "#texture2" },
+                "west": { "uv": [ 0, 10, 8, 12 ], "texture": "#texture2" },
+                "east": { "uv": [ 0, 10, 8, 12 ], "texture": "#texture2" }
+            }
+        },
+        {
+            "Name": "CounterShelf1",
+            "from": [ 0, 9, 6 ],
+            "to": [ 16, 10, 14 ],
+            "faces": {
+                "down": { "uv": [ 5.5, 0, 13.5, 4 ], "texture": "#texture1" },
+                "up": { "uv": [ 5.5, 0, 13.5, 4 ], "texture": "#texture1" },
+                "south": { "uv": [ 6, 0, 14, 0.5 ], "texture": "#texture1" },
+                "west": { "uv": [ 0, 0, 4, 0.5 ], "texture": "#texture1" },
+                "east": { "uv": [ 0, 0, 4, 0.5 ], "texture": "#texture1" }
+            }
+        },
+        {
+            "Name": "CounterShelf2",
+            "from": [ 0, 0, 6 ],
+            "to": [ 16, 3, 14 ],
+            "faces": {
+                "down": { "uv": [ 5.5, 4, 13.5, 8 ], "texture": "#texture1" },
+                "up": { "uv": [ 5.5, 0, 13.5, 4 ], "texture": "#texture1" },
+                "south": { "uv": [ 0.5, 14.5, 8.5, 16 ], "texture": "#texture1" },
+                "west": { "uv": [ 1, 6.5, 5, 8 ], "texture": "#texture1" },
+                "east": { "uv": [ 0, 6.5, 4, 8 ], "texture": "#texture1" }
+            }
+        },
+        {
+            "Name": "CounterBack",
+            "from": [ 0, 0, 4 ],
+            "to": [ 16, 16, 6 ],
+            "faces": {
+                "down": { "uv": [ 0.5, 15, 8.5, 16 ], "texture": "#texture1" },
+                "up": { "uv": [ 0.5, 8, 8.5, 9 ], "texture": "#texture1" },
+                "north": { "uv": [ 0.5, 8, 8.5, 16 ], "texture": "#texture1" },
+                "south": { "uv": [ 0.5, 8, 8.5, 16 ], "texture": "#texture1" },
+                "west": { "uv": [ 0, 0, 1, 8 ], "texture": "#texture1" },
+                "east": { "uv": [ 4, 0, 5, 8 ], "texture": "#texture1" }
+            }
+        }
+    ]
+}
