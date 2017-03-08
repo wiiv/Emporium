@@ -32,7 +32,7 @@ public class BlockStoneBenchMason extends BlockBase {
 
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.3);
+		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.25);
 	}
 
 	@Override

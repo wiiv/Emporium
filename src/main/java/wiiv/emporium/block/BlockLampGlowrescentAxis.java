@@ -21,7 +21,7 @@ public class BlockLampGlowrescentAxis extends BlockBaseColorable16 {
 	public BlockLampGlowrescentAxis(int color) {
 		super(Material.CIRCUITS, "glowrescent_axis_lamp", 1.0F, color);
 		setSoundType(SoundType.METAL);
-		setLightLevel(0.75F);
+		setLightLevel(0.895F);
 	}
 
 	@Override

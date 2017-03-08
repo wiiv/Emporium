@@ -6,7 +6,7 @@ item.cookie_strawberry.name=Strawberry Cookie
 
 item.debug.name=Render Debug
 
-tile.jar.name=Jar
+tile.jar_cookie_metal.name=Metal Cookie Jar
 tile.library_lamp_white.name=White Library Lamp
 tile.library_lamp_orange.name=Orange Library Lamp
 tile.library_lamp_magenta.name=Magenta Library Lamp
@@ -114,6 +114,10 @@ tile.sofa_gris.name=Gris Sofa
 tile.sofa_silver.name=Silver Sofa
 tile.sofa_bluve.name=Bluve Sofa
 tile.sofa_liminus.name=Liminus Sofa
+tile.sofa_greed.name=Greed Sofa
+tile.sofa_brog.name=Brog Sofa
+tile.sofa_magen.name=Magen Sofa
+tile.sofa_cyna.name=Cyna Sofa
 
 tile.floating_paper_lamp_white.name=White Floating Paper Lamp
 tile.floating_paper_lamp_orange.name=Orange Floating Paper Lamp
@@ -194,7 +198,7 @@ tile.modern_table_brown.name=Brown Modern Table
 
 tile.modern_wooden_table.name=Modern Wooden Table
 
-tile.counter_bar.name=Bar Counter
+tile.barrel_wooden.name=Wooden Barrel
 
 tile.garden_golden_lamp_white.name=White Outdoor Golden Lamp
 tile.garden_golden_lamp_orange.name=Orange Outdoor Golden Lamp

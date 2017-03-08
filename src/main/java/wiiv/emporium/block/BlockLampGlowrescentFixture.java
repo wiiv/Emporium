@@ -21,7 +21,7 @@ public class BlockLampGlowrescentFixture extends BlockBaseColorable16 {
 	public BlockLampGlowrescentFixture(int color) {
 		super(Material.CIRCUITS, "glowrescent_fixture_lamp", 1.0F, color);
 		setSoundType(SoundType.METAL);
-		setLightLevel(0.75F);
+		setLightLevel(0.895F);
 	}
 
 	@Override

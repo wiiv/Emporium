@@ -18,32 +18,30 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockLampGlowrescentCube extends BlockBaseColorable16 {
+public class BlockBarrel extends BlockBase {
 	
 	public static final PropertyDirection FACING = PropertyDirection.create("facing");
 	
-	public BlockLampGlowrescentCube(int color) {
-		super(Material.CIRCUITS, "glowrescent_cube_lamp", 1.0F, color);
-		setSoundType(SoundType.METAL);
-		setLightLevel(0.895F);
+	public BlockBarrel() {
+		super(Material.WOOD, "barrel_wooden", 1.0F);
+		setSoundType(SoundType.WOOD);
+		
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 	}
 	
 	private AxisAlignedBB getBox(EnumFacing facing) {
 		switch (facing) {
-		case DOWN:
-			return new AxisAlignedBB((0.0625D * 3), 1 - (0.0625D * 12), (0.0625D * 3), (0.0625D * 13), 1.0D, (0.0625D * 13));
 		case EAST:
-			return new AxisAlignedBB((0.0625D * 12), (0.0625D * 3), (0.0625D * 3), 0.0D, (0.0625D * 13), (0.0625D * 13));
+			return new AxisAlignedBB(1.0D, (0.0625D * 2), (0.0625D * 2), 0.0D, (0.0625D * 14), (0.0625D * 14));
 		case NORTH:
-			return new AxisAlignedBB((0.0625D * 13), (0.0625D * 3), 1 - (0.0625D * 12), (0.0625D * 3), (0.0625D * 13), 1.0D);
+			return new AxisAlignedBB((0.0625D * 14), (0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), 1.0D);
 		case SOUTH:
-			return new AxisAlignedBB((0.0625D * 13), (0.0625D * 3), 0.0D, (0.0625D * 3), (0.0625D * 13), (0.0625D * 12));
+			return new AxisAlignedBB((0.0625D * 14), (0.0625D * 2), 1.0D, (0.0625D * 2), (0.0625D * 14), 0.0D);
 		case WEST:
-			return new AxisAlignedBB(1 - (0.0625D * 12), (0.0625D * 3), (0.0625D * 3), 1.0D, (0.0625D * 13), (0.0625D * 13));
+			return new AxisAlignedBB(0.0D, (0.0625D * 2), (0.0625D * 2), 1.0D, (0.0625D * 14), (0.0625D * 14));
 		default:
 		case UP:
-			return new AxisAlignedBB((0.0625D * 3), 0.0D, (0.0625D * 3), (0.0625D * 13), (0.0625D * 12), (0.0625D * 13));
+			return new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), 1.0D, (0.0625D * 14));
 		}
 	}
 
@@ -65,9 +63,6 @@ public class BlockLampGlowrescentCube extends BlockBaseColorable16 {
 			iblockstate = iblockstate.withProperty(FACING, EnumFacing.NORTH);
 			break;
 		case 5:
-			iblockstate = iblockstate.withProperty(FACING, EnumFacing.DOWN);
-			break;
-		case 6:
 		default:
 			iblockstate = iblockstate.withProperty(FACING, EnumFacing.UP);
 		}
@@ -86,11 +81,9 @@ public class BlockLampGlowrescentCube extends BlockBaseColorable16 {
 			return 3;
 		case NORTH:
 			return 4;
-		case DOWN:
-			return 5;
 		case UP:
 		default:
-			return 6;
+			return 5;
 		}
 	}
 
@@ -122,9 +115,9 @@ public class BlockLampGlowrescentCube extends BlockBaseColorable16 {
 	}
 
 	@Override
-    public boolean canRenderInLayer(BlockRenderLayer layer) {
-        return layer == BlockRenderLayer.SOLID || layer == BlockRenderLayer.TRANSLUCENT;
-    }
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.SOLID;
+	}
 	
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {

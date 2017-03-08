@@ -1,0 +1,48 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "block/block",
+	"textures": {
+		"frame": "emporium:blocks/sofa_magen",
+        "particle": "emporium:blocks/sofa_magen"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 0, 180 ],
+            "translation": [ 0, 0, -2],
+            "scale":[ 1, 1, 1]
+        }
+    },
+	"elements": [
+		{
+			"Name": "Sit",
+			"from": [ 2, 0, 0 ],
+			"to": [ 14, 9, 14 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 6, 7 ], "texture": "#frame" },
+				"up": { "uv": [ 0, 0, 6, 7 ], "texture": "#frame" },
+				"north": { "uv": [ 0, 7, 6, 11 ], "texture": "#frame" },
+				"south": { "uv": [ 0, 7, 6, 11 ], "texture": "#frame" },
+				"west": { "uv": [ 0, 11, 7, 15 ], "texture": "#frame" },
+				"east": { "uv": [ 7, 11, 14, 15 ], "texture": "#frame" }
+			}
+		},
+        {
+            "Name": "Back",
+            "from": [ 1, 1, 1 ],
+			"to": [ 15, 19, 4 ],
+			"faces": {
+				"down": { "uv": [ 6, 9, 13, 10.5 ], "texture": "#frame" },
+				"up": { "uv": [ 6, 9, 13, 10.5 ], "texture": "#frame" },
+				"north": { "uv": [ 6, 0, 13, 9 ], "texture": "#frame" },
+				"south": { "uv": [ 6, 0, 13, 9 ], "texture": "#frame" },
+				"west": { "uv": [ 13, 0, 14.5, 9 ], "texture": "#frame" },
+				"east": { "uv": [ 13, 0, 14.5, 9 ], "texture": "#frame" }
+			}
+        }
+	]
+}

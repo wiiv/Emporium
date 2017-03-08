@@ -97,8 +97,7 @@ public class BlockMedievalTable extends BlockBase {
 
 	@Override
 	public BlockRenderLayer getBlockLayer() {
-
-		return BlockRenderLayer.CUTOUT;
+		return BlockRenderLayer.SOLID;
 	}
 
 }

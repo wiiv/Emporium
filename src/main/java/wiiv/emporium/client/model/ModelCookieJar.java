@@ -18,7 +18,7 @@ public class ModelCookieJar extends ModelBase {
 		textureHeight = 32;
 		lid = new ModelRenderer(this, 32, 0);
 		lid.setRotationPoint(0.0F, 16.0F, 0.0F);
-		lid.addBox(-3.0F, -4.0F, -3.0F, 6, 2, 6, 0.0F);
+		lid.addBox(-3.0F, -4.0001F, -3.0F, 6, 2, 6, 0.0F);
 		glass = new ModelRenderer(this, 0, 10);
 		glass.setRotationPoint(0.0F, 16.0F, 0.0F);
 		glass.addBox(-4.0F, -2.0F, -4.0F, 8, 8, 8, 0.0F);

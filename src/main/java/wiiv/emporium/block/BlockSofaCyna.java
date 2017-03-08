@@ -21,14 +21,14 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import wiiv.emporium.util.MountableUtil;
 
-public class BlockSofaOchre extends BlockBase {
+public class BlockSofaCyna extends BlockBase {
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), (0.0625D * 8), (0.0625D * 14));
 	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 2), 0.0D, (0.0625D * 2), (0.0625D * 14), (0.0625D * 8), (0.0625D * 14));
 
-	public BlockSofaOchre() {
-		super(Material.WOOD, "sofa_ochre", 1.0F);
+	public BlockSofaCyna() {
+		super(Material.WOOD, "sofa_cyna", 1.0F);
 		setSoundType(SoundType.WOOD);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}

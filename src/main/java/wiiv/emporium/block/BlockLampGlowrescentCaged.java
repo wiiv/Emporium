@@ -18,7 +18,7 @@ public class BlockLampGlowrescentCaged extends BlockBaseColorable16 {
 	public BlockLampGlowrescentCaged(int color) {
 		super(Material.CIRCUITS, "glowrescent_caged_lamp", 1.0F, color);
 		setSoundType(SoundType.METAL);
-		setLightLevel(0.75F);
+		setLightLevel(0.895F);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 	}
 

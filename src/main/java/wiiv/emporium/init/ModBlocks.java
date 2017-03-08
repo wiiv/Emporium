@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import wiiv.emporium.api.IModelHolder;
+import wiiv.emporium.block.BlockBarrel;
 import wiiv.emporium.block.BlockCabinet;
 import wiiv.emporium.block.BlockCookieJar;
 import wiiv.emporium.block.BlockCounterBar;
@@ -27,9 +28,13 @@ import wiiv.emporium.block.BlockModernTable;
 import wiiv.emporium.block.BlockModernWoodenTable;
 import wiiv.emporium.block.BlockSofaBlac;
 import wiiv.emporium.block.BlockSofaBluve;
+import wiiv.emporium.block.BlockSofaBrog;
+import wiiv.emporium.block.BlockSofaCyna;
+import wiiv.emporium.block.BlockSofaGreed;
 import wiiv.emporium.block.BlockSofaGris;
 import wiiv.emporium.block.BlockSofaHeart;
 import wiiv.emporium.block.BlockSofaLiminus;
+import wiiv.emporium.block.BlockSofaMagen;
 import wiiv.emporium.block.BlockSofaOchre;
 import wiiv.emporium.block.BlockSofaPurplus;
 import wiiv.emporium.block.BlockSofaSilver;
@@ -62,6 +67,8 @@ public class ModBlocks {
 
 	public static BlockModernWoodenTable MODERN_WOODEN_TABLE;
 	public static BlockCabinet CABINET;
+	
+	public static BlockBarrel BARREL;
 
 	public static BlockSofaHeart SOFA_HEART;
 	public static BlockSofaYell SOFA_YELL;
@@ -73,7 +80,11 @@ public class ModBlocks {
 	public static BlockSofaSilver SOFA_SILVER;
 	public static BlockSofaBluve SOFA_BLUVE;
 	public static BlockSofaLiminus SOFA_LIMINUS;
-
+	public static BlockSofaGreed SOFA_GREED;
+	public static BlockSofaBrog SOFA_BROG;
+	public static BlockSofaMagen SOFA_MAGEN;
+	public static BlockSofaCyna SOFA_CYNA;
+	
 	public static BlockCounterBar COUNTER_BAR;
 
 	public static BlockLampLibrary[] LIBRARY_LAMP = new BlockLampLibrary[16];
@@ -148,6 +159,10 @@ public class ModBlocks {
 		BLOCK_LIST.add(MODERN_WOODEN_TABLE = new BlockModernWoodenTable());
 
 		BLOCK_LIST.add(CABINET = new BlockCabinet());
+		
+		BLOCK_LIST.add(BARREL = new BlockBarrel());
+		
+		BLOCK_LIST.add(COUNTER_BAR = new BlockCounterBar());
 
 		BLOCK_LIST.add(SOFA_HEART = new BlockSofaHeart());
 		BLOCK_LIST.add(SOFA_YELL = new BlockSofaYell());
@@ -159,7 +174,10 @@ public class ModBlocks {
 		BLOCK_LIST.add(SOFA_SILVER = new BlockSofaSilver());
 		BLOCK_LIST.add(SOFA_BLUVE = new BlockSofaBluve());
 		BLOCK_LIST.add(SOFA_LIMINUS = new BlockSofaLiminus());
-		BLOCK_LIST.add(COUNTER_BAR = new BlockCounterBar());
+		BLOCK_LIST.add(SOFA_GREED = new BlockSofaGreed());
+		BLOCK_LIST.add(SOFA_BROG = new BlockSofaBrog());
+		BLOCK_LIST.add(SOFA_MAGEN = new BlockSofaMagen());
+		BLOCK_LIST.add(SOFA_CYNA = new BlockSofaCyna());
 
 		for (EnumColor8 color : EnumColor8.values()) {
 			PAPER_FLOATING_LAMP[color.getMetadata()] = new BlockLampPaperFloating(color.getMetadata());

@@ -37,7 +37,7 @@ public class BlockCookieJar extends BlockBase {
 	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 4), 0.0D, (0.0625D * 4), (0.0625D * 12), (0.0625D * 12), (0.0625D * 12));
 
 	public BlockCookieJar() {
-		super(Material.GLASS, "jar", 1.0F);
+		super(Material.GLASS, "jar_metal", 1.0F);
 		setSoundType(SoundType.GLASS);
 		GameRegistry.registerTileEntity(TileCookieJar.class, Globals.MOD_ID + ":TileJar");
 		Item.getItemFromBlock(this).setMaxStackSize(1);
@@ -72,7 +72,7 @@ public class BlockCookieJar extends BlockBase {
 
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return new AxisAlignedBB(0.253D, 0.0D, 0.253D, 0.7475D, 0.62D, 0.7475D);
+		return new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.625D, 0.75D);
 	}
 
 	@Override
