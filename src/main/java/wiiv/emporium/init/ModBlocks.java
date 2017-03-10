@@ -6,6 +6,7 @@ import java.util.List;
 import wiiv.emporium.api.IModelHolder;
 import wiiv.emporium.block.BlockBarrel;
 import wiiv.emporium.block.BlockCabinet;
+import wiiv.emporium.block.BlockCabinetTopSingle;
 import wiiv.emporium.block.BlockCookieJar;
 import wiiv.emporium.block.BlockCounterBar;
 import wiiv.emporium.block.BlockLampCandelabra;
@@ -66,7 +67,9 @@ public class ModBlocks {
 	public static BlockStoneBirdBath STONE_BIRD_BATH;
 
 	public static BlockModernWoodenTable MODERN_WOODEN_TABLE;
+	
 	public static BlockCabinet CABINET;
+	public static BlockCabinetTopSingle CABINET_TOP_SINGLE;
 	
 	public static BlockBarrel BARREL;
 
@@ -159,6 +162,7 @@ public class ModBlocks {
 		BLOCK_LIST.add(MODERN_WOODEN_TABLE = new BlockModernWoodenTable());
 
 		BLOCK_LIST.add(CABINET = new BlockCabinet());
+		BLOCK_LIST.add(CABINET_TOP_SINGLE = new BlockCabinetTopSingle());
 		
 		BLOCK_LIST.add(BARREL = new BlockBarrel());
 		

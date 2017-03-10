@@ -27,18 +27,18 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.IPerspectiveAwareModel;
 import wiiv.emporium.Globals;
-import wiiv.emporium.block.BlockCabinet;
-import wiiv.emporium.block.tile.TileCabinet;
-import wiiv.emporium.client.model.ModelCabinet;
+import wiiv.emporium.block.BlockCabinetTopSingle;
+import wiiv.emporium.block.tile.TileCabinetTopSingle;
+import wiiv.emporium.client.model.ModelCabinetTopSingle;
 import wiiv.emporium.init.ModBlocks;
 import wiiv.emporium.util.RenderUtils;
 
-public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> implements IItemRenderer, IPerspectiveAwareModel {
+public class RenderTileCabinetTopSingle extends TileEntitySpecialRenderer<TileCabinetTopSingle> implements IItemRenderer, IPerspectiveAwareModel {
 
-	public static final ResourceLocation CABINET_TEXTURE = new ResourceLocation(Globals.MOD_ID, "textures/models/cabinet_top_double.png");
+	public static final ResourceLocation CABINET_TEXTURE = new ResourceLocation(Globals.MOD_ID, "textures/models/cabinet_top_single.png");
 	public static final ResourceLocation CABINET_SPRITE = new ResourceLocation(Globals.MOD_ID, "models/cabinet1_sprite");
 	private static final ResourceLocation RES_ITEM_GLINT = new ResourceLocation("textures/misc/enchanted_item_glint.png");
-	private final ModelCabinet MODEL = new ModelCabinet();
+	private final ModelCabinetTopSingle MODEL = new ModelCabinetTopSingle();
 
 	@Override
 	public void renderItem(ItemStack item) {
@@ -48,7 +48,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 			GlStateManager.enableLighting();
 			GlStateManager.rotate(180, 0, 0, 180);
 			GlStateManager.translate(-0.5, -1.5, 0.5);
-			ModelCabinet.getInstance().render(0.0625F);
+			ModelCabinetTopSingle.getInstance().render(0.0625F);
 			GlStateManager.translate(0.5, 1.5, -0.5);
 			GlStateManager.disableLighting();
 			GlStateManagerHelper.popState();
@@ -56,7 +56,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 	}
 
 	@Override
-	public void renderTileEntityAt(TileCabinet te, double x, double y, double z, float partialTicks, int destroyStage) {
+	public void renderTileEntityAt(TileCabinetTopSingle te, double x, double y, double z, float partialTicks, int destroyStage) {
 		//super.renderTileEntityAt(tile, x, y, z, partialTicks, destroyStage);
 		int i = 0;
 		if (te.hasWorldObj()) {
@@ -105,8 +105,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 		float f = te.prevDoorAngle + (te.doorAngle - te.prevDoorAngle) * partialTicks;
 		f = 1.0F - f;
 		f = 1.0F - f * f * f;
-		MODEL.ldoor.rotateAngleY = +(f * ((float) Math.PI / 2F));
-		MODEL.rdoor.rotateAngleY = -(f * ((float) Math.PI / 2F));
+		MODEL.door.rotateAngleY = +(f * ((float) Math.PI / 2F));
 
 		if (destroyStage < 0) {
 			GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
@@ -135,7 +134,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 
 	}
 
-	public void renderInventory(TileCabinet tile) {
+	public void renderInventory(TileCabinetTopSingle tile) {
 		int j = 0, ii = 0;
 		double x = 0.0D, z = 0.0D;
 		if (tile.hasWorldObj()) {
@@ -160,7 +159,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 		for (int i = 0; i < tile.getInventory().getSizeInventory(); i++) {
 			ItemStack stack = tile.getInventory().getStackInSlot(i);
 			if (stack != null) {
-				if (MODEL.ldoor.rotateAngleY != 0.0f && MODEL.rdoor.rotateAngleY != 0.0f) {
+				if (MODEL.door.rotateAngleY != 0.0f) {
 					switch (ii) {
 					default:
 					case 0:
@@ -182,7 +181,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 					}
 
 					GlStateManager.translate(x, i < 8 ? 3 : 1.15, z);
-					if (stack.getItem() instanceof ItemSkull || Block.getBlockFromItem(stack.getItem()) instanceof BlockCabinet || Block.getBlockFromItem(stack.getItem()) instanceof BlockPumpkin) {
+					if (stack.getItem() instanceof ItemSkull || Block.getBlockFromItem(stack.getItem()) instanceof BlockCabinetTopSingle || Block.getBlockFromItem(stack.getItem()) instanceof BlockPumpkin) {
 						GlStateManager.rotate(180 - (ii % 2 == 0 ? j : -j), 0, 1, 0);
 					}
 					else {
@@ -194,7 +193,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 
 					Minecraft.getMinecraft().getItemRenderer().renderItem(Minecraft.getMinecraft().thePlayer, stack, ItemCameraTransforms.TransformType.NONE);
 
-					if (stack.getItem() instanceof ItemSkull || Block.getBlockFromItem(stack.getItem()) instanceof BlockCabinet || Block.getBlockFromItem(stack.getItem()) instanceof BlockPumpkin) {
+					if (stack.getItem() instanceof ItemSkull || Block.getBlockFromItem(stack.getItem()) instanceof BlockCabinetTopSingle || Block.getBlockFromItem(stack.getItem()) instanceof BlockPumpkin) {
 						GlStateManager.rotate(-(180 - (ii % 2 == 0 ? j : -j)), 0, 1, 0);
 					}
 					else {
@@ -202,7 +201,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 					}
 					GlStateManager.translate(-x, i < 8 ? -3 : -1.15, -z);
 				}
-				if (MODEL.ldoor.rotateAngleY == 0.0f && MODEL.rdoor.rotateAngleY == 0.0f && Minecraft.getMinecraft().thePlayer.isSneaking()) {
+				if (MODEL.door.rotateAngleY == 0.0f && Minecraft.getMinecraft().thePlayer.isSneaking()) {
 					renderItemOnFace(stack, EnumFacing.values()[ii + 2], i, ii);
 				}
 			}

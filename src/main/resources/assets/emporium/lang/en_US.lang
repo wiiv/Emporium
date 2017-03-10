@@ -198,6 +198,10 @@ tile.modern_table_brown.name=Brown Modern Table
 
 tile.modern_wooden_table.name=Modern Wooden Table
 
+tile.cabinet.name=Cabinet
+tile.cabinet_top_single.name=Single Door Top Cabinet 
+tile.cabinet_top_double.name=Double Door Top Cabinet
+
 tile.barrel_wooden.name=Wooden Barrel
 
 tile.garden_golden_lamp_white.name=White Outdoor Golden Lamp
