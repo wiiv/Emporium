@@ -1,0 +1,54 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{
+        	"custom": {
+            	"base": "emporium:industrial_auto_crafter#base",
+            	"Solid": "emporium:industrial_auto_crafter#base",
+            	"Translucent": "emporium:industrial_auto_crafter#trans"
+        	}	
+        }],
+        "base": [{
+            "model": "emporium:industrial_auto_crafter"
+        }],
+        "trans": [{
+            "model": "emporium:industrial_auto_crafter_trans"
+        }],
+        "facing=west":  [{ 
+        	"custom": {
+            	"base": "emporium:industrial_auto_crafter#base",
+            	"Solid": "emporium:industrial_auto_crafter#base",
+            	"Translucent": "emporium:industrial_auto_crafter#trans"
+            },
+            "y": 270
+        }],
+        "facing=north": [{ 
+        	"custom": {
+            	"base": "emporium:industrial_auto_crafter#base",
+            	"Solid": "emporium:industrial_auto_crafter#base",
+            	"Translucent": "emporium:industrial_auto_crafter#trans"
+            }
+        }],
+        "facing=east":  [{ 
+        	"custom": {
+            	"base": "emporium:industrial_auto_crafter#base",
+            	"Solid": "emporium:industrial_auto_crafter#base",
+            	"Translucent": "emporium:industrial_auto_crafter#trans"
+            },
+            "y": 90 
+        }],
+        "facing=south": [{ 
+        	"custom": {
+            	"base": "emporium:industrial_auto_crafter#base",
+            	"Solid": "emporium:industrial_auto_crafter#base",
+            	"Translucent": "emporium:industrial_auto_crafter#trans"
+            },
+            "y": 180
+        }]
+    }
+}

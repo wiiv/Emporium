@@ -3,9 +3,9 @@
     "defaults": {
         "model": "forge:multi-layer",
         "custom": {
-            "base": "emporium:floating_paper_lamp_purple#base",
-            "Cutout": "emporium:floating_paper_lamp_purple#base",
-            "Translucent": "emporium:floating_paper_lamp_purple#trans"
+            "base": "emporium:floating_paper_lamp_eight#base",
+            "Cutout": "emporium:floating_paper_lamp_eight#base",
+            "Translucent": "emporium:floating_paper_lamp_eight#trans"
         },
         "transform": "forge:default-block"
     },
@@ -16,7 +16,7 @@
             "model": "emporium:floating_paper_lamp"
         }],
         "trans": [{
-            "model": "emporium:floating_paper_lamp_purple"
+            "model": "emporium:floating_paper_lamp_white"
         }]
     }
 }

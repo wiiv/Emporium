@@ -73,7 +73,7 @@ public class BlockLampLibrary extends BlockBaseColorable16 {
 	@Override
 	public BlockRenderLayer getBlockLayer() {
 
-		return BlockRenderLayer.CUTOUT;
+		return BlockRenderLayer.SOLID;
 	}
 
 }

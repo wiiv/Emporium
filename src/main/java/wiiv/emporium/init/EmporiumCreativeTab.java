@@ -12,7 +12,7 @@ public class EmporiumCreativeTab extends CreativeTabs {
 	@Override
 	public Item getTabIconItem() {
 		// TODO Auto-generated method stub
-		return Item.getItemFromBlock(ModBlocks.JAR);
+		return Item.getItemFromBlock(ModBlocks.SOFA_HEART);
 	}
 
 }

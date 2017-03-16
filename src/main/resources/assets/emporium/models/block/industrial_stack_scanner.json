@@ -1,0 +1,65 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "block/block",
+	"textures": {
+		"texture0": "emporium:blocks/industrial/conveyor_belt_side",
+		"texture1": "emporium:blocks/industrial/conveyor_belt_on",
+		"texture2": "emporium:blocks/industrial/stack_scanner",
+		"texture3": "emporium:blocks/industrial/conveyor_belt_special_side_on",
+		"particle": "emporium:blocks/industrial/stack_scanner"
+    },
+	"elements": [
+		{
+			"Name": "frame",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 4, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 16, 16, 0 ], "texture": "#texture1", "rotation": 90 },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1", "rotation": 90 },
+				"north": { "uv": [ 0, 12, 16, 16 ], "texture": "#texture0" },
+				"south": { "uv": [ 0, 12, 16, 16 ], "texture": "#texture3" },
+				"west": { "uv": [ 0, 0, 16, 4 ], "texture": "#texture1" },
+				"east": { "uv": [ 0, 16, 16, 12 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"Name": "top",
+			"from": [ 4, 14, 2 ],
+			"to": [ 12, 16, 14 ],
+			"faces": {
+				"down": { "uv": [ 4, 6, 8, 12 ], "texture": "#texture2" },
+				"up": { "uv": [ 0, 6, 4, 12 ], "texture": "#texture2" },
+				"north": { "uv": [ 9, 4, 13, 5 ], "texture": "#texture2" },
+				"south": { "uv": [ 9, 4, 13, 5 ], "texture": "#texture2" },
+				"west": { "uv": [ 9, 5, 15, 6 ], "texture": "#texture2" },
+				"east": { "uv": [ 9, 5, 15, 6 ], "texture": "#texture2" }
+			}
+		},
+		{
+			"Name": "back",
+			"from": [ 4, 4, 0 ],
+			"to": [ 12, 16, 2 ],
+			"faces": {
+				"down": { "uv": [ 9, 4, 13, 5 ], "texture": "#texture2" },
+				"up": { "uv": [ 9, 4, 13, 5 ], "texture": "#texture2" },
+				"north": { "uv": [ 4, 0, 8, 6 ], "texture": "#texture2" },
+				"south": { "uv": [ 0, 0, 4, 6 ], "texture": "#texture2" },
+				"west": { "uv": [ 8, 0, 9, 6 ], "texture": "#texture2" },
+				"east": { "uv": [ 8, 0, 9, 6 ], "texture": "#texture2" }
+			}
+		},
+		{
+			"Name": "front",
+			"from": [ 4, 4, 14 ],
+			"to": [ 12, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 9, 4, 13, 5 ], "texture": "#texture2" },
+				"up": { "uv": [ 9, 4, 13, 5 ], "texture": "#texture2" },
+				"north": { "uv": [ 0, 0, 4, 6 ], "texture": "#texture2" },
+				"south": { "uv": [ 8, 6, 12, 12 ], "texture": "#texture2" },
+				"west": { "uv": [ 8, 0, 9, 6 ], "texture": "#texture2" },
+				"east": { "uv": [ 8, 0, 9, 6 ], "texture": "#texture2" }
+			}
+		}
+	]
+}

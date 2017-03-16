@@ -1,57 +1,49 @@
 {
-    "__comment": "model created by wiiv",
+    "Comment": "model created by wiiv",
     "parent":"block/block",
     "textures": {
-        "0": "emporium:blocks/jar_lid",
-        "1": "emporium:blocks/jar_glass",
-        "particle": "emporium:blocks/jar_lid"
-    },
-    "display": {
-        "gui": {
-            "rotation": [ 30, 225, 0 ],
-            "translation": [ 0, 0, 0],
-            "scale":[ 0.625, 0.625, 0.625 ]
-        }
+        "texture": "emporium:blocks/jar_metal",
+        "particle": "emporium:blocks/jar_metal"
     },
     "elements": [
         {
-            "name": "Base",
-            "from": [ 4.0, 0.0, 4.0 ], 
-            "to": [ 12.0, 2.0, 12.0 ], 
-            "faces": {
-                "north": { "texture": "#0", "uv": [ 8.0, 0.0, 16.0, 2.0 ] },
-                "east": { "texture": "#0", "uv": [ 8.0, 0.0, 16.0, 2.0 ] },
-                "south": { "texture": "#0", "uv": [ 8.0, 0.0, 16.0, 2.0 ] },
-                "west": { "texture": "#0", "uv": [ 8.0, 0.0, 16.0, 2.0 ] },
-                "up": { "texture": "#0", "uv": [ 0.0, 0.0, 8.0, 8.0 ] },
-                "down": { "texture": "#0", "uv": [ 0.0, 8.0, 8.0, 16.0 ] }
-            }
+            "name": "Lid",
+            "from": [ 5, 10, 5 ],
+			"to": [ 11, 12, 11 ],
+			"faces": {
+				"down": { "uv": [ 0, 10, 6, 16 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 10, 6, 16 ], "texture": "#texture" },
+				"north": { "uv": [ 8, 16, 6, 10 ], "texture": "#texture", "rotation": 270 },
+				"south": { "uv": [ 8, 16, 6, 10 ], "texture": "#texture", "rotation": 270 },
+				"west": { "uv": [ 8, 16, 6, 10 ], "texture": "#texture", "rotation": 270 },
+				"east": { "uv": [ 8, 16, 6, 10 ], "texture": "#texture", "rotation": 270 }
+			}
         },
         {
             "name": "Glass",
-            "from": [ 4.0, 2.0, 4.0 ], 
-            "to": [ 12.0, 10.0, 12.0 ], 
-            "faces": {
-                "north": { "texture": "#1", "uv": [ 4.0, 8.0, 12.0, 16.0 ] },
-                "east": { "texture": "#1", "uv": [ 4.0, 8.0, 12.0, 16.0 ] },
-                "south": { "texture": "#1", "uv": [ 4.0, 8.0, 12.0, 16.0 ] },
-                "west": { "texture": "#1", "uv": [ 4.0, 8.0, 12.0, 16.0 ] },
-                "up": { "texture": "#1", "uv": [ 4.0, 4.0, 12.0, 12.0 ] },
-                "down": { "texture": "#1", "uv": [ 4.0, 4.0, 12.0, 12.0 ] }
-            }
+            "from": [ 4, 2, 4 ],
+			"to": [ 12, 10, 12 ],
+			"faces": {
+				"down": { "uv": [ 4, 4, 12, 12 ], "texture": "#texture" },
+				"up": { "uv": [ 8, 0, 16, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 8, 8, 16, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 8, 8, 16, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 8, 8, 16, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 8, 8, 16, 16 ], "texture": "#texture" }
+			}
         },
         {
-            "name": "Lid",
-            "from": [ 5.0, 10.0, 5.0 ], 
-            "to": [ 11.0, 12.0, 11.0 ], 
-            "faces": {
-                "north": { "texture": "#0", "uv": [ 8.0, 8.0, 14.0, 10.0 ] },
-                "east": { "texture": "#0", "uv": [ 8.0, 8.0, 14.0, 10.0 ] },
-                "south": { "texture": "#0", "uv": [ 8.0, 8.0, 14.0, 10.0 ] },
-                "west": { "texture": "#0", "uv": [ 8.0, 8.0, 14.0, 10.0 ] },
-                "up": { "texture": "#0", "uv": [ 8.0, 2.0, 14.0, 8.0 ] },
-                "down": { "texture": "#0", "uv": [ 8.0, 10.0, 14.0, 16.0 ] }
-            }
-        }
+            "name": "Base",
+            "from": [ 4, 0, 4 ],
+			"to": [ 12, 2, 12 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 8, 8 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 8, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 8, 8, 10 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 8, 8, 10 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 8, 8, 10 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 8, 8, 10 ], "texture": "#texture" }
+			}
+		}
     ]
 }

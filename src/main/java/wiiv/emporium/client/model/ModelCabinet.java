@@ -36,7 +36,7 @@ public class ModelCabinet extends ModelBase {
 		textureHeight = 128;
 		lhandle = new ModelRenderer(this, 0, 0);
 		lhandle.setRotationPoint(0.0F, 0.0F, 0.0F);
-		lhandle.addBox(5.0F, 3.0F, -1.0F, 1, 4, 1, 0.0F);
+		lhandle.addBox(5.0F, 2.0F, -1.0F, 1, 4, 1, 0.0F);
 		back = new ModelRenderer(this, 0, 50);
 		back.setRotationPoint(0.0F, 16.0F, 0.0F);
 		back.addBox(-8.0F, -6.0F, 6.0F, 16, 12, 2, 0.0F);
@@ -56,7 +56,7 @@ public class ModelCabinet extends ModelBase {
 		rdoor.addBox(-7.0F, -6.0F, 0.0F, 8, 13, 1, 0.0F);
 		rhandle = new ModelRenderer(this, 0, 0);
 		rhandle.setRotationPoint(0.0F, 0.0F, 0.0F);
-		rhandle.addBox(-6.0F, 3.0F, -1.0F, 1, 4, 1, 0.0F);
+		rhandle.addBox(-6.0F, 2.0F, -1.0F, 1, 4, 1, 0.0F);
 		shelf1 = new ModelRenderer(this, 0, 115);
 		shelf1.setRotationPoint(0.0F, 16.0F, 0.0F);
 		shelf1.addBox(-7.0F, -6.0F, -6.0F, 14, 1, 12, 0.0F);

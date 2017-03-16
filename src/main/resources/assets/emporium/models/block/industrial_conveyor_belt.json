@@ -1,0 +1,24 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "block/block",
+	"textures": {
+		"texture": "emporium:blocks/industrial/conveyor_belt_side",
+		"texture1": "emporium:blocks/industrial/conveyor_belt_on",
+		"particle": "emporium:blocks/industrial/conveyor_belt_on"
+    },
+	"elements": [
+		{
+			"Name": "Frame",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 4, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 16, 16, 0 ], "texture": "#texture1", "rotation": 90 },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1", "rotation": 90 },
+				"north": { "uv": [ 0, 12, 16, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 12, 16, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 0, 16, 4 ], "texture": "#texture1" },
+				"east": { "uv": [ 0, 16, 16, 12 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

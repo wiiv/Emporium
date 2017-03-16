@@ -1,0 +1,8 @@
+{
+    "variants": {
+	    "facing=west":  { "model": "emporium:stool_bar_cushion", "y": 270 },
+        "facing=north": { "model": "emporium:stool_bar_cushion" },
+        "facing=east":  { "model": "emporium:stool_bar_cushion", "y": 90 },
+        "facing=south": { "model": "emporium:stool_bar_cushion", "y": 180 }
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{
+        	"custom": {
+            	"base": "emporium:industrial_stack_scanner#base",
+            	"Solid": "emporium:industrial_stack_scanner#base",
+            	"Translucent": "emporium:industrial_stack_scanner#trans"
+        	}	
+        }],
+        "base": [{
+            "model": "emporium:industrial_stack_scanner"
+        }],
+        "trans": [{
+            "model": "emporium:industrial_stack_scanner_trans"
+        }],
+        "facing=west":  [{ 
+        	"custom": {
+            	"base": "emporium:industrial_stack_scanner#base",
+            	"Solid": "emporium:industrial_stack_scanner#base",
+            	"Translucent": "emporium:industrial_stack_scanner#trans"
+            },
+            "y": 270
+        }],
+        "facing=north": [{ 
+        	"custom": {
+            	"base": "emporium:industrial_stack_scanner#base",
+            	"Solid": "emporium:industrial_stack_scanner#base",
+            	"Translucent": "emporium:industrial_stack_scanner#trans"
+            }
+        }],
+        "facing=east":  [{ 
+        	"custom": {
+            	"base": "emporium:industrial_stack_scanner#base",
+            	"Solid": "emporium:industrial_stack_scanner#base",
+            	"Translucent": "emporium:industrial_stack_scanner#trans"
+            },
+            "y": 90 
+        }],
+        "facing=south": [{ 
+        	"custom": {
+            	"base": "emporium:industrial_stack_scanner#base",
+            	"Solid": "emporium:industrial_stack_scanner#base",
+            	"Translucent": "emporium:industrial_stack_scanner#trans"
+            },
+            "y": 180
+        }]
+    }
+}

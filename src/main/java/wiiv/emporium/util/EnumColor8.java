@@ -7,7 +7,7 @@ import net.minecraft.util.IStringSerializable;
  *
  */
 public enum EnumColor8 implements IStringSerializable {
-	ORANGE, MAGENTA, YELLOW, WHITE, PURPLE, BLUE, GREEN, RED;
+	ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT;
 
 	public int getMetadata() {
 		return meta;

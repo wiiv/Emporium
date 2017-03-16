@@ -3,9 +3,9 @@
     "defaults": {
         "model": "forge:multi-layer",
         "custom": {
-            "base": "emporium:floating_paper_lamp_blue#base",
-            "Cutout": "emporium:floating_paper_lamp_blue#base",
-            "Translucent": "emporium:floating_paper_lamp_blue#trans"
+            "base": "emporium:floating_paper_lamp_five#base",
+            "Cutout": "emporium:floating_paper_lamp_five#base",
+            "Translucent": "emporium:floating_paper_lamp_five#trans"
         },
         "transform": "forge:default-block"
     },

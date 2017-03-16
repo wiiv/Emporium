@@ -204,6 +204,10 @@ tile.cabinet_top_double.name=Double Door Top Cabinet
 
 tile.barrel_wooden.name=Wooden Barrel
 
+tile.industrial_conveyor_belt.name=Conveyor Belt
+tile.industrial_auto_crafter.name=Auto Crafter
+tile.industrial_stack_scanner.name=Stack Scanner
+
 tile.garden_golden_lamp_white.name=White Outdoor Golden Lamp
 tile.garden_golden_lamp_orange.name=Orange Outdoor Golden Lamp
 tile.garden_golden_lamp_magenta.name=Magenta Outdoor Golden Lamp

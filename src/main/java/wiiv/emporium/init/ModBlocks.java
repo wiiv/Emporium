@@ -9,6 +9,9 @@ import wiiv.emporium.block.BlockCabinet;
 import wiiv.emporium.block.BlockCabinetTopSingle;
 import wiiv.emporium.block.BlockCookieJar;
 import wiiv.emporium.block.BlockCounterBar;
+import wiiv.emporium.block.BlockIndustrialAutoCrafter;
+import wiiv.emporium.block.BlockIndustrialConveyorBelt;
+import wiiv.emporium.block.BlockIndustrialStackScanner;
 import wiiv.emporium.block.BlockLampCandelabra;
 import wiiv.emporium.block.BlockLampCandleBig;
 import wiiv.emporium.block.BlockLampCandleTall;
@@ -45,6 +48,7 @@ import wiiv.emporium.block.BlockStoneBench;
 import wiiv.emporium.block.BlockStoneBenchMason;
 import wiiv.emporium.block.BlockStoneBirdBath;
 import wiiv.emporium.block.BlockStoneTable;
+import wiiv.emporium.block.BlockStoolBarCushion;
 import wiiv.emporium.util.EnumColor16;
 import wiiv.emporium.util.EnumColor8;
 
@@ -54,6 +58,8 @@ public class ModBlocks {
 	public static BlockCookieJar JAR;
 
 	public static BlockModernTable[] MODERN_TABLE = new BlockModernTable[16];
+	
+	public static BlockStoolBarCushion[] STOOL_BAR_CUSHION = new BlockStoolBarCushion[8];
 
 	public static BlockMedievalTable MEDIEVAL_TABLE;
 	public static BlockMedievalBench MEDIEVAL_BENCH;
@@ -106,6 +112,10 @@ public class ModBlocks {
 
 	public static BlockLampCandleBig[] CANDLE_BIG_LAMP = new BlockLampCandleBig[16];
 	public static BlockLampCandleTall[] CANDLE_TALL_LAMP = new BlockLampCandleTall[16];
+	
+	public static BlockIndustrialConveyorBelt INDUSTRIAL_CONVEYOR_BELT;
+	public static BlockIndustrialAutoCrafter INDUSTRIAL_AUTO_CRAFTER;
+	public static BlockIndustrialStackScanner INDUSTRIAL_STACK_SCANNER;
 
 	public static void init() {
 		BLOCK_LIST.add(JAR = new BlockCookieJar());
@@ -186,8 +196,14 @@ public class ModBlocks {
 		for (EnumColor8 color : EnumColor8.values()) {
 			PAPER_FLOATING_LAMP[color.getMetadata()] = new BlockLampPaperFloating(color.getMetadata());
 			BLOCK_LIST.add(PAPER_FLOATING_LAMP[color.getMetadata()]);
+			
+			STOOL_BAR_CUSHION[color.getMetadata()] = new BlockStoolBarCushion(color.getMetadata());
+			BLOCK_LIST.add(STOOL_BAR_CUSHION[color.getMetadata()]);
 		}
-
+		
+		BLOCK_LIST.add(INDUSTRIAL_CONVEYOR_BELT = new BlockIndustrialConveyorBelt());
+		BLOCK_LIST.add(INDUSTRIAL_AUTO_CRAFTER = new BlockIndustrialAutoCrafter());
+		BLOCK_LIST.add(INDUSTRIAL_STACK_SCANNER = new BlockIndustrialStackScanner());
 	}
 
 	public static void initModels() {

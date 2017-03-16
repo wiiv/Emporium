@@ -1,0 +1,27 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "block/block",
+	"textures": {
+		"texture": "emporium:blocks/industrial/auto_crafter"
+	},
+	"elements": [
+		{
+			"Name": "curtainL",
+			"from": [ 3, 4, 2 ],
+			"to": [ 3.001, 14, 14 ],
+			"faces": {
+				"west": { "uv": [ 7, 0, 13, 5 ], "texture": "#texture" },
+				"east": { "uv": [ 7, 0, 13, 5 ], "texture": "#texture" }
+			}
+		},
+		{
+			"Name": "curtainR",
+			"from": [ 13, 4, 2 ],
+			"to": [ 13.001, 14, 14 ],
+			"faces": {
+				"west": { "uv": [ 7, 0, 13, 5 ], "texture": "#texture" },
+				"east": { "uv": [ 7, 0, 13, 5 ], "texture": "#texture" }
+			}
+		}
+	]
+}

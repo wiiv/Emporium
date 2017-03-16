@@ -19,7 +19,7 @@ archivesBaseName = "emporium"
 sourceCompatibility = targetCompatibility = "1.8"
 
 minecraft {
-	version = "1.10.2-12.18.2.2114"
+	version = "1.10.2-12.18.3.2254"
 	runDir = "run"
 	
 	mappings = "stable_26"
