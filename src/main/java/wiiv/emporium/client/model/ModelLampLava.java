@@ -7,7 +7,7 @@ import net.minecraft.entity.Entity;
  * lamp_Lava - wiiv
  * Created using Tabula 4.1.1
  */
-public class LampLava extends ModelBase {
+public class ModelLampLava extends ModelBase {
 	public ModelRenderer tankTop;
 	public ModelRenderer tank;
 	public ModelRenderer fluid;
@@ -16,7 +16,7 @@ public class LampLava extends ModelBase {
 	public ModelRenderer glob3;
 	public ModelRenderer tankBottom;
 
-	public LampLava() {
+	public ModelLampLava() {
 		textureWidth = 64;
 		textureHeight = 32;
 		glob1 = new ModelRenderer(this, 44, 16);
