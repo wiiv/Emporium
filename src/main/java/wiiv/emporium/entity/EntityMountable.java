@@ -8,6 +8,7 @@ import net.minecraft.world.World;
 public class EntityMountable extends Entity {
 
 	public BlockPos pos;
+	private final String TAG_POS = "Position";
 
 	public EntityMountable(World world) {
 		super(world);
@@ -66,8 +67,8 @@ public class EntityMountable extends Entity {
 
 	@Override
 	public void onEntityUpdate() {
-		if (!worldObj.isRemote) {
-			if (!isBeingRidden() || worldObj.isAirBlock(pos)) {
+		if (getEntityWorld() != null && !getEntityWorld().isRemote) {
+			if (!isBeingRidden() || getEntityWorld().isAirBlock(pos)) {
 				setDead();
 			}
 		}
@@ -79,10 +80,16 @@ public class EntityMountable extends Entity {
 
 	@Override
 	protected void readEntityFromNBT(NBTTagCompound compound) {
+		if (compound.hasKey(TAG_POS)) {
+			pos = BlockPos.fromLong(compound.getLong(TAG_POS));
+		}
 	}
 
 	@Override
 	protected void writeEntityToNBT(NBTTagCompound compound) {
+		if (pos != null) {
+			compound.setLong(TAG_POS, pos.toLong());
+		}
 	}
 
 }

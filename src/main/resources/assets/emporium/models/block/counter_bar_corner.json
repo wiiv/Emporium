@@ -2,10 +2,10 @@
 	"__comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "blocks/modern_wooden_counter",
-		"texture1": "blocks/modern_wooden_counter",
-		"texture2": "blocks/stone_dark_extended",
-		"texture3": "blocks/stone_dark"
+		"particle": "emporium:blocks/modern_wooden_counter",
+		"texture1": "emporium:blocks/modern_wooden_counter",
+		"texture2": "emporium:blocks/stone_dark_extended",
+		"texture3": "emporium:blocks/stone_dark"
 	},
 	"elements": [
 		{

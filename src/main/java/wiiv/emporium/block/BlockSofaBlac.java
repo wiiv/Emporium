@@ -110,7 +110,9 @@ public class BlockSofaBlac extends BlockBase {
 	@Override
 	protected BlockStateContainer createBlockState() {
 		return new BlockStateContainer(this, new IProperty[] {
-				FACING, LEFT, RIGHT
+				FACING,
+				LEFT,
+				RIGHT
 		});
 	}
 
@@ -141,6 +143,13 @@ public class BlockSofaBlac extends BlockBase {
 	@Override
 	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facingIn, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
 		EnumFacing facing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
+		for (EnumFacing nearFacing : EnumFacing.HORIZONTALS) {
+			IBlockState nearState = worldIn.getBlockState(pos.offset(nearFacing));
+			if (nearState.getBlock() == this) {
+				facing = nearState.getValue(FACING);
+				break;
+			}
+		}
 		return getDefaultState().withProperty(FACING, facing);
 	}
 

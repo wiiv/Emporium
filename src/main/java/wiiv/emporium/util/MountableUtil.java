@@ -19,15 +19,17 @@ public class MountableUtil {
 		return sitOnBlock(world, pos, player, yOffset, false);
 	}
 
-	@SuppressWarnings("rawtypes")
 	public static boolean sitOnBlock(World world, BlockPos pos, EntityPlayer player, double yOffset, boolean directional) {
+		if (isPlayerMounting(player)) {
+			player.dismountEntity(player.getRidingEntity());
+		}
 		if (!checkForExistingEntity(world, pos, player)) {
 			EntityMountable nemb = new EntityMountable(world, pos, yOffset);
 			world.spawnEntityInWorld(nemb);
 			if (directional) {
 				IBlockState state = world.getBlockState(pos);
 				Map<IProperty<?>, Comparable<?>> propMap = state.getProperties();
-				for (IProperty prop : propMap.keySet()) {
+				for (IProperty<?> prop : propMap.keySet()) {
 					if (prop instanceof PropertyDirection) {
 						switch ((EnumFacing) propMap.get(prop)) {
 						case EAST:
@@ -54,15 +56,15 @@ public class MountableUtil {
 		return true;
 	}
 
-	public static boolean checkForExistingEntity(World par1World, BlockPos pos, EntityPlayer par5EntityPlayer) {
+	public static boolean checkForExistingEntity(World world, BlockPos pos, EntityPlayer player) {
 		double x = pos.getX();
 		double y = pos.getY();
 		double z = pos.getZ();
-		List<EntityMountable> listEMB = par1World.getEntitiesWithinAABB(EntityMountable.class, new AxisAlignedBB(x, y, z, x + 1.0D, y + 1.0D, z + 1.0D).expand(1D, 1D, 1D));
+		List<EntityMountable> listEMB = world.getEntitiesWithinAABB(EntityMountable.class, new AxisAlignedBB(x, y, z, x + 1.0D, y + 1.0D, z + 1.0D).expand(1D, 1D, 1D));
 		for (EntityMountable mountable : listEMB) {
-			if (mountable.pos.getX() == x && mountable.pos.getY() == y && mountable.pos.getZ() == z) {
+			if (mountable.pos != null && (mountable.pos.getX() == x && mountable.pos.getY() == y && mountable.pos.getZ() == z)) {
 				if (!mountable.isBeingRidden()) {
-					par5EntityPlayer.startRiding(mountable);
+					player.startRiding(mountable);
 				}
 				return true;
 			}
@@ -81,5 +83,9 @@ public class MountableUtil {
 			}
 		}
 		return false;
+	}
+
+	public static boolean isPlayerMounting(EntityPlayer player) {
+		return player.isRiding();
 	}
 }
