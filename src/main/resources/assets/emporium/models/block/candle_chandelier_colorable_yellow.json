@@ -1,0 +1,7 @@
+{
+	"parent": "emporium:block/candle_chandelier_colorable_frame",
+	"textures": {
+		"candle": "emporium:blocks/lighting/candle/candle_yellow",
+		"crystal": "emporium:blocks/lighting/candle/chandelier_crystal_yellow"
+	}
+}

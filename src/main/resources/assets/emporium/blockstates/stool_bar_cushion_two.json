@@ -1,8 +1,15 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:stool_bar_cushion_orange"
+        },
     "variants": {
-	    "facing=west":  { "model": "emporium:stool_bar_cushion_red", "y": 270 },
-        "facing=north": { "model": "emporium:stool_bar_cushion_red" },
-        "facing=east":  { "model": "emporium:stool_bar_cushion_red", "y": 90 },
-        "facing=south": { "model": "emporium:stool_bar_cushion_red", "y": 180 }
+    	"inventory": [{}],
+    	"facing": {
+        	"north": {},
+        	"south": {"y": 180},
+        	"east":  {"y": 90},
+        	"west":  { "y": 270 }
+        }
     }
 }

@@ -62,7 +62,7 @@ public class PacketRemoveItemFromCabinetFace implements IMessage {
 				ItemStack stack = tile.getInventory().getStackInSlot(message.slotId);
 				EntityPlayerMP player = ctx.getServerHandler().playerEntity;
 				if (player.inventory.addItemStackToInventory(stack)) {
-					world.spawnEntityInWorld(new EntityItem(world, player.posX, player.posY, player.posZ, stack));
+					world.spawnEntity(new EntityItem(world, player.posX, player.posY, player.posZ, stack));
 				}
 				player.sendContainerToPlayer(player.inventoryContainer);
 				tile.getInventory().setInventorySlotContents(message.slotId, null);

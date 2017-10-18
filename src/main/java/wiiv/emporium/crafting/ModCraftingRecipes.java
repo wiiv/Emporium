@@ -9,6 +9,6 @@ public class ModCraftingRecipes {
 
 	public static void register() {
 
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.JAR), " I ", "G G", "GIG", 'I', Items.IRON_INGOT, 'G', new ItemStack(Blocks.STAINED_GLASS_PANE, 1, 0));
+		//GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.JAR), " I ", "G G", "GIG", 'I', Items.IRON_INGOT, 'G', new ItemStack(Blocks.STAINED_GLASS_PANE, 1, 0));
 	}
 }

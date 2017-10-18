@@ -1,0 +1,71 @@
+{
+    "joints": {
+        "door": {"0": [1.0]},
+        "handle": {"1": [1.0]}
+    },
+    "clips": {
+        "closed": {
+            "loop": false,
+            "joint_clips": { },
+            "events": {}
+        },
+        "open": {
+            "loop": true,
+            "joint_clips": {
+                "door": [
+                	{
+                    "variable": "origin_x",
+                    "type": "uniform",
+                    "interpolation": "nearest",
+                    "samples": [ 0 ]
+                	},
+                	{
+                    "variable": "origin_z",
+                    "type": "uniform",
+                    "interpolation": "nearest",
+                    "samples": [ 0.625 ]
+                	},
+                	{
+                    "variable": "axis_y",
+                    "type": "uniform",
+                    "interpolation": "nearest",
+                    "samples": [ 1 ]
+                	},
+                	{
+                    "variable": "angle",
+                    "type": "uniform",
+                    "interpolation": "nearest",
+                    "samples": [ -90, 0, 0 ]
+                	}
+                ],
+                "handle": [
+                	{
+                    "variable": "origin_x",
+                    "type": "uniform",
+                    "interpolation": "nearest",
+                    "samples": [ 0 ]
+                	},
+                	{
+                    "variable": "origin_z",
+                    "type": "uniform",
+                    "interpolation": "nearest",
+                    "samples": [ 0.625 ]
+                	},
+                	{
+                    "variable": "axis_y",
+                    "type": "uniform",
+                    "interpolation": "nearest",
+                    "samples": [ 1 ]
+                	},
+                	{
+                    "variable": "angle",
+                    "type": "uniform",
+                    "interpolation": "nearest",
+                    "samples": [ -90, 0, 0 ]
+                	}
+                ]
+            },
+            "events": {}
+        }
+    }
+}

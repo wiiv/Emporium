@@ -1,11 +1,10 @@
 {
     "Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
-    "parent": "block/block",
+	"parent": "emporium:block/block_front",
     "textures": {
-        "particle": "emporium:blocks/modern_wooden_counter",
-        "texture1": "emporium:blocks/modern_wooden_counter",
-        "texture2": "emporium:blocks/stone_dark_extended",
-        "texture3": "emporium:blocks/stone_dark"
+        "particle": "emporium:blocks/furniture/counter/counter_wood_modern",
+        "texture1": "emporium:blocks/furniture/counter/counter_wood_modern",
+        "texture2": "emporium:blocks/material/stone_dark"
     },
 	"elements": [
 		{
@@ -13,13 +12,13 @@
 			"from": [ 0, 16, 0 ],
             "to": [ 16, 20, 16 ],
             "faces": {
-                "down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture3" },
-                "up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture3" },
-                "north": { "uv": [ 1, 8, 9, 10 ], "texture": "#texture2" },
-                "south": { "uv": [ 0, 8, 8, 10 ], "texture": "#texture2" },
-                "west": { "uv": [ 0, 10, 8, 12 ], "texture": "#texture2" },
-                "east": { "uv": [ 0, 10, 8, 12 ], "texture": "#texture2" }
-            }
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture2" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture2" },
+				"north": { "uv": [ 0, 0, 16, 4 ], "texture": "#texture2" },
+				"south": { "uv": [ 0, 4, 16, 8 ], "texture": "#texture2" },
+				"west": { "uv": [ 0, 8, 16, 12 ], "texture": "#texture2" },
+				"east": { "uv": [ 0, 12, 16, 16 ], "texture": "#texture2" }
+			}
 		},
 		{
 			"Name": "CounterShelf1",
@@ -52,7 +51,7 @@
             "faces": {
                 "down": { "uv": [ 11.5, 4, 12, 8 ], "texture": "#texture1" },
                 "north": { "uv": [ 4.5, 0, 5, 8 ], "texture": "#texture1" },
-                "south": { "uv": [ 4.5, 0, 5, 8 ], "texture": "#texture1" },
+                "south": { "uv": [ 0, 0, 0.5, 8 ], "texture": "#texture1" },
                 "west": { "uv": [ 1, 0, 5, 8 ], "texture": "#texture1" },
                 "east": { "uv": [ 0, 0, 4, 8 ], "texture": "#texture1" }
             }
@@ -64,7 +63,7 @@
             "faces": {
                 "down": { "uv": [ 5, 4, 5.5, 8 ], "texture": "#texture1" },
                 "north": { "uv": [ 4.5, 0, 5, 8 ], "texture": "#texture1" },
-                "south": { "uv": [ 0, 0, 0.5, 8 ], "texture": "#texture1" },
+                "south": { "uv": [ 4.5, 0, 5, 8 ], "texture": "#texture1" },
                 "west": { "uv": [ 1, 0, 5, 8 ], "texture": "#texture1" },
                 "east": { "uv": [ 0, 0, 4, 8 ], "texture": "#texture1" }
             }

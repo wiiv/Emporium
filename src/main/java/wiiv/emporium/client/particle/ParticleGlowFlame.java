@@ -22,7 +22,7 @@ public class ParticleGlowFlame extends Particle implements ICustomParticle {
 
 	public ParticleGlowFlame(World worldIn, double x, double y, double z, double vx, double vy, double vz, float r, float g, float b, float scale) {
 		super(worldIn, x, y, z, 0, 0, 0);
-		field_190017_n = false;
+		canCollide = false;
 		colorR = r;
 		colorG = g;
 		colorB = b;
@@ -42,7 +42,7 @@ public class ParticleGlowFlame extends Particle implements ICustomParticle {
 		motionX = vx;
 		motionY = vy;
 		motionZ = vz;
-		field_190014_F = 2.0f * (float) Math.PI;
+		particleAngle = 2.0f * (float) Math.PI;
 		TextureAtlasSprite sprite = Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(Textures.GLOW_FLAME.toString());
 		setParticleTexture(sprite);
 	}
@@ -73,11 +73,11 @@ public class ParticleGlowFlame extends Particle implements ICustomParticle {
 	public void onUpdate() {
 		super.onUpdate();
 
-		if (worldObj.rand.nextInt(4) == 0) {
+		if (world.rand.nextInt(4) == 0) {
 			particleAge++;
 		}
-		int rand1 = worldObj.rand.nextInt(2);
-		int rand2 = worldObj.rand.nextInt(2);
+		int rand1 = world.rand.nextInt(2);
+		int rand2 = world.rand.nextInt(2);
 		if (rand1 == 0) {
 			motionX = (rand1 == 0 ? 0.0009d : -0.0009d) + (rand1 == 0 ? motionX : -motionX);
 			motionZ = (rand2 == 0 ? 0.0009d : -0.0009d) + (rand2 == 0 ? motionZ : -motionZ);
@@ -90,8 +90,8 @@ public class ParticleGlowFlame extends Particle implements ICustomParticle {
 		particleScale = initScale - initScale * lifeCoeff;
 		particleAlpha = 1.0f - lifeCoeff;
 		//particleAlpha = 1.0f;
-		field_190015_G = field_190014_F;
-		field_190014_F += 1.0f;
+		prevParticleAngle = particleAngle;
+		particleAngle += 1.0f;
 		motionY += particleAge / 100 + 0.002d;
 		colorG = Math.min(colorG, lifeCoeff);
 	}

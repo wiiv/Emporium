@@ -1,0 +1,31 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:cabinet_wood"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{
+            "model": "emporium:cabinet_wood",
+            "submodel": {
+                "door": {
+                    "model": "emporium:cabinet_wood_drawer"
+                }
+            }
+        }],
+        "facing": {
+        	"north": { "transform": "identity"                   },
+            "south": { "transform": { "rotation": { "y": 180 } } },
+            "east":  { "transform": { "rotation": { "y": 270 } } },
+            "west":  { "transform": { "rotation": { "y": 90  } } }
+        },
+        "static": {
+            "true": {
+                "model": "emporium:cabinet_wood"
+            },
+            "false": {
+                "model": "emporium:cabinet_wood_drawer"
+            }
+        }
+    }
+}

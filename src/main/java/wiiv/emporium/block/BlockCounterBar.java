@@ -26,44 +26,7 @@ public class BlockCounterBar extends BlockBase {
 		setSoundType(SoundType.WOOD);
 		setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(TYPE, CounterType.SINGLE));
 	}
-
-	/*
-	@Override
-	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-		EnumFacing facing = state.getValue(FACING);
-		if (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH) {
-			IBlockState right = worldIn.getBlockState(pos.east());
-			IBlockState left = worldIn.getBlockState(pos.west());
-
-			if (worldIn.getBlockState(pos.east()).getBlock() == this && (right.getValue(FACING) == EnumFacing.NORTH | right.getValue(FACING) == EnumFacing.SOUTH)) {
-				state = state.withProperty(RIGHT, true);
-			}
-			if (worldIn.getBlockState(pos.west()).getBlock() == this && (left.getValue(FACING) == EnumFacing.NORTH | left.getValue(FACING) == EnumFacing.SOUTH)) {
-				state = state.withProperty(LEFT, true);
-			}
-
-			return state;
-		}
-
-		if (facing == EnumFacing.EAST || facing == EnumFacing.WEST) {
-			IBlockState right = worldIn.getBlockState(pos.north());
-			IBlockState left = worldIn.getBlockState(pos.south());
-
-			if (right.getBlock() == this && (right.getValue(FACING) == EnumFacing.EAST | right.getValue(FACING) == EnumFacing.WEST)) {
-				state = state.withProperty(RIGHT, true);
-			}
-			if (left.getBlock() == this && (left.getValue(FACING) == EnumFacing.EAST | left.getValue(FACING) == EnumFacing.WEST)) {
-				state = state.withProperty(LEFT, true);
-			}
-
-			return state;
 	
-	
-	
-		return state;
-	}
-	*/
-
 	@Override
 	public IBlockState getActualState(IBlockState state, IBlockAccess world, BlockPos pos) {
 		EnumFacing facing = state.getValue(FACING);
@@ -158,7 +121,7 @@ public class BlockCounterBar extends BlockBase {
 	}
 
 	@Override
-	public IBlockState onBlockPlaced(World world, BlockPos pos, EnumFacing facingIn, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facingIn, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
 		EnumFacing facing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw).getOpposite();
 		if (placer != null && placer instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) placer;

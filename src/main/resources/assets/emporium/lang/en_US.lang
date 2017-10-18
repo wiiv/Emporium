@@ -119,14 +119,14 @@ tile.sofa_brog.name=Brog Sofa
 tile.sofa_magen.name=Magen Sofa
 tile.sofa_cyna.name=Cyna Sofa
 
-tile.floating_paper_lamp_white.name=White Floating Paper Lamp
-tile.floating_paper_lamp_orange.name=Orange Floating Paper Lamp
-tile.floating_paper_lamp_magenta.name=Magenta Floating Paper Lamp
-tile.floating_paper_lamp_blue.name=Blue Floating Paper Lamp
-tile.floating_paper_lamp_purple.name=Purple Floating Paper Lamp
-tile.floating_paper_lamp_red.name=Red Floating Paper Lamp
-tile.floating_paper_lamp_green.name=Green Floating Paper Lamp
-tile.floating_paper_lamp_yellow.name=Yellow Floating Paper Lamp
+tile.lamp_paper_floating _white.name=White Floating Lamp
+tile.lamp_paper_floating _orange.name=Orange Floating Lamp
+tile.lamp_paper_floating _magenta.name=Magenta Floating Lamp
+tile.lamp_paper_floating _blue.name=Blue Floating Lamp
+tile.lamp_paper_floating _purple.name=Purple Floating Lamp
+tile.lamp_paper_floating _red.name=Red Floating Lamp
+tile.lamp_paper_floating _green.name=Green Floating Lamp
+tile.lamp_paper_floating _yellow.name=Yellow Floating Lamp
 
 tile.glowrescent_axis_lamp_white.name=White Glowrescent Axis Lamp
 tile.glowrescent_axis_lamp_orange.name=Orange Glowrescent Axis Lamp
@@ -224,3 +224,30 @@ tile.garden_golden_lamp_green.name=Green Outdoor Golden Lamp
 tile.garden_golden_lamp_cyan.name=Cyan Outdoor Golden Lamp
 tile.garden_golden_lamp_yellow.name=Yellow Outdoor Golden Lamp
 tile.garden_golden_lamp_brown.name=Brown Outdoor Golden Lamp
+
+tile.stool_bar_cushion_one.name=Red Cushioned Bar Stool
+tile.stool_bar_cushion_two.name=Orange Cushioned Bar Stool
+tile.stool_bar_cushion_three.name=Yellow Cushioned Bar Stool
+tile.stool_bar_cushion_four.name=Green Cushioned Bar Stool
+tile.stool_bar_cushion_five.name=Blue Cushioned Bar Stool
+tile.stool_bar_cushion_six.name=Purple Cushioned Bar Stool
+tile.stool_bar_cushion_seven.name=Magenta Cushioned Bar Stool
+tile.stool_bar_cushion_eight.name=Black Cushioned Bar Stool
+
+tile.stool_bar_plastic_one.name=Red Plastic Bar Stool
+tile.stool_bar_plastic_two.name=Orange Plastic Bar Stool
+tile.stool_bar_plastic_three.name=Yellow Plastic Bar Stool
+tile.stool_bar_plastic_four.name=Green Plastic Bar Stool
+tile.stool_bar_plastic_five.name=Blue Plastic Bar Stool
+tile.stool_bar_plastic_six.name=Purple Plastic Bar Stool
+tile.stool_bar_plastic_seven.name=Magenta Plastic Bar Stool
+tile.stool_bar_plastic_eight.name=White Plastic Bar Stool
+
+tile.lamp_floating_one.name=Red Floating Lamp
+tile.lamp_floating_two.name=Orange Floating Lamp
+tile.lamp_floating_three.name=Yellow Floating Lamp
+tile.lamp_floating_four.name=Green Floating Lamp
+tile.lamp_floating_five.name=Blue Floating Lamp
+tile.lamp_floating_six.name=Purple Floating Lamp
+tile.lamp_floating_seven.name=Magenta Floating Lamp
+tile.lamp_floating_eight.name=Black Floating Lamp

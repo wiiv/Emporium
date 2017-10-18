@@ -2,6 +2,8 @@ package wiiv.emporium.block;
 
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -11,7 +13,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -24,9 +25,7 @@ import wiiv.emporium.util.MountableUtil;
 public class BlockMedievalChairQueen extends BlockBase {
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
-	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 1), (0.0625D * 15), (0.0625D * 10), (0.0625D * 15));
-	private static final AxisAlignedBB COLLISION_BOX = new AxisAlignedBB((0.0625D * 1), 0.0D, (0.0625D * 1), (0.0625D * 15), (0.0625D * 10), (0.0625D * 15));
-
+	
 	public BlockMedievalChairQueen() {
 		super(Material.WOOD, "medieval_chair_queen", 1.0F);
 		setSoundType(SoundType.WOOD);
@@ -43,31 +42,41 @@ public class BlockMedievalChairQueen extends BlockBase {
 		return false;
 	}
 
-	/*
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		return getBox(state.getValue(FACING));
+	}
+	
+	@Override
+	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean p_185477_7_) {
+		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, getBox(state.getValue(FACING)));
+	}
+	
+	private AxisAlignedBB getBox(EnumFacing facing) {
+		switch (facing) {
+		case SOUTH:
+			return new AxisAlignedBB((0.0625D * 3), (0.0F), (0.0625D * 2), 1 - (0.0625D * 3), (0.0625D * 8), 1 - (0.0625D * 4));
+		case EAST:
+			return new AxisAlignedBB((0.0625D * 2), (0.0F), (0.0625D * 3), 1 - (0.0625D * 4), (0.0625D * 8), 1 - (0.0625D * 3));
+		case WEST:
+			return new AxisAlignedBB((0.0625D * 4), (0.0F), (0.0625D * 3), 1 - (0.0625D * 2), (0.0625D * 8), 1 - (0.0625D * 3));
+		default:
+		case NORTH:
+			return new AxisAlignedBB((0.0625D * 3), (0.0F), (0.0625D * 4), 1 - (0.0625D * 3), (0.0625D * 8), 1 - (0.0625D * 2));
+		}
+	}
+	
 	@Override
 	public BlockRenderLayer getBlockLayer() {
 
-		return BlockRenderLayer.TRANSLUCENT;
+		return BlockRenderLayer.SOLID;
 	}
-	*/
-
+	
 	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-
-		return BOUNDING_BOX;
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] {FACING});
 	}
-
-	@Override
-	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, Entity entityIn) {
-		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, COLLISION_BOX);
-	}
-
-	@Override
-	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facingIn, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-		EnumFacing facing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
-		return getDefaultState().withProperty(FACING, facing);
-	}
-
+	
 	@Override
 	public int getMetaFromState(IBlockState state) {
 		return state.getValue(FACING).getHorizontalIndex();
@@ -80,21 +89,13 @@ public class BlockMedievalChairQueen extends BlockBase {
 	}
 
 	@Override
-	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] {
-				FACING
-		});
+	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facingIn, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+		EnumFacing facing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
+		return getDefaultState().withProperty(FACING, facing);
 	}
 
 	@Override
-	public BlockRenderLayer getBlockLayer() {
-
-		return BlockRenderLayer.CUTOUT;
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.25, true);
 	}
-
-	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-		return MountableUtil.sitOnBlock(worldIn, pos, playerIn, 0.4, true);
-	}
-
 }

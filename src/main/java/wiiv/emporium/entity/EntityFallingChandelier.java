@@ -23,7 +23,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import wiiv.emporium.block.BlockLampChandelier;
+import wiiv.emporium.block.BlockCandleChandelierColorable;
 import wiiv.emporium.init.ModBlocks;
 
 /**
@@ -65,7 +65,7 @@ public class EntityFallingChandelier extends Entity {
 
 	public void setType(Block block) {
 		int i = 0;
-		for (BlockLampChandelier chandelier : ModBlocks.CHANDELIER_LAMP) {
+		for (BlockCandleChandelierColorable chandelier : ModBlocks.CANDLE_CHANDELIER_COLORABLE) {
 			++i;
 			if (block == chandelier) {
 				dataManager.set(TYPE, i - 1);
@@ -127,16 +127,16 @@ public class EntityFallingChandelier extends Entity {
 			if (fallTime++ == 0) {
 				BlockPos blockpos = new BlockPos(this);
 
-				if (worldObj.getBlockState(blockpos).getBlock() == block) {
-					worldObj.setBlockToAir(blockpos);
+				if (world.getBlockState(blockpos).getBlock() == block) {
+					world.setBlockToAir(blockpos);
 				}
-				else if (!worldObj.isRemote) {
+				else if (!world.isRemote) {
 					setDead();
 					return;
 				}
 			}
 
-			if (!func_189652_ae()) {
+			if (!hasNoGravity()) {
 				motionY -= 0.03999999910593033D;
 			}
 
@@ -145,14 +145,14 @@ public class EntityFallingChandelier extends Entity {
 			motionY *= 0.9800000190734863D;
 			motionZ *= 0.9800000190734863D;
 
-			if (!worldObj.isRemote) {
+			if (!world.isRemote) {
 				BlockPos blockpos1 = new BlockPos(this);
 
 				if (onGround) {
-					IBlockState iblockstate = worldObj.getBlockState(blockpos1);
+					IBlockState iblockstate = world.getBlockState(blockpos1);
 
-					if (worldObj.isAirBlock(new BlockPos(posX, posY - 0.009999999776482582D, posZ))) {
-						if (BlockLampChandelier.canFallThrough(worldObj.getBlockState(new BlockPos(posX, posY - 0.009999999776482582D, posZ)))) {
+					if (world.isAirBlock(new BlockPos(posX, posY - 0.009999999776482582D, posZ))) {
+						if (BlockCandleChandelierColorable.canFallThrough(world.getBlockState(new BlockPos(posX, posY - 0.009999999776482582D, posZ)))) {
 							onGround = false;
 							return;
 						}
@@ -166,25 +166,25 @@ public class EntityFallingChandelier extends Entity {
 						//setDead();
 
 						//if (!canSetAsBlock) {
-						//if (worldObj.canBlockBePlaced(block, blockpos1, true, EnumFacing.UP, (Entity) null, (ItemStack) null) && !BlockLampChandelier.canFallThrough(worldObj.getBlockState(blockpos1.down())) && worldObj.setBlockState(blockpos1, fallTile, 3)) {
+						//if (world.canBlockBePlaced(block, blockpos1, true, EnumFacing.UP, (Entity) null, (ItemStack) null) && !BlockLampChandelier.canFallThrough(world.getBlockState(blockpos1.down())) && world.setBlockState(blockpos1, fallTile, 3)) {
 						//		if (block instanceof BlockLampChandelier) {
-						//((BlockLampChandelier) block).onEndFalling(worldObj, blockpos1);
+						//((BlockLampChandelier) block).onEndFalling(world, blockpos1);
 						//setDead();
 						//		}
 						//}
-						//else if (shouldDropItem && worldObj.getGameRules().getBoolean("doEntityDrops")) {
+						//else if (shouldDropItem && world.getGameRules().getBoolean("doEntityDrops")) {
 						entityDropItem(new ItemStack(block, 1), 0.0F);
-						((BlockLampChandelier) block).onEndFalling(worldObj, blockpos1);
+						((BlockCandleChandelierColorable) block).onEndFalling(world, blockpos1);
 						setDead();
 						//}
 						//}
 					}
 				}
-				else if (fallTime > 100 && !worldObj.isRemote && (blockpos1.getY() < 1 || blockpos1.getY() > 256) || fallTime > 600) {
-					if (shouldDropItem && worldObj.getGameRules().getBoolean("doEntityDrops")) {
+				else if (fallTime > 100 && !world.isRemote && (blockpos1.getY() < 1 || blockpos1.getY() > 256) || fallTime > 600) {
+					if (shouldDropItem && world.getGameRules().getBoolean("doEntityDrops")) {
 						entityDropItem(new ItemStack(block, 1), 0.0F);
 					}
-					((BlockLampChandelier) block).onEndFalling(worldObj, blockpos1);
+					((BlockCandleChandelierColorable) block).onEndFalling(world, blockpos1);
 
 					setDead();
 				}
@@ -197,14 +197,14 @@ public class EntityFallingChandelier extends Entity {
 		Block block = fallTile.getBlock();
 
 		if (hurtEntities) {
-			int i = MathHelper.ceiling_float_int(distance - 1.0F);
+			int i = MathHelper.ceil(distance - 1.0F);
 
 			if (i > 0) {
-				List<Entity> list = Lists.newArrayList(worldObj.getEntitiesWithinAABBExcludingEntity(this, getEntityBoundingBox()));
-				DamageSource damagesource = DamageSource.anvil;
+				List<Entity> list = Lists.newArrayList(world.getEntitiesWithinAABBExcludingEntity(this, getEntityBoundingBox()));
+				DamageSource damagesource = DamageSource.ANVIL;
 
 				for (Entity entity : list) {
-					entity.attackEntityFrom(damagesource, Math.min(MathHelper.floor_float(i * fallHurtAmount), fallHurtMax));
+					entity.attackEntityFrom(damagesource, Math.min(MathHelper.floor(i * fallHurtAmount), fallHurtMax));
 				}
 
 				if (rand.nextFloat() < 0.05000000074505806D + i * 0.05D) {
@@ -215,7 +215,7 @@ public class EntityFallingChandelier extends Entity {
 	}
 
 	private boolean isChandelier(Block block) {
-		for (BlockLampChandelier chandelier : ModBlocks.CHANDELIER_LAMP) {
+		for (BlockCandleChandelierColorable chandelier : ModBlocks.CANDLE_CHANDELIER_COLORABLE) {
 			if (block == chandelier) {
 				return true;
 			}
@@ -225,11 +225,11 @@ public class EntityFallingChandelier extends Entity {
 
 	@Nullable
 	public IBlockState getBlock() {
-		return ModBlocks.CHANDELIER_LAMP[getType()].getDefaultState();
+		return ModBlocks.CANDLE_CHANDELIER_COLORABLE[getType()].getDefaultState();
 	}
 
-	private BlockLampChandelier getChandelier(Block block) {
-		for (BlockLampChandelier chandelier : ModBlocks.CHANDELIER_LAMP) {
+	private BlockCandleChandelierColorable getChandelier(Block block) {
+		for (BlockCandleChandelierColorable chandelier : ModBlocks.CANDLE_CHANDELIER_COLORABLE) {
 			if (block == chandelier) {
 				return chandelier;
 			}
@@ -319,7 +319,7 @@ public class EntityFallingChandelier extends Entity {
 
 	@SideOnly(Side.CLIENT)
 	public World getWorldObj() {
-		return worldObj;
+		return world;
 	}
 
 	/**

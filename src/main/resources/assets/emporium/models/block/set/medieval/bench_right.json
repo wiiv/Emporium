@@ -1,0 +1,62 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "emporium:block/block_front",
+	"textures": {
+		"particle": "emporium:blocks/set/medieval/wood_medieval",
+		"texture": "emporium:blocks/set/medieval/wood_medieval_bench"
+	},
+	"elements": [
+		{
+			"comment": "pillow_r",
+			"from": [ 0, 6, 4 ],
+			"to": [ 15, 8, 12 ],
+			"faces": {
+				"down": { "uv": [ 8.5, 10, 16, 14 ], "texture": "#texture" },
+				"up": { "uv": [ 8.5, 10, 16, 14 ], "texture": "#texture" },
+				"north": { "uv": [ 7, 14, 14.5, 15 ], "texture": "#texture" },
+				"south": { "uv": [ 8.5, 14, 16, 15 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 15, 4, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 15, 4, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "top_r",
+			"from": [ 0, 4, 4 ],
+			"to": [ 15, 6, 12 ],
+			"faces": {
+				"down": { "uv": [ 8.5, 0, 16, 4 ], "texture": "#texture" },
+				"up": { "uv": [ 8.5, 0, 16, 4 ], "texture": "#texture" },
+				"north": { "uv": [ 8.5, 4, 16, 5 ], "texture": "#texture" },
+				"south": { "uv": [ 7, 4, 14.5, 5 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 9, 4, 10 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 9, 4, 10 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "bar_r",
+			"from": [ 0, 1, 6 ],
+			"to": [ 15, 3, 10 ],
+			"faces": {
+				"down": { "uv": [ 8.5, 0, 16, 2 ], "texture": "#texture" },
+				"up": { "uv": [ 8.5, 0, 16, 2 ], "texture": "#texture" },
+				"north": { "uv": [ 7, 4, 14.5, 5 ], "texture": "#texture" },
+				"south": { "uv": [ 8.5, 4, 16, 5 ], "texture": "#texture" },
+				"west": { "uv": [ 5, 5, 7, 6 ], "texture": "#texture" },
+				"east": { "uv": [ 5, 5, 7, 6 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "leg_rr",
+			"from": [ 12, 0, 4 ],
+			"to": [ 14, 4, 12 ],
+			"faces": {
+				"down": { "uv": [ 7, 5, 8, 9 ], "texture": "#texture" },
+				"up": { "uv": [ 7, 5, 8, 9 ], "texture": "#texture" },
+				"north": { "uv": [ 4, 5, 5, 7 ], "texture": "#texture" },
+				"south": { "uv": [ 4, 5, 5, 7 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 5, 4, 7 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 5, 4, 7 ], "texture": "#texture" }
+			}
+		}
+	]
+}

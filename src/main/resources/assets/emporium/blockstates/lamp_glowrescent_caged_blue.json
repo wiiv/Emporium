@@ -1,0 +1,30 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+            "base": "emporium:lamp_glowrescent_caged_blue#base",
+            "Cutout": "emporium:lamp_glowrescent_caged_blue#base",
+            "Translucent": "emporium:lamp_glowrescent_caged_blue#trans"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:lamp_glowrescent_caged"
+        }],
+        "trans": [{
+            "model": "emporium:lamp_glowrescent_caged_blue"
+        }],
+		"facing": {
+		    "up": { },
+			"down": { "x": 180 },
+            "north": {"x": 90 },
+            "south": {"x": 90, "y": 180 },
+            "west": {"x": 90, "y": 270 },
+            "east": {"x": 90, "y": 90 }
+        }
+    }
+}

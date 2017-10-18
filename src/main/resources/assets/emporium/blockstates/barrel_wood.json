@@ -1,0 +1,17 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:barrel_wood_vertical"
+    },
+    "variants": {
+        "inventory": [{}],
+		"facing": {
+		    "up": { },
+			"down": { "x": 180 },
+            "north": { "model": "emporium:barrel_wood_horizontal" },
+            "south": { "model": "emporium:barrel_wood_horizontal", "y": 180 },
+            "west": { "model": "emporium:barrel_wood_horizontal", "y": 270 },
+            "east": { "model": "emporium:barrel_wood_horizontal", "y": 90 }
+        }
+    }
+}

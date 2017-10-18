@@ -1,0 +1,28 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+        	"base": "emporium:lamp_library_red#base",
+            "Solid": "emporium:lamp_library_red#base",
+            "Translucent": "emporium:lamp_library_red#trans"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:lamp_library_0frame"
+        }],
+        "trans": [{
+            "model": "emporium:lamp_library_red"
+        }],
+        "facing": {
+        	"north": {},
+        	"south": {"y": 180},
+        	"east":  {"y": 90},
+        	"west":  { "y": 270 }
+        }
+    }
+}

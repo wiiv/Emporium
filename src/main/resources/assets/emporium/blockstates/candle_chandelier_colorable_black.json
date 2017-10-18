@@ -1,0 +1,10 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:candle_chandelier_colorable_black"
+        },
+    "variants": {
+    	"inventory": [{}],
+    	"normal": [{}]
+    }
+}

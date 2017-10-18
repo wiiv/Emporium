@@ -1,0 +1,77 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "emporium:block/block_front",
+	"textures": {
+		"texture": "emporium:blocks/set/medieval/wood_medieval_table",
+		"texture1": "emporium:blocks/set/medieval/wood_medieval_polished",
+		"particle": "emporium:blocks/set/medieval/wood_medieval"
+		
+	},
+	"elements": [
+		{
+			"comment": "top",
+			"from": [ 0, 14, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+				"north": { "uv": [ 0, 9, 8, 10 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 9, 8, 10 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 9, 8, 10 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 9, 8, 10 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "support",
+			"from": [ 3, 12, 4 ],
+			"to": [ 13, 14, 12 ],
+			"faces": {
+				"down": { "uv": [ 9, 8, 14, 12 ], "texture": "#texture" },
+				"up": { "uv": [ 9, 8, 14, 12 ], "texture": "#texture" },
+				"north": { "uv": [ 9, 7, 14, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 9, 7, 14, 8 ], "texture": "#texture" },
+				"west": { "uv": [ 4, 2, 12, 4 ], "texture": "#texture" },
+				"east": { "uv": [ 4, 2, 12, 4 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "bar",
+			"from": [ 0, 2, 7 ],
+			"to": [ 16, 6, 9 ],
+			"faces": {
+				"down": { "uv": [ 0, 9, 8, 10 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 9, 8, 10 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 10, 8, 12 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 10, 8, 12 ], "texture": "#texture" },
+				"west": { "uv": [ 8, 10, 9, 12 ], "texture": "#texture" },
+				"east": { "uv": [ 8, 10, 9, 12 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "leg_l",
+			"from": [ 1, 0, 4 ],
+			"to": [ 3, 14, 12 ],
+			"faces": {
+				"down": { "uv": [ 12, 4, 14, 12 ], "texture": "#texture" },
+				"up": { "uv": [ 12, 4, 14, 12 ], "texture": "#texture" },
+				"north": { "uv": [ 13, 0, 14, 7 ], "texture": "#texture" },
+				"south": { "uv": [ 13, 0, 14, 7 ], "texture": "#texture" },
+				"west": { "uv": [ 9, 0, 13, 7 ], "texture": "#texture" },
+				"east": { "uv": [ 9, 0, 13, 7 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "leg_r",
+			"from": [ 13, 0, 4 ],
+			"to": [ 15, 14, 12 ],
+			"faces": {
+				"down": { "uv": [ 12, 4, 14, 12 ], "texture": "#texture" },
+				"up": { "uv": [ 12, 4, 14, 12 ], "texture": "#texture" },
+				"north": { "uv": [ 13, 0, 14, 7 ], "texture": "#texture" },
+				"south": { "uv": [ 13, 0, 14, 7 ], "texture": "#texture" },
+				"west": { "uv": [ 9, 0, 13, 7 ], "texture": "#texture" },
+				"east": { "uv": [ 9, 0, 13, 7 ], "texture": "#texture" }
+			}
+		}
+	]
+}

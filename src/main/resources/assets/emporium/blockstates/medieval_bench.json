@@ -1,20 +1,28 @@
 {
-	"variants": {
-		"facing=north,left=false,right=false": {"model": "emporium:medieval_bench_single"},
-		"facing=east,left=false,right=false": {"model": "emporium:medieval_bench_single", "y": 90},
-		"facing=south,left=false,right=false": {"model": "emporium:medieval_bench_single"},
-		"facing=west,left=false,right=false": {"model": "emporium:medieval_bench_single", "y": 90},
-		"facing=north,left=true,right=false": {"model": "emporium:medieval_bench_right"},
-		"facing=east,left=true,right=false": {"model": "emporium:medieval_bench_left", "y": 90},
-		"facing=south,left=true,right=false": {"model": "emporium:medieval_bench_right"},
-		"facing=west,left=true,right=false": {"model": "emporium:medieval_bench_left", "y": 90},
-		"facing=north,left=false,right=true": {"model": "emporium:medieval_bench_left"},
-		"facing=east,left=false,right=true": {"model": "emporium:medieval_bench_right", "y": 90},
-		"facing=south,left=false,right=true": {"model": "emporium:medieval_bench_left"},
-		"facing=west,left=false,right=true": {"model": "emporium:medieval_bench_right", "y": 90},
-		"facing=north,left=true,right=true": {"model": "emporium:medieval_bench_center"},
-		"facing=east,left=true,right=true": {"model": "emporium:medieval_bench_center", "y": 90},
-		"facing=south,left=true,right=true": {"model": "emporium:medieval_bench_center"},
-		"facing=west,left=true,right=true": {"model": "emporium:medieval_bench_center", "y": 90}
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:set/medieval/bench_single"
+    },
+    "variants": {
+    	"inventory": [{}],
+		"facing=north,left=false,right=false": {"model": "emporium:set/medieval/bench_single"},
+		"facing=north,left=true,right=false": {"model": "emporium:set/medieval/bench_right"},
+		"facing=north,left=true,right=true": {"model": "emporium:set/medieval/bench_center"},
+		"facing=north,left=false,right=true": {"model": "emporium:set/medieval/bench_left"},
+		
+		"facing=south,left=false,right=false": {"model": "emporium:set/medieval/bench_single", "y": 180},
+		"facing=south,left=false,right=true": {"model": "emporium:set/medieval/bench_right", "y": 180},
+		"facing=south,left=true,right=true": {"model": "emporium:set/medieval/bench_center", "y": 180},
+		"facing=south,left=true,right=false": {"model": "emporium:set/medieval/bench_left", "y": 180},
+		
+		"facing=east,left=false,right=false": {"model": "emporium:set/medieval/bench_single", "y": 90},
+		"facing=east,left=false,right=true": {"model": "emporium:set/medieval/bench_right", "y": 90},
+		"facing=east,left=true,right=true": {"model": "emporium:set/medieval/bench_center", "y": 90},
+		"facing=east,left=true,right=false": {"model": "emporium:set/medieval/bench_left", "y": 90},
+		
+		"facing=west,left=false,right=false": {"model": "emporium:set/medieval/bench_single", "y": 270},
+		"facing=west,left=true,right=false": {"model": "emporium:set/medieval/bench_right", "y": 270},
+		"facing=west,left=true,right=true": {"model": "emporium:set/medieval/bench_center", "y": 270},
+		"facing=west,left=false,right=true": {"model": "emporium:set/medieval/bench_left", "y": 270}	
 	}
 }

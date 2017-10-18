@@ -1,0 +1,36 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"textures": {
+        "texture": "emporium:blocks/material/stone_normal",
+        "texture1": "emporium:blocks/material/stone_clear",
+        "particle": "emporium:blocks/material/stone_clear"
+    },
+	"elements": [
+	    {
+            "Name": "top_r",
+            "from": [ 0, 12, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+                "up": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture1" },
+                "north": { "uv": [ 0, 0, 16, 4 ], "texture": "#texture1" },
+                "south": { "uv": [ 0, 0, 16, 4 ], "texture": "#texture1" },
+                "west": { "uv": [ 0, 0, 16, 4 ], "texture": "#texture1" },
+                "east": { "uv": [ 0, 0, 16, 4 ], "texture": "#texture1" }
+            }
+        },
+		{
+			"Name": "leg_r",
+			"from": [ 12, 0, 1 ],
+			"to": [ 15, 12, 15 ],
+			"faces": {
+				"down": { "uv": [ 12, 1, 15, 15 ], "texture": "#texture" },
+				"up": { "uv": [ 12, 1, 15, 15 ], "texture": "#texture" },
+				"north": { "uv": [ 1, 4, 4, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 12, 4, 15, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 1, 4, 15, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 1, 4, 15, 16 ], "texture": "#texture" }
+			}
+		}
+	]
+}

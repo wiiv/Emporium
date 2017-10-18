@@ -197,7 +197,7 @@ public class TileCabinet extends TileEntity implements ITickable, IInventory {
 	public void setInventorySlotContents(int index, ItemStack stack) {
 		inventory[index] = stack;
 
-		if (stack != null && stack.stackSize > getInventoryStackLimit()) {
+		if (stack != null && stack.getCount() > getInventoryStackLimit()) {
 			stack.stackSize = getInventoryStackLimit();
 		}
 		markDirty();

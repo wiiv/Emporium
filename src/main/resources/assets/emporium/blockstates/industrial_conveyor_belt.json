@@ -1,8 +1,16 @@
 {
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:industrial_conveyor_belt",
+        "transform": "forge:default-block"
+        },
     "variants": {
-	    "facing=west":  { "model": "emporium:industrial_conveyor_belt", "y": 270 },
-        "facing=north": { "model": "emporium:industrial_conveyor_belt" },
-        "facing=east":  { "model": "emporium:industrial_conveyor_belt", "y": 90 },
-        "facing=south": { "model": "emporium:industrial_conveyor_belt", "y": 180 }
+    	"inventory": [{}],
+    	"facing": {
+        	"north": {},
+        	"south": {"y": 180},
+        	"east":  {"y": 90},
+        	"west":  { "y": 270 }
+        }
     }
 }

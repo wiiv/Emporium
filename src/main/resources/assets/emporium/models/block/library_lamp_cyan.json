@@ -1,6 +1,0 @@
-{
-	"parent": "emporium:block/library_lamp",
-    "textures": {
-        "1": "emporium:blocks/lamp_library_cyan"
-    }
-}

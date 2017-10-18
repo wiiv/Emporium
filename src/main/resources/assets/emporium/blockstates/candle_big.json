@@ -1,0 +1,10 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:candle_big"
+        },
+    "variants": {
+    	"inventory": [{}],
+    	"normal": [{}]
+    }
+}

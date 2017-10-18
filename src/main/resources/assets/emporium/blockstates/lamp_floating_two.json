@@ -1,0 +1,22 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+        	"base": "emporium:lamp_floating_two#trans",
+            "Cutout": "emporium:lamp_floating_two#base",
+            "Translucent": "emporium:lamp_floating_two#trans"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:lamp_floating_0frame"
+        }],
+        "trans": [{
+            "model": "emporium:lamp_floating_orange"
+        }]
+    }
+}

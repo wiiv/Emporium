@@ -1,0 +1,49 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"texture": "emporium:blocks/material/wood_modern_polished",
+		"texture1": "emporium:blocks/furniture/table/table_wood_modern",
+		"particle": "emporium:blocks/material/wood_modern"
+	},
+	"elements": [
+		{
+			"comment": "top_r",
+			"from": [ 0, 14, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 1, 0, 9, 8 ], "texture": "#texture1" },
+				"up": { "uv": [ 1, 0, 9, 8 ], "texture": "#texture1" },
+				"north": { "uv": [ 0, 8, 8, 9 ], "texture": "#texture1" },
+				"south": { "uv": [ 1, 8, 9, 9 ], "texture": "#texture1" },
+				"west": { "uv": [ 0, 9, 8, 10 ], "texture": "#texture1" },
+				"east": { "uv": [ 0, 9, 8, 10 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"comment": "leg_rf",
+			"from": [ 13, 0, 13 ],
+			"to": [ 15, 14, 15 ],
+			"faces": {
+				"down": { "uv": [ 8, 9, 9, 10 ], "texture": "#texture1" },
+				"up": { "uv": [ 8, 9, 9, 10 ], "texture": "#texture1" },
+				"north": { "uv": [ 9, 7.5, 10, 14.5 ], "texture": "#texture1" },
+				"south": { "uv": [ 10, 7.5, 11, 14.5 ], "texture": "#texture1" },
+				"west": { "uv": [ 12, 7.5, 13, 14.5 ], "texture": "#texture1" },
+				"east": { "uv": [ 11, 7.5, 12, 14.5 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"comment": "leg_rb",
+			"from": [ 13, 0, 1 ],
+			"to": [ 15, 14, 3 ],
+			"faces": {
+				"down": { "uv": [ 8, 9, 9, 10 ], "texture": "#texture1" },
+				"up": { "uv": [ 8, 9, 9, 10 ], "texture": "#texture1" },
+				"north": { "uv": [ 9, 7.5, 10, 14.5 ], "texture": "#texture1" },
+				"south": { "uv": [ 10, 7.5, 11, 14.5 ], "texture": "#texture1" },
+				"west": { "uv": [ 12, 7.5, 13, 14.5 ], "texture": "#texture1" },
+				"east": { "uv": [ 11, 7.5, 12, 14.5 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

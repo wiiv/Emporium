@@ -29,12 +29,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.IPerspectiveAwareModel;
 import wiiv.emporium.Globals;
-import wiiv.emporium.block.tile.TileCookieJar;
+import wiiv.emporium.block.tile.TileJarCookie;
 import wiiv.emporium.client.model.ModelCookieJar;
 import wiiv.emporium.init.ModBlocks;
 import wiiv.emporium.util.RenderUtils;
 
-public class RenderTileJar extends TileEntitySpecialRenderer<TileCookieJar> implements IItemRenderer, IPerspectiveAwareModel {
+public class RenderTileJar extends TileEntitySpecialRenderer<TileJarCookie> implements IItemRenderer, IPerspectiveAwareModel {
 
 	public static final ResourceLocation JAR_TEXTURE = new ResourceLocation(Globals.MOD_ID, "textures/models/jar_metal.png");
 	public static final ResourceLocation JAR_SPRITE = new ResourceLocation(Globals.MOD_ID, "models/jar_metal_sprite");
@@ -65,7 +65,7 @@ public class RenderTileJar extends TileEntitySpecialRenderer<TileCookieJar> impl
 	}
 
 	@Override
-	public void renderTileEntityAt(TileCookieJar jar, double x, double y, double z, float partialTicks, int destroyStage) {
+	public void renderTileEntityAt(TileJarCookie jar, double x, double y, double z, float partialTicks, int destroyStage) {
 		super.renderTileEntityAt(jar, x, y, z, partialTicks, destroyStage);
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(x, y, z);
@@ -92,10 +92,10 @@ public class RenderTileJar extends TileEntitySpecialRenderer<TileCookieJar> impl
 
 				for (int i = 0; i < stack.stackSize; i++) {
 
-					GlStateManager.rotate(TileCookieJar.getAngle(i), TileCookieJar.getXRot(i), TileCookieJar.getYRot(i), TileCookieJar.getZRot(i));
-					GlStateManager.translate(TileCookieJar.getXOffset(i), TileCookieJar.getZOffset(i), (TileCookieJar.getYOffset(i) - 0.06F));
+					GlStateManager.rotate(TileJarCookie.getAngle(i), TileJarCookie.getXRot(i), TileJarCookie.getYRot(i), TileJarCookie.getZRot(i));
+					GlStateManager.translate(TileJarCookie.getXOffset(i), TileJarCookie.getZOffset(i), (TileJarCookie.getYOffset(i) - 0.06F));
 					Minecraft.getMinecraft().getRenderItem().renderItem(stack, ItemCameraTransforms.TransformType.FIXED);
-					GlStateManager.rotate(-TileCookieJar.getAngle(i), -TileCookieJar.getXRot(i), -TileCookieJar.getYRot(i), -TileCookieJar.getZRot(i));
+					GlStateManager.rotate(-TileJarCookie.getAngle(i), -TileJarCookie.getXRot(i), -TileJarCookie.getYRot(i), -TileJarCookie.getZRot(i));
 
 				}
 				GlStateManager.disableBlend();
@@ -105,7 +105,7 @@ public class RenderTileJar extends TileEntitySpecialRenderer<TileCookieJar> impl
 		}
 	}
 
-	private void renderItems(TileCookieJar jar) {
+	private void renderItems(TileJarCookie jar) {
 
 		ItemStack stack = jar.getStack();
 
@@ -120,10 +120,10 @@ public class RenderTileJar extends TileEntitySpecialRenderer<TileCookieJar> impl
 
 			for (int i = 0; i < jar.getStack().stackSize; i++) {
 
-				GlStateManager.rotate(TileCookieJar.getAngle(i), TileCookieJar.getXRot(i), TileCookieJar.getYRot(i), TileCookieJar.getZRot(i));
-				GlStateManager.translate(TileCookieJar.getXOffset(i), TileCookieJar.getZOffset(i), (TileCookieJar.getYOffset(i) - 0.06F));
+				GlStateManager.rotate(TileJarCookie.getAngle(i), TileJarCookie.getXRot(i), TileJarCookie.getYRot(i), TileJarCookie.getZRot(i));
+				GlStateManager.translate(TileJarCookie.getXOffset(i), TileJarCookie.getZOffset(i), (TileJarCookie.getYOffset(i) - 0.06F));
 				Minecraft.getMinecraft().getRenderItem().renderItem(stack, ItemCameraTransforms.TransformType.FIXED);
-				GlStateManager.rotate(-TileCookieJar.getAngle(i), -TileCookieJar.getXRot(i), -TileCookieJar.getYRot(i), -TileCookieJar.getZRot(i));
+				GlStateManager.rotate(-TileJarCookie.getAngle(i), -TileJarCookie.getXRot(i), -TileJarCookie.getYRot(i), -TileJarCookie.getZRot(i));
 
 			}
 

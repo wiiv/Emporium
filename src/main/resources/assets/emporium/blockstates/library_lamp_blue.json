@@ -1,8 +1,0 @@
-{
-    "variants": {
-	    "facing=west":  { "model": "emporium:library_lamp_blue", "y": 270 },
-        "facing=north": { "model": "emporium:library_lamp_blue" },
-        "facing=east":  { "model": "emporium:library_lamp_blue", "y": 90 },
-        "facing=south": { "model": "emporium:library_lamp_blue", "y": 180 }
-    }
-}

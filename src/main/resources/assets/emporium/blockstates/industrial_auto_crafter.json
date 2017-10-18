@@ -2,53 +2,26 @@
     "forge_marker": 1,
     "defaults": {
         "model": "forge:multi-layer",
+        "custom": {
+        	"base": "emporium:industrial_auto_crafter#base",
+        	"Solid": "emporium:industrial_auto_crafter#base",
+        	"Translucent": "emporium:industrial_auto_crafter#trans"
+        },
         "transform": "forge:default-block"
     },
     "variants": {
-        "normal": [{}],
-        "inventory": [{
-        	"custom": {
-            	"base": "emporium:industrial_auto_crafter#base",
-            	"Solid": "emporium:industrial_auto_crafter#base",
-            	"Translucent": "emporium:industrial_auto_crafter#trans"
-        	}	
-        }],
+        "inventory": [{}],
         "base": [{
             "model": "emporium:industrial_auto_crafter"
         }],
         "trans": [{
             "model": "emporium:industrial_auto_crafter_trans"
         }],
-        "facing=west":  [{ 
-        	"custom": {
-            	"base": "emporium:industrial_auto_crafter#base",
-            	"Solid": "emporium:industrial_auto_crafter#base",
-            	"Translucent": "emporium:industrial_auto_crafter#trans"
-            },
-            "y": 270
-        }],
-        "facing=north": [{ 
-        	"custom": {
-            	"base": "emporium:industrial_auto_crafter#base",
-            	"Solid": "emporium:industrial_auto_crafter#base",
-            	"Translucent": "emporium:industrial_auto_crafter#trans"
-            }
-        }],
-        "facing=east":  [{ 
-        	"custom": {
-            	"base": "emporium:industrial_auto_crafter#base",
-            	"Solid": "emporium:industrial_auto_crafter#base",
-            	"Translucent": "emporium:industrial_auto_crafter#trans"
-            },
-            "y": 90 
-        }],
-        "facing=south": [{ 
-        	"custom": {
-            	"base": "emporium:industrial_auto_crafter#base",
-            	"Solid": "emporium:industrial_auto_crafter#base",
-            	"Translucent": "emporium:industrial_auto_crafter#trans"
-            },
-            "y": 180
-        }]
+        "facing": {
+        	"north": {},
+        	"south": {"y": 180},
+        	"east":  {"y": 90},
+        	"west":  { "y": 270 }
+        }
     }
 }

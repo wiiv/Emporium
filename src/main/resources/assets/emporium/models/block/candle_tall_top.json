@@ -1,0 +1,47 @@
+{
+	"Comment": "Model created by wiiv using Cubik Sudio",
+    "parent": "block/block",
+	"textures": {
+		"texture": "emporium:blocks/lighting/candle/frame_tall",
+		"candle": "emporium:blocks/lighting/candle/candle_wax",
+		"particle": "emporium:blocks/lighting/candle/candle_wax"
+	},
+	"elements": [
+		{
+			"from": [ 7, 0, 7 ],
+			"to": [ 9, 5, 9 ],
+			"faces": {
+				"down": { "uv": [ 12, 3, 14, 5 ], "texture": "#texture" },
+				"up": { "uv": [ 12, 3, 14, 5 ], "texture": "#texture" },
+				"north": { "uv": [ 16, 5, 14, 10 ], "texture": "#texture" },
+				"south": { "uv": [ 14, 0, 16, 5 ], "texture": "#texture" },
+				"west": { "uv": [ 16, 0, 14, 5 ], "texture": "#texture" },
+				"east": { "uv": [ 14, 5, 16, 10 ], "texture": "#texture" }
+			}
+		},
+		{
+			"from": [ 6, 5, 6 ],
+			"to": [ 10, 8, 10 ],
+			"faces": {
+				"down": { "uv": [ 6, 4, 10, 8 ], "texture": "#texture" },
+				"up": { "uv": [ 6, 0, 10, 4 ], "texture": "#texture" },
+				"north": { "uv": [ 4, 8, 8, 11 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 8, 4, 11 ], "texture": "#texture" },
+				"west": { "uv": [ 4, 8, 0, 11 ], "texture": "#texture" },
+				"east": { "uv": [ 4, 8, 8, 11 ], "texture": "#texture" }
+			}
+		},
+		{
+			"from": [ 7, 8, 7 ],
+			"to": [ 9, 16, 9 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 2, 2 ], "texture": "#candle" },
+				"up": { "uv": [ 2, 0, 4, 2 ], "texture": "#candle" },
+				"north": { "uv": [ 0, 2, 2, 10 ], "texture": "#candle" },
+				"south": { "uv": [ 0, 2, 2, 10 ], "texture": "#candle" },
+				"west": { "uv": [ 2, 2, 4, 10 ], "texture": "#candle" },
+				"east": { "uv": [ 2, 2, 4, 10 ], "texture": "#candle" }
+			}
+		}
+	]
+}

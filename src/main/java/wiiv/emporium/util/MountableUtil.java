@@ -25,7 +25,7 @@ public class MountableUtil {
 		}
 		if (!checkForExistingEntity(world, pos, player)) {
 			EntityMountable nemb = new EntityMountable(world, pos, yOffset);
-			world.spawnEntityInWorld(nemb);
+			world.spawnEntity(nemb);
 			if (directional) {
 				IBlockState state = world.getBlockState(pos);
 				Map<IProperty<?>, Comparable<?>> propMap = state.getProperties();

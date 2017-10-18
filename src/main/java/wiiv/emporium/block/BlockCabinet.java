@@ -34,7 +34,7 @@ import wiiv.emporium.block.tile.TileCabinet;
 import wiiv.emporium.client.render.tile.RenderTileCabinet;
 import wiiv.emporium.init.ModGuiHandler;
 import wiiv.emporium.init.ModNetworkHandler;
-import wiiv.emporium.network.PacketCabinetDoors;
+import wiiv.emporium.network.PacketOpenDoors;
 
 public class BlockCabinet extends BlockBase {
 
@@ -141,7 +141,7 @@ public class BlockCabinet extends BlockBase {
 							if (!GuiScreen.isCtrlKeyDown()) {
 								boolean doorsOpen = getTE(world, pos).doorsOpen();
 								getTE(world, pos).setDoorsOpen(!doorsOpen);
-								ModNetworkHandler.INSTANCE.sendToServer(new PacketCabinetDoors(pos, !doorsOpen, world.provider.getDimension()));
+								ModNetworkHandler.INSTANCE.sendToServer(new PacketOpenDoors(pos, !doorsOpen, world.provider.getDimension()));
 							}
 						}
 
@@ -177,7 +177,7 @@ public class BlockCabinet extends BlockBase {
 				ItemStack slotStack = tile.getInventory().getStackInSlot(slotIndex);
 				if (slotStack != null) {
 					if (!player.inventory.addItemStackToInventory(slotStack)) {
-						world.spawnEntityInWorld(new EntityItem(world, player.posX, player.posY, player.posZ, slotStack));
+						world.spawnEntity(new EntityItem(world, player.posX, player.posY, player.posZ, slotStack));
 					}
 					if (!world.isRemote) {
 						((EntityPlayerMP) player).sendContainerToPlayer(player.inventoryContainer);

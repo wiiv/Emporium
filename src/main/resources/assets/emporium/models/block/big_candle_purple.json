@@ -1,6 +1,0 @@
-{
-	"parent": "emporium:block/big_candle",
-	"textures": {
-		"candle": "emporium:blocks/lamp_candle_purple"
-	}
-}

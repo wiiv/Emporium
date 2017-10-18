@@ -1,0 +1,28 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:table_stone_basic_single"
+    },
+    "variants": {
+    	"inventory": [{}],
+		"facing=north,left=false,right=false": {"model": "emporium:table_stone_basic_single"},
+		"facing=north,left=true,right=false": {"model": "emporium:table_stone_basic_right"},
+		"facing=north,left=true,right=true": {"model": "emporium:table_stone_basic_center"},
+		"facing=north,left=false,right=true": {"model": "emporium:table_stone_basic_left"},
+		
+		"facing=south,left=false,right=false": {"model": "emporium:table_stone_basic_single", "y": 180},
+		"facing=south,left=false,right=true": {"model": "emporium:table_stone_basic_right", "y": 180},
+		"facing=south,left=true,right=true": {"model": "emporium:table_stone_basic_center", "y": 180},
+		"facing=south,left=true,right=false": {"model": "emporium:table_stone_basic_left", "y": 180},
+		
+		"facing=east,left=false,right=false": {"model": "emporium:table_stone_basic_single", "y": 90},
+		"facing=east,left=false,right=true": {"model": "emporium:table_stone_basic_right", "y": 90},
+		"facing=east,left=true,right=true": {"model": "emporium:table_stone_basic_center", "y": 90},
+		"facing=east,left=true,right=false": {"model": "emporium:table_stone_basic_left", "y": 90},
+		
+		"facing=west,left=false,right=false": {"model": "emporium:table_stone_basic_single", "y": 270},
+		"facing=west,left=true,right=false": {"model": "emporium:table_stone_basic_right", "y": 270},
+		"facing=west,left=true,right=true": {"model": "emporium:table_stone_basic_center", "y": 270},
+		"facing=west,left=false,right=true": {"model": "emporium:table_stone_basic_left", "y": 270}	
+	}
+}

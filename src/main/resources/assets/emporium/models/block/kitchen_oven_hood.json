@@ -1,0 +1,36 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "emporium:block/block_front",
+	"textures": {
+		"texture": "emporium:blocks/appliance/kitchen/oven_hood",
+		"particle": "emporium:blocks/material/metal_normal"
+	},
+	"elements": [ 	 
+		{
+			"comment": "bottom",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 3, 16 ],
+			"faces": {
+				"down": { "uv": [ 8, 0, 16, 8 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 8, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 8, 14.5, 16, 16 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 14.5, 8, 16 ], "texture": "#texture" },
+				"west": { "uv": [ 8, 14.5, 16, 16 ], "texture": "#texture" },
+				"east": { "uv": [ 8, 14.5, 16, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "top",
+			"from": [ 4, 3, 0 ],
+			"to": [ 12, 16, 6 ],
+			"faces": {
+				"down": { "uv": [ 10, 8, 14, 11 ], "texture": "#texture" },
+				"up": { "uv": [ 10, 8, 14, 11 ], "texture": "#texture" },
+				"north": { "uv": [ 3, 8, 7, 14.5 ], "texture": "#texture" },
+				"south": { "uv": [ 3, 8, 7, 14.5 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 8, 3, 14.5 ], "texture": "#texture" },
+				"east": { "uv": [ 7, 8, 10, 14.5 ], "texture": "#texture" }
+			}
+		}
+	]
+}

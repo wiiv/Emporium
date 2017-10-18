@@ -1,0 +1,28 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+            "base": "emporium:appliance_cooktop_gas#base",
+            "Solid": "emporium:appliance_cooktop_gas#base",
+            "Cutout": "emporium:appliance_cooktop_gas#cutout"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:appliance_cooktop_gas"
+        }],
+        "cutout": [{
+            "model": "emporium:appliance_cooktop_gas_cutout"
+        }],
+        "facing": {
+        	"north": {},
+        	"south": {"y": 180},
+        	"east":  {"y": 90},
+        	"west":  { "y": 270 }
+        }
+    }
+}

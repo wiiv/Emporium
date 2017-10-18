@@ -1,0 +1,15 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:appliance_mac_1980"
+        },
+    "variants": {
+    	"inventory": [{}],
+    	"facing": {
+        	"north": {},
+        	"south": {"y": 180},
+        	"east":  {"y": 90},
+        	"west":  { "y": 270 }
+        }
+    }
+}

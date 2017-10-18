@@ -2,8 +2,8 @@
     "Comment": "model created by wiiv",
     "parent":"block/block",
     "textures": {
-        "texture": "emporium:blocks/jar_metal",
-        "particle": "emporium:blocks/jar_metal"
+        "texture": "emporium:blocks/storage/jar_cork",
+        "particle": "emporium:blocks/storage/jar_cork"
     },
     "elements": [
         {

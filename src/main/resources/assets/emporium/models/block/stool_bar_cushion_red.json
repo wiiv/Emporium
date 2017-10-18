@@ -1,74 +1,47 @@
 {
 	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
-	"parent": "block/block",
+	"parent": "emporium:block/block_front",
 	"textures": {
-		"texture": "emporium:blocks/stool_bar_modern_frame1",
-		"texture1": "emporium:blocks/stool_bar_modern_pillow_red",
-        "particle": "emporium:blocks/stool_bar_modern_pillow_red_sprite"
-    },
-    "display": {
-        "gui": {
-            "rotation": [ 30, 45, 0 ],
-            "translation": [ 0, 0, 0 ],
-            "scale": [ 0.625, 0.625, 0.625 ]
-        },
-        "fixed": {
-            "rotation": [ 0, 0, 180 ],
-            "translation": [ 0, 0, -2],
-            "scale":[ 1, 1, 1]
-        }
+		"texture": "emporium:blocks/furniture/stool/frame",
+		"texture1": "emporium:blocks/furniture/stool/cushion_red",
+		"particle": "emporium:blocks/furniture/stool/frame"
     },
 	"elements": [
 		{
-			"Name": "StoolPillow",
-			"from": [ 4, 9, 4 ],
+			"comment": "base",
+			"from": [ 4, 0, 4 ],
+			"to": [ 12, 2, 12 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 8, 8 ], "texture": "#texture" },
+				"up": { "uv": [ 0, 0, 8, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 8, 8, 10 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 8, 8, 10 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 8, 8, 10 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 8, 8, 10 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "frame",
+			"from": [ 7, 2, 7 ],
+			"to": [ 9, 8, 9 ],
+			"faces": {
+				"north": { "uv": [ 8, 0, 10, 6 ], "texture": "#texture" },
+				"south": { "uv": [ 8, 0, 10, 6 ], "texture": "#texture" },
+				"west": { "uv": [ 8, 0, 10, 6 ], "texture": "#texture" },
+				"east": { "uv": [ 8, 0, 10, 6 ], "texture": "#texture" }
+			}
+		},
+		{
+			"comment": "pillow",
+			"from": [ 4, 8, 4 ],
 			"to": [ 12, 12, 12 ],
 			"faces": {
 				"down": { "uv": [ 8, 0, 16, 8 ], "texture": "#texture1" },
 				"up": { "uv": [ 0, 0, 8, 8 ], "texture": "#texture1" },
-				"north": { "uv": [ 0, 8, 8, 11 ], "texture": "#texture1" },
-				"south": { "uv": [ 0, 8, 8, 11 ], "texture": "#texture1" },
-				"west": { "uv": [ 0, 8, 8, 11 ], "texture": "#texture1" },
-				"east": { "uv": [ 0, 8, 8, 11 ], "texture": "#texture1" }
-			}
-		},
-		{
-			"Name": "StoolFrame",
-			"from": [ 7, 1, 7 ],
-			"to": [ 9, 9, 9 ],
-			"faces": {
-				"down": { "uv": [ 7, 16, 9, 16 ], "texture": "#texture" },
-				"up": { "uv": [ 7, 0, 9, 0 ], "texture": "#texture" },
-				"north": { "uv": [ 14, 0, 16, 8 ], "texture": "#texture" },
-				"south": { "uv": [ 14, 0, 16, 8 ], "texture": "#texture" },
-				"west": { "uv": [ 14, 0, 16, 8 ], "texture": "#texture" },
-				"east": { "uv": [ 14, 0, 16, 8 ], "texture": "#texture" }
-			}
-		},
-		{
-			"Name": "StoolFrameFeet",
-			"from": [ 5, 3, 8 ],
-			"to": [ 11, 4, 12 ],
-			"faces": {
-				"down": { "uv": [ 8, 6, 14, 10 ], "texture": "#texture" },
-				"up": { "uv": [ 8, 6, 14, 10 ], "texture": "#texture" },
-				"north": { "uv": [ 8, 6, 14, 7 ], "texture": "#texture" },
-				"south": { "uv": [ 8, 9, 14, 10 ], "texture": "#texture" },
-				"west": { "uv": [ 8, 6, 9, 10 ], "texture": "#texture", "rotation": 90 },
-				"east": { "uv": [ 13, 6, 14, 10 ], "texture": "#texture", "rotation": 90 }
-			}
-		},
-		{
-			"Name": "StoolBase",
-			"from": [ 5, 0, 5 ],
-			"to": [ 11, 1, 11 ],
-			"faces": {
-				"down": { "uv": [ 8, 0, 14, 6 ], "texture": "#texture" },
-				"up": { "uv": [ 8, 0, 14, 6 ], "texture": "#texture" },
-				"north": { "uv": [ 8, 0, 14, 1 ], "texture": "#texture" },
-				"south": { "uv": [ 8, 0, 14, 1 ], "texture": "#texture" },
-				"west": { "uv": [ 8, 0, 14, 1 ], "texture": "#texture" },
-				"east": { "uv": [ 8, 0, 14, 1 ], "texture": "#texture" }
+				"north": { "uv": [ 0, 8, 8, 12 ], "texture": "#texture1" },
+				"south": { "uv": [ 0, 8, 8, 12 ], "texture": "#texture1" },
+				"west": { "uv": [ 0, 8, 8, 12 ], "texture": "#texture1" },
+				"east": { "uv": [ 0, 8, 8, 12 ], "texture": "#texture1" }
 			}
 		}
 	]

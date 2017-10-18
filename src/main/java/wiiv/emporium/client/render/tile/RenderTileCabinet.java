@@ -35,8 +35,8 @@ import wiiv.emporium.util.RenderUtils;
 
 public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> implements IItemRenderer, IPerspectiveAwareModel {
 
-	public static final ResourceLocation CABINET_TEXTURE = new ResourceLocation(Globals.MOD_ID, "textures/models/cabinet_top_double.png");
-	public static final ResourceLocation CABINET_SPRITE = new ResourceLocation(Globals.MOD_ID, "models/cabinet1_sprite");
+	public static final ResourceLocation CABINET_TEXTURE = new ResourceLocation(Globals.MOD_ID, "textures/models/cabinet_wood_modern.png");
+	public static final ResourceLocation CABINET_SPRITE = new ResourceLocation(Globals.MOD_ID, "textures/models/cabinet_wood_modern_sprite");
 	private static final ResourceLocation RES_ITEM_GLINT = new ResourceLocation("textures/misc/enchanted_item_glint.png");
 	private final ModelCabinet MODEL = new ModelCabinet();
 
@@ -105,9 +105,20 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 		float f = te.prevDoorAngle + (te.doorAngle - te.prevDoorAngle) * partialTicks;
 		f = 1.0F - f;
 		f = 1.0F - f * f * f;
-		MODEL.ldoor.rotateAngleY = +(f * ((float) Math.PI / 2F));
-		MODEL.rdoor.rotateAngleY = -(f * ((float) Math.PI / 2F));
-
+		
+		//ceiling cabinet doors
+		MODEL.ldoorf.rotateAngleY = +(f * ((float) Math.PI / 2F));
+		MODEL.rdoorf.rotateAngleY = -(f * ((float) Math.PI / 2F));
+		
+		//floor cabinet doors
+		//MODEL.ldoorf.rotateAngleY = +(f * ((float) Math.PI / 2F));
+		//MODEL.rdoorf.rotateAngleY = -(f * ((float) Math.PI / 2F));
+		
+		//ceiling cabinet single door
+		//MODEL.ldoor.rotateAngleY = +(f * ((float) Math.PI / 2F));
+		
+		//MODEL.rdoor.rotateAngleY = -(f * ((float) Math.PI / 2F));
+		
 		if (destroyStage < 0) {
 			GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 		}
@@ -138,7 +149,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 	public void renderInventory(TileCabinet tile) {
 		int j = 0, ii = 0;
 		double x = 0.0D, z = 0.0D;
-		if (tile.hasWorldObj()) {
+		if (tile.hasWorld()) {
 			ii = tile.getBlockMetadata();
 		}
 
@@ -160,7 +171,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 		for (int i = 0; i < tile.getInventory().getSizeInventory(); i++) {
 			ItemStack stack = tile.getInventory().getStackInSlot(i);
 			if (stack != null) {
-				if (MODEL.ldoor.rotateAngleY != 0.0f && MODEL.rdoor.rotateAngleY != 0.0f) {
+				if (MODEL.ldoorc.rotateAngleY != 0.0f && MODEL.rdoorc.rotateAngleY != 0.0f) {
 					switch (ii) {
 					default:
 					case 0:
@@ -202,13 +213,13 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 					}
 					GlStateManager.translate(-x, i < 8 ? -3 : -1.15, -z);
 				}
-				if (MODEL.ldoor.rotateAngleY == 0.0f && MODEL.rdoor.rotateAngleY == 0.0f && Minecraft.getMinecraft().thePlayer.isSneaking()) {
+				if (MODEL.ldoorc.rotateAngleY == 0.0f && MODEL.rdoorc.rotateAngleY == 0.0f && Minecraft.getMinecraft().thePlayer.isSneaking()) {
 					renderItemOnFace(stack, EnumFacing.values()[ii + 2], i, ii);
 				}
 			}
 		}
 	}
-
+	
 	private void renderItemOnFace(ItemStack itemStack, EnumFacing side, int index, int rotation) {
 		if (side == EnumFacing.DOWN || side == EnumFacing.UP) {
 			return;
@@ -271,14 +282,14 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 		GlStateManager.disablePolygonOffset();
 		GlStateManager.popMatrix();
 	}
-
+	
 	private void moveRendering(float size, float offsetX, float offsetY, float offsetZ) {
 		GlStateManager.translate(0, 0, offsetZ);
 		GlStateManager.scale(1 / 16f, 1 / 16f, -.00001f);
 		GlStateManager.translate(offsetX, offsetY, 0);
 		GlStateManager.scale(size, size, 1);
 	}
-
+	
 	private boolean frontOfShelf(int index) {
 		return (index > 3 && index < 8) || index > 11;
 	}
@@ -302,7 +313,7 @@ public class RenderTileCabinet extends TileEntitySpecialRenderer<TileCabinet> im
 		}
 		return 0;
 	}
-
+	
 	@Override
 	public Pair<? extends IBakedModel, Matrix4f> handlePerspective(ItemCameraTransforms.TransformType cameraTransformType) {
 		return MapWrapper.handlePerspective(this, TransformUtils.DEFAULT_BLOCK.getTransforms(), cameraTransformType);

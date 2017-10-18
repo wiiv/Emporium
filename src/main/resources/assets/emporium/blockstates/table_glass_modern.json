@@ -1,0 +1,164 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+    		"base": "emporium:table_glass_modern#basec",
+        	"Solid": "emporium:table_glass_modern#base",
+        	"Translucent": "emporium:table_glass_modern#trans"
+    	},
+    	"transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:table_glass_modern_single"
+        }],
+        "basel": [{
+            "model": "emporium:table_glass_modern_left"
+        }],
+        "basec": [{
+            "model": "emporium:table_glass_modern_center"
+        }],
+        "baser": [{
+            "model": "emporium:table_glass_modern_right"
+        }],
+        "trans": [{
+            "model": "emporium:table_glass_modern_trans"
+        }],
+        "transl": [{
+            "model": "emporium:table_glass_modern_transl"
+        }],
+        "transc": [{
+            "model": "emporium:table_glass_modern_transc"
+        }],
+        "transr": [{
+            "model": "emporium:table_glass_modern_transr"
+        }],
+        "facing=north,left=false,right=false":  [{ 
+        	"custom": {
+        		"base": "emporium:table_glass_modern#basec",
+            	"Solid": "emporium:table_glass_modern#base",
+            	"Translucent": "emporium:table_glass_modern#trans"
+            }
+        }],
+        "facing=north,left=false,right=true":  [{ 
+            "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#basel",
+                "Translucent": "emporium:table_glass_modern#transl"
+            }
+        }],
+        "facing=north,left=true,right=true":  [{ 
+            "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+	            "Solid": "emporium:table_glass_modern#basec",
+	            "Translucent": "emporium:table_glass_modern#transc"
+	        }
+        }],
+        "facing=north,left=true,right=false":  [{ 
+            "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#baser",
+                "Translucent": "emporium:table_glass_modern#transr"
+            }
+        }],
+        "facing=south,left=false,right=false":  [{ 
+        	"custom": {
+	    		"base": "emporium:table_glass_modern#basec",
+	        	"Solid": "emporium:table_glass_modern#base",
+	        	"Translucent": "emporium:table_glass_modern#trans"
+	        },
+	        "y": 180
+	    }],
+        "facing=south,left=true,right=false":  [{ 
+            "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#basel",
+                "Translucent": "emporium:table_glass_modern#transl"
+            },
+	        "y": 180
+        }],
+        "facing=south,left=true,right=true":  [{ 
+             "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#basec",
+                "Translucent": "emporium:table_glass_modern#transc"
+            },
+	        "y": 180
+        }],
+        "facing=south,left=false,right=true":  [{ 
+             "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#baser",
+                "Translucent": "emporium:table_glass_modern#transr"
+            },
+	        "y": 180
+        }],
+        "facing=east,left=false,right=false": [{
+        	"custom": {
+        		"base": "emporium:table_glass_modern#basec",
+            	"Solid": "emporium:table_glass_modern#base",
+            	"Translucent": "emporium:table_glass_modern#trans"
+            },
+            "y": 90
+        }],
+        "facing=east,left=true,right=false": [{
+        	"custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#basel",
+                "Translucent": "emporium:table_glass_modern#transl"
+            },
+            "y": 90
+        }],
+        "facing=east,left=true,right=true": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#basec",
+                "Translucent": "emporium:table_glass_modern#transc"
+            },
+            "y": 90
+        }],
+        "facing=east,left=false,right=true": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#baser",
+                "Translucent": "emporium:table_glass_modern#transr"
+            },
+            "y": 90
+        }],
+        "facing=west,left=false,right=false": [{ 
+        	"custom": {
+	    		"base": "emporium:table_glass_modern#basec",
+	        	"Solid": "emporium:table_glass_modern#base",
+	        	"Translucent": "emporium:table_glass_modern#trans"
+	        },
+	        "y": 270
+        }],
+        "facing=west,left=false,right=true": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#basel",
+                "Translucent": "emporium:table_glass_modern#transl"
+            },
+	        "y": 270
+        }],
+        "facing=west,left=true,right=true": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#basec",
+                "Translucent": "emporium:table_glass_modern#transc"
+            },
+	        "y": 270
+        }],
+        "facing=west,left=true,right=false": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_modern#basec",
+                "Solid": "emporium:table_glass_modern#baser",
+                "Translucent": "emporium:table_glass_modern#transr"
+            },
+	        "y": 270
+        }]
+    }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "emporium:block/candle_candelabra_colorable_frame",
+	"textures": {
+		"candle": "emporium:blocks/lighting/candle/candle_silver",
+		"crystal": "emporium:blocks/lighting/candle/chandelier_crystal_silver"
+	}
+}

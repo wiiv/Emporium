@@ -1,0 +1,22 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+            "base": "emporium:lamp_glowrescent_axis_black#base",
+            "Solid": "emporium:lamp_glowrescent_axis_black#base",
+            "Translucent": "emporium:lamp_glowrescent_axis_black#trans"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:lamp_glowrescent_axis_ver"
+        }],
+        "trans": [{
+            "model": "emporium:lamp_glowrescent_axis_ver_black"
+        }]
+    }
+}

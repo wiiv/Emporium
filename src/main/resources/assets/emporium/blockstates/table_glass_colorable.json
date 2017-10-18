@@ -1,0 +1,28 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+            "base": "emporium:table_glass_colorable#base",
+            "Solid": "emporium:table_glass_colorable#base",
+            "Translucent": "emporium:table_glass_colorable#trans"
+        },
+        "transform": "forge:default-block"
+    },
+    "variants": {
+    	"normal": [{}],
+        "inventory": [{}],
+        "facing": {
+            "north": { },
+            "south": {"y": 180},
+            "west": {"y": 270},
+            "east": {"y": 90}
+        },
+        "base": [{
+            "model": "emporium:table_glass_colorable"
+        }],
+        "trans": [{
+            "model": "emporium:table_glass_colorable_trans"
+        }]
+    }
+}

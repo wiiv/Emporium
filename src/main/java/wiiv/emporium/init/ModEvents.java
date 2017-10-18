@@ -45,8 +45,8 @@ public class ModEvents {
 	@SubscribeEvent
 	public void onTextureStitch(TextureStitchEvent event) {
 		event.getMap().registerSprite(Textures.GLOW_FLAME);
-		event.getMap().registerSprite(RenderTileCabinet.CABINET_SPRITE);
-		event.getMap().registerSprite(RenderTileJar.JAR_SPRITE);
+		//event.getMap().registerSprite(RenderTileCabinet.CABINET_SPRITE);
+		//event.getMap().registerSprite(RenderTileJar.JAR_SPRITE);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -70,7 +70,7 @@ public class ModEvents {
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public void onRenderAfterWorld(RenderWorldLastEvent event) {
-		ClientProxy.particleRenderer.renderParticles(Minecraft.getMinecraft().thePlayer, event.getPartialTicks());
+		ClientProxy.particleRenderer.renderParticles(Minecraft.getMinecraft().player, event.getPartialTicks());
 	}
 
 	private void loadChunk(World world, int chunkX, int chunkZ) {
@@ -128,7 +128,7 @@ public class ModEvents {
 	public void onBlockRightClick(RightClickBlock event) {
 		if (event.getHand() == EnumHand.MAIN_HAND && event.getEntityPlayer() != null) {
 			EntityPlayer player = event.getEntityPlayer();
-			World world = player.worldObj;
+			World world = player.world;
 			BlockPos pos = event.getPos();
 			if (world.getBlockState(pos).getBlock() instanceof BlockCabinet) {
 				BlockCabinet cabinet = (BlockCabinet) world.getBlockState(pos).getBlock();

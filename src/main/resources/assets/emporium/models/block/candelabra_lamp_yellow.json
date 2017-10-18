@@ -1,7 +1,0 @@
-{
-	"parent": "emporium:block/candelabra_lamp",
-	"textures": {
-		"candle": "emporium:blocks/lamp_candle_yellow",
-		"crystal": "emporium:blocks/lamp_chandelier_crystal_yellow"
-	}
-}

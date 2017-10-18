@@ -1,0 +1,10 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "emporium:candle_candelabra_colorable_yellow"
+        },
+    "variants": {
+    	"inventory": [{}],
+    	"normal": [{}]
+    }
+}

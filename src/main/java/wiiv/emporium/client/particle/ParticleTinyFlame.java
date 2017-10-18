@@ -32,9 +32,8 @@ public class ParticleTinyFlame extends ParticleFlame {
 		setParticleTextureIndex(48);
 	}
 
-	@Override
 	public void moveEntity(double x, double y, double z) {
-		setEntityBoundingBox(getEntityBoundingBox().offset(x, y, z));
+		setBoundingBox(getBoundingBox().offset(x, y, z));
 		resetPositionToBB();
 	}
 
@@ -66,12 +65,12 @@ public class ParticleTinyFlame extends ParticleFlame {
 				new Vec3d(-rotationX * f4 - rotationXY * f4, -rotationZ * f4, -rotationYZ * f4 - rotationXZ * f4), new Vec3d(-rotationX * f4 + rotationXY * f4, rotationZ * f4, -rotationYZ * f4 + rotationXZ * f4), new Vec3d(rotationX * f4 + rotationXY * f4, rotationZ * f4, rotationYZ * f4 + rotationXZ * f4), new Vec3d(rotationX * f4 - rotationXY * f4, -rotationZ * f4, rotationYZ * f4 - rotationXZ * f4)
 		};
 
-		if (field_190014_F != 0.0F) {
-			float f8 = field_190014_F + (field_190014_F - field_190015_G) * partialTicks;
+		if (particleAngle != 0.0F) {
+			float f8 = particleAngle + (particleAngle - prevParticleAngle) * partialTicks;
 			float f9 = MathHelper.cos(f8 * 0.5F);
-			float f10 = MathHelper.sin(f8 * 0.5F) * (float) field_190016_K.xCoord;
-			float f11 = MathHelper.sin(f8 * 0.5F) * (float) field_190016_K.yCoord;
-			float f12 = MathHelper.sin(f8 * 0.5F) * (float) field_190016_K.zCoord;
+			float f10 = MathHelper.sin(f8 * 0.5F) * (float) cameraViewDir.xCoord;
+			float f11 = MathHelper.sin(f8 * 0.5F) * (float) cameraViewDir.yCoord;
+			float f12 = MathHelper.sin(f8 * 0.5F) * (float) cameraViewDir.zCoord;
 			Vec3d vec3d = new Vec3d(f10, f11, f12);
 
 			for (int l = 0; l < 4; ++l) {
@@ -88,7 +87,7 @@ public class ParticleTinyFlame extends ParticleFlame {
 	@Override
 	public int getBrightnessForRender(float p_189214_1_) {
 		float f = (particleAge + p_189214_1_) / particleMaxAge;
-		f = MathHelper.clamp_float(f, 0.0F, 1.0F);
+		f = MathHelper.clamp(f, 0.0F,0.0F);
 		int i = super.getBrightnessForRender(p_189214_1_);
 		int j = i & 255;
 		int k = i >> 16 & 255;
@@ -116,7 +115,7 @@ public class ParticleTinyFlame extends ParticleFlame {
 		motionY *= 0.9599999785423279D;
 		motionZ *= 0.9599999785423279D;
 
-		if (isCollided) {
+		if (canCollide) {
 			motionX *= 0.699999988079071D;
 			motionZ *= 0.699999988079071D;
 		}
@@ -124,8 +123,9 @@ public class ParticleTinyFlame extends ParticleFlame {
 
 	@SideOnly(Side.CLIENT)
 	public static class Factory implements IParticleFactory {
+
 		@Override
-		public Particle getEntityFX(int particleID, World worldIn, double xCoordIn, double yCoordIn, double zCoordIn, double xSpeedIn, double ySpeedIn, double zSpeedIn, int... p_178902_15_) {
+		public Particle createParticle(int particleID, World worldIn, double xCoordIn, double yCoordIn, double zCoordIn, double xSpeedIn, double ySpeedIn, double zSpeedIn, int... p_178902_15_) {
 			return new ParticleTinyFlame(worldIn, xCoordIn, yCoordIn, zCoordIn, xSpeedIn, ySpeedIn, zSpeedIn);
 		}
 	}

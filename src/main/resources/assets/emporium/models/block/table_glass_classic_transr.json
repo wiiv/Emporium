@@ -1,0 +1,22 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "emporium:blocks/material/glass_1hue",
+		"texture": "emporium:blocks/furniture/table/frame1",
+		"texture1": "emporium:blocks/material/glass_1hue"
+	},
+	"elements": [
+		{
+			"Comment": "topR",
+			"from": [ 0, 15, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 1, 8, 9, 0 ], "texture": "#texture" },
+				"up": { "uv": [ 1, 0, 9, 8 ], "texture": "#texture" },
+				"north": { "uv": [ 9, 0, 1, 0.5 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 7.5, 8, 8 ], "texture": "#texture" },
+				"east": { "uv": [ 16, 15, 0, 16 ], "texture": "#texture1" }
+			}
+		}
+	]
+}

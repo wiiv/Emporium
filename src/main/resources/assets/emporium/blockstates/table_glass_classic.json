@@ -1,0 +1,164 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "forge:multi-layer",
+        "custom": {
+    		"base": "emporium:table_glass_classic#basec",
+        	"Solid": "emporium:table_glass_classic#base",
+        	"Translucent": "emporium:table_glass_classic#trans"
+    	},
+    	"transform": "forge:default-block"
+    },
+    "variants": {
+        "normal": [{}],
+        "inventory": [{}],
+        "base": [{
+            "model": "emporium:table_glass_classic_single"
+        }],
+        "basel": [{
+            "model": "emporium:table_glass_classic_left"
+        }],
+        "basec": [{
+            "model": "emporium:table_glass_classic_center"
+        }],
+        "baser": [{
+            "model": "emporium:table_glass_classic_right"
+        }],
+        "trans": [{
+            "model": "emporium:table_glass_classic_trans"
+        }],
+        "transl": [{
+            "model": "emporium:table_glass_classic_transl"
+        }],
+        "transc": [{
+            "model": "emporium:table_glass_classic_transc"
+        }],
+        "transr": [{
+            "model": "emporium:table_glass_classic_transr"
+        }],
+        "facing=north,left=false,right=false":  [{ 
+        	"custom": {
+        		"base": "emporium:table_glass_classic#basec",
+            	"Solid": "emporium:table_glass_classic#base",
+            	"Translucent": "emporium:table_glass_classic#trans"
+            }
+        }],
+        "facing=north,left=false,right=true":  [{ 
+            "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#basel",
+                "Translucent": "emporium:table_glass_classic#transl"
+            }
+        }],
+        "facing=north,left=true,right=true":  [{ 
+            "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+	            "Solid": "emporium:table_glass_classic#basec",
+	            "Translucent": "emporium:table_glass_classic#transc"
+	        }
+        }],
+        "facing=north,left=true,right=false":  [{ 
+            "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#baser",
+                "Translucent": "emporium:table_glass_classic#transr"
+            }
+        }],
+        "facing=south,left=false,right=false":  [{ 
+        	"custom": {
+	    		"base": "emporium:table_glass_classic#basec",
+	        	"Solid": "emporium:table_glass_classic#base",
+	        	"Translucent": "emporium:table_glass_classic#trans"
+	        },
+	        "y": 180
+	    }],
+        "facing=south,left=true,right=false":  [{ 
+            "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#basel",
+                "Translucent": "emporium:table_glass_classic#transl"
+            },
+	        "y": 180
+        }],
+        "facing=south,left=true,right=true":  [{ 
+             "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#basec",
+                "Translucent": "emporium:table_glass_classic#transc"
+            },
+	        "y": 180
+        }],
+        "facing=south,left=false,right=true":  [{ 
+             "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#baser",
+                "Translucent": "emporium:table_glass_classic#transr"
+            },
+	        "y": 180
+        }],
+        "facing=east,left=false,right=false": [{
+        	"custom": {
+        		"base": "emporium:table_glass_classic#basec",
+            	"Solid": "emporium:table_glass_classic#base",
+            	"Translucent": "emporium:table_glass_classic#trans"
+            },
+            "y": 90
+        }],
+        "facing=east,left=true,right=false": [{
+        	"custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#basel",
+                "Translucent": "emporium:table_glass_classic#transl"
+            },
+            "y": 90
+        }],
+        "facing=east,left=true,right=true": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#basec",
+                "Translucent": "emporium:table_glass_classic#transc"
+            },
+            "y": 90
+        }],
+        "facing=east,left=false,right=true": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#baser",
+                "Translucent": "emporium:table_glass_classic#transr"
+            },
+            "y": 90
+        }],
+        "facing=west,left=false,right=false": [{ 
+        	"custom": {
+	    		"base": "emporium:table_glass_classic#basec",
+	        	"Solid": "emporium:table_glass_classic#base",
+	        	"Translucent": "emporium:table_glass_classic#trans"
+	        },
+	        "y": 270
+        }],
+        "facing=west,left=false,right=true": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#basel",
+                "Translucent": "emporium:table_glass_classic#transl"
+            },
+	        "y": 270
+        }],
+        "facing=west,left=true,right=true": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#basec",
+                "Translucent": "emporium:table_glass_classic#transc"
+            },
+	        "y": 270
+        }],
+        "facing=west,left=true,right=false": [{ 
+            "custom": {
+            	"base": "emporium:table_glass_classic#basec",
+                "Solid": "emporium:table_glass_classic#baser",
+                "Translucent": "emporium:table_glass_classic#transr"
+            },
+	        "y": 270
+        }]
+    }
+}

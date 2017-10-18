@@ -1,0 +1,89 @@
+{
+	"Comment": "Designed by Wiiv with Cubik Studio - https://cubik.studio",
+	"parent": "emporium:block/block_front",
+	"textures": {
+		"texture": "emporium:blocks/furniture/chair/wood_modern_chair",
+		"texture1": "emporium:blocks/material/fabric_upholstery",
+		"particle": "emporium:blocks/material/fabric_upholstery"
+	},
+	"elements": [
+		{
+			"__comment": "leg_lf",
+			"from": [ 11, 0, 12 ],
+			"to": [ 13, 6, 14 ],
+			"faces": {
+				"down": { "uv": [ 2, 8, 4, 10 ], "texture": "#texture" },
+				"up": { "uv": [ 2, 8, 4, 10 ], "texture": "#texture" },
+				"north": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"west": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"east": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box20",
+			"from": [ 3, 8, 4 ],
+			"to": [ 13, 20, 6 ],
+			"faces": {
+				"down": { "uv": [ 3, 10, 13, 12 ], "texture": "#texture1" },
+				"up": { "uv": [ 3, 4, 13, 6 ], "texture": "#texture1" },
+				"north": { "uv": [ 3, 4, 13, 16 ], "texture": "#texture1" },
+				"south": { "uv": [ 3, 4, 13, 16 ], "texture": "#texture1" },
+				"west": { "uv": [ 4, 4, 6, 16 ], "texture": "#texture1" },
+				"east": { "uv": [ 10, 4, 12, 16 ], "texture": "#texture1" }
+			}
+		},
+		{
+			"__comment": "leg_lf",
+			"from": [ 3, 0, 12 ],
+			"to": [ 5, 6, 14 ],
+			"faces": {
+				"down": { "uv": [ 2, 8, 4, 10 ], "texture": "#texture" },
+				"up": { "uv": [ 2, 8, 4, 10 ], "texture": "#texture" },
+				"north": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"west": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"east": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "leg_lf",
+			"from": [ 11, 0, 4 ],
+			"to": [ 13, 6, 6 ],
+			"faces": {
+				"down": { "uv": [ 2, 8, 4, 10 ], "texture": "#texture" },
+				"up": { "uv": [ 2, 8, 4, 10 ], "texture": "#texture" },
+				"north": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"west": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"east": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "leg_lf",
+			"from": [ 3, 0, 4 ],
+			"to": [ 5, 6, 6 ],
+			"faces": {
+				"down": { "uv": [ 2, 8, 4, 10 ], "texture": "#texture" },
+				"up": { "uv": [ 2, 8, 4, 10 ], "texture": "#texture" },
+				"north": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"south": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"west": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" },
+				"east": { "uv": [ 2, 0, 4, 8 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box20",
+			"from": [ 3, 6, 4 ],
+			"to": [ 13, 8, 14 ],
+			"faces": {
+				"down": { "uv": [ 3, 2, 13, 12 ], "texture": "#texture1" },
+				"up": { "uv": [ 3, 4, 13, 14 ], "texture": "#texture1" },
+				"north": { "uv": [ 3, 8, 13, 10 ], "texture": "#texture1" },
+				"south": { "uv": [ 3, 8, 13, 10 ], "texture": "#texture1" },
+				"west": { "uv": [ 4, 8, 14, 10 ], "texture": "#texture1" },
+				"east": { "uv": [ 2, 8, 12, 10 ], "texture": "#texture1" }
+			}
+		}
+	]
+}
